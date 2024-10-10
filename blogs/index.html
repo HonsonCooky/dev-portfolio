@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harrison Cook - Blogs</title>
+    <link rel="icon" type="image/png" href="../favicon.png" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Harrison's Blogs</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>Fetching Blog...</main>
+  </body>
+
+  <script type="text/javascript">
+    function loadPage() {
+      const body = document.querySelector("main");
+      const hash = window.location.hash;
+
+      if (hash === "") {
+        return;
+      }
+
+      const pageTitle = `${hash.slice(1)}.html`;
+      fetch(pageTitle)
+        .then((res) => {
+          if (!res.ok) throw Error();
+          return res.text();
+        })
+        .then((txt) => (body.innerHTML = txt))
+        .catch((e) => (body.innerHTML = "Oops: Can't find this page."));
+    }
+
+    window.onload = loadPage;
+    window.onhashchange = loadPage;
+  </script>
+</html>

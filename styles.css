@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Lekton:ital,wght@0,400;0,700;1,400&display=swap");
+
+:root {
+  --green: #00ff00;
+}
+
+* {
+  color: var(--green);
+  border-color: var(--green);
+}
+
+body {
+  background-color: black;
+  font-family: "Lekton", monospace;
+  font-size-adjust: 0.4;
+  max-width: 80ch;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+header,
+footer {
+  background-color: black;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    position: sticky;
+  }
+}
+
+header {
+  top: 0;
+  border-bottom: 1px solid;
+
+  h1 {
+    margin: 0;
+    padding: 0.5em 0;
+  }
+}
+
+footer {
+  padding-bottom: 1em;
+  bottom: 0;
+  border-top: 1px solid;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+}
+
+a {
+  text-decoration: none;
+
+  &:before,
+  &:after {
+    content: "|";
+  }
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+section {
+  margin: 20px 0;
+  padding: 10px 0;
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid;
+  }
+
+  @media (min-width: 768px) {
+    scroll-margin-top: 9em;
+  }
+}
+
+table {
+  width: 80%;
+  margin: 2em auto;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid;
+  padding: 0.5em 1ch;
+  text-align: left;
+}
+
+figure {
+  width: 80%;
+  border: 1px solid;
+  padding: 2em 0 0.5em 0;
+  margin: 2em auto;
+  text-align: center;
+}
+
+img {
+  max-height: 300px;
+  max-width: 30dvh;
+  border: 1px solid;
+}
+
+figcaption {
+  margin-top: 0.5em;
+  font-size: 13px;
+}
