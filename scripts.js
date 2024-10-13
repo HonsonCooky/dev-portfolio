@@ -1,8 +1,3 @@
-const profileImg = document.getElementById("profile-img");
-profileImg.onmouseover = () => (profileImg.src = "./assets/imgs/profile.png");
-profileImg.onmouseout = () =>
-  (profileImg.src = "./assets/imgs/profile-pixel.png");
-
 const buttons = document.querySelectorAll("button");
 buttons.forEach((btn) => {
   if (btn.onclick) return;
@@ -15,12 +10,32 @@ buttons.forEach((btn) => {
 });
 
 const details = document.querySelectorAll("details");
+
 details.forEach((detail) => {
   detail.ontoggle = function () {
     if (!this.open) return;
 
     details.forEach((other) => {
-      if (other !== this) other.open = false;
-    });
+      if (other !== this && other.open){
+        other.open = false;
+      }
+    })
   };
+});
+
+const imgs = document.querySelectorAll("img");
+function imgMouseOver() {
+  this.src = this.getAttribute("hover");
+}
+function imgMouseOut() {
+  this.src = this.getAttribute("default");
+}
+imgs.forEach((img) => {
+  if (!img.src) {
+    img.src = img.getAttribute("default");
+    img.onmouseover = imgMouseOver;
+    img.onmouseout = imgMouseOut;
+  }
+
+  img.onclick = function () {};
 });
