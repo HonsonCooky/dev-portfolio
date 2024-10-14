@@ -9,20 +9,6 @@ buttons.forEach((btn) => {
   };
 });
 
-const details = document.querySelectorAll("details");
-
-details.forEach((detail) => {
-  detail.ontoggle = function () {
-    if (!this.open) return;
-
-    details.forEach((other) => {
-      if (other !== this && other.open){
-        other.open = false;
-      }
-    })
-  };
-});
-
 const imgs = document.querySelectorAll("img");
 function imgMouseOver() {
   this.src = this.getAttribute("hover");
@@ -37,5 +23,9 @@ imgs.forEach((img) => {
     img.onmouseout = imgMouseOut;
   }
 
-  img.onclick = function () {};
+  img.onclick = function () {
+    window.open(
+      img.src ?? img.getAttribute("hover") ?? img.getAttribute("default"),
+    );
+  };
 });

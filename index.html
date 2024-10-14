@@ -9,6 +9,14 @@
     <script src="scripts.js" defer></script>
   </head>
   <body>
+    <img
+      id="profile-img"
+      default="./assets/imgs/profile-pixel.png"
+      hover="./assets/imgs/profile.png"
+      alt="profile.png"
+      style="margin: 2em auto 0 auto; display: block"
+    />
+
     <header>
       <h1>Harrison Cook</h1>
       <nav>
@@ -19,9 +27,10 @@
         <button href="#dialog">Dialog</button>
       </nav>
     </header>
+
     <main>
       <section id="profile">
-        <h1>Profile</h1>
+        <h1 style="margin: 0">Profile</h1>
         <table>
           <tr>
             <th>First</th>
@@ -91,19 +100,10 @@
             my melodic journey through bytes, nibbles and bits!
           </p>
         </details>
-        <figure>
-          <img
-            id="profile-img"
-            default="./assets/imgs/profile-pixel.png"
-            hover="./assets/imgs/profile.png"
-            alt="profile.png"
-          />
-          <figcaption>Harrison - Decompiler of Spaghetti</figcaption>
-        </figure>
       </section>
 
       <section id="quests">
-        <h1>Quests</h1>
+        <h1 style="margin: 0">Quests</h1>
         <article>
           <h1>Active:</h1>
           <details>
@@ -180,18 +180,19 @@
             </p>
             <p>
               It is said that teaching is the best way to learn. During my
-              studies at Victoria University I put this theory into practice;
-              Providing support to students in Software Engineering, Networking
-              Engineering, and Computer Science disciplines. My responsibilities
-              included running workshops and tutorials, also marking
-              assignments, for classes I took a year before. This role afforded
-              me the opportunity to master the art of conveying complex
-              technical subjects (such as C pointers and CPU threads) to a
-              diverse student body with varying degrees of technical
-              proficiency. The ability to simplify and communicate intricate
-              concepts effectively has been invaluable in my current career,
-              where I engage effectively with business analysts, scrum masters,
-              and product owners, facilitating clear and productive discussions.
+              studies at Victoria University I put this theory into practice and
+              became a tutor; Providing support to students in Software
+              Engineering, Networking Engineering, and Computer Science
+              disciplines. My responsibilities included running workshops and
+              tutorials, also marking assignments, for classes I took a year
+              before. This role afforded me the opportunity to master the art of
+              conveying complex technical subjects (such as C pointers and CPU
+              threads) to a diverse student body with varying degrees of
+              technical proficiency. The ability to simplify and communicate
+              intricate concepts effectively has been invaluable in my current
+              career, where I engage effectively with business analysts, scrum
+              masters, and product owners, facilitating clear and productive
+              discussions.
             </p>
           </details>
         </article>
@@ -275,10 +276,47 @@
           <summary>
             <b>Toolbox</b> <wbr />|&gt; <span>C#, TypeScript</span>
           </summary>
-          <p>
-            My journey through code has introduced me to an assortment of tools
-            that I've collected. 
-          </p>
+          <h1>Languages</h1>
+          <table>
+            <tr>
+              <th>Professional</th>
+              <td>C#, TypeScript</td>
+            </tr>
+            <tr>
+              <th>Educational</th>
+              <td>C, C++, F#, JavaScript, Java, Ruby, Rust</td>
+            </tr>
+            <tr>
+              <th>Personal</th>
+              <td>Dart, HTML + CSS, Lua, Zig</td>
+            </tr>
+          </table>
+          <h1>Frameworks</h1>
+          <table>
+            <tr>
+              <th>Professional</th>
+              <td>ASP.NET, React-Native, Vue.js</td>
+            </tr>
+            <tr>
+              <th>Educational</th>
+              <td>React</td>
+            </tr>
+            <tr>
+              <th>Personal</th>
+              <td>Blazor, Flutter, Next.js, Tailwind, Webpack</td>
+            </tr>
+          </table>
+          <h1>DevOps</h1>
+          <table>
+            <tr>
+              <th>Professional</th>
+              <td>AWS, Azure, GitHub, Jenkins, Terraform</td>
+            </tr>
+            <tr>
+              <th>Educational</th>
+              <td>GitLab</td>
+            </tr>
+          </table>
         </details>
 
         <details id="projects">

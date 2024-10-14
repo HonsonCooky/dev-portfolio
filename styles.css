@@ -32,7 +32,7 @@ footer {
 
 header {
   top: 0;
-  border-bottom: 1px solid;
+  border-bottom: 0.5em dashed;
   padding: 0.5em 0;
   position: sticky;
 }
@@ -40,7 +40,7 @@ header {
 footer {
   padding: 0.5em 0;
   bottom: 0;
-  border-top: 1px solid;
+  border-top: 0.5em dashed;
 
   @media (min-width: 768px) {
     position: sticky;
@@ -51,10 +51,6 @@ nav {
   button {
     margin: 0.2em 0;
   }
-}
-
-main {
-  padding: 0 2ch;
 }
 
 button {
@@ -135,12 +131,14 @@ img {
 }
 
 section {
-  margin: 20px 0;
-  padding: 10px 0;
+  padding: 2em 2ch;
+
+  > h1:first-of-type {
+    margin-top: 0;
+  }
 
   &:not(:last-of-type) {
-    padding-bottom: 5em;
-    border-bottom: 1px solid;
+    border-bottom: 0.5em dashed;
   }
 }
 
