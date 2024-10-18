@@ -1,11 +1,18 @@
 * {
   box-sizing: border-box;
+  border-color: darkgrey;
+}
+
+html,
+body {
+  margin: 0;
 }
 
 body {
   background-color: white;
   color: blue;
   font-size: 14px;
+  line-height: 1em;
   font-family: monospace;
 }
 
@@ -15,6 +22,13 @@ footer {
   text-align: center;
 }
 
+footer {
+  div {
+    background: black;
+    color: white;
+  }
+}
+
 main {
   margin: 1em auto;
   max-width: 80ch;
@@ -22,8 +36,17 @@ main {
 
 section {
   margin: 2em 2ch;
-  border: outset;
+  border: 1px outset;
   padding: 1em 1ch;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2em;
 }
 
 a {
@@ -38,22 +61,22 @@ a {
 }
 
 code {
+  display: inline-block;
   border: 1px dotted;
-  padding: 0.1em 1ch;
-  line-height: 1.5em;
-}
-
-hr {
+  padding: 0 1ch;
+  white-space: nowrap;
 }
 
 img {
   display: block;
   margin: 1em auto;
+  border: 1px solid;
   max-height: 20em;
 }
 
 details {
   margin: 0.5em 1ch;
+
   summary {
     cursor: pointer;
     white-space: nowrap;
@@ -66,23 +89,32 @@ details {
 
     b {
       display: inline-block;
-      min-width: 20ch;
+      width: 100%;
+
+      @media (min-width: 768px) {
+        width: 0;
+        min-width: 20ch;
+      }
     }
   }
 }
 
 table {
   margin: 1em auto;
-  border: outset;
+  border: 1px outset;
   width: 100%;
 
   @media (min-width: 768px) {
     width: 80%;
   }
 
+  th {
+    width: 0;
+  }
+
   th,
   td {
-    border: inset;
+    border: 1px inset;
     padding: 0.5em 2ch 0.5em 1ch;
     text-align: start;
   }
