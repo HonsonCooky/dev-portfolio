@@ -1,12 +1,12 @@
 {
-  "name": "8bit-resume",
-  "version": "1.0.0",
-  "author": "Harrison Cook",
-  "license": "MIT",
-  "description": "",
-  "devDependencies": {
-    "prettier": "^3.3.3",
-    "prettier-plugin-css-order": "^2.1.2",
-    "prettier-plugin-organize-attributes": "^1.0.0"
-  }
+    "name": "8bit-resume",
+    "version": "1.0.0",
+    "author": "Harrison Cook",
+    "license": "MIT",
+    "description": "",
+    "devDependencies": {
+        "prettier": "^3.3.3",
+        "prettier-plugin-css-order": "^2.1.2",
+        "prettier-plugin-organize-attributes": "^1.0.0"
+    }
 }

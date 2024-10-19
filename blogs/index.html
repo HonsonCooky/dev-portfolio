@@ -1,42 +1,53 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Harrison Cook - Blogs</title>
-    <link rel="icon" type="image/png" href="../favicon.png" />
-    <link rel="stylesheet" href="../styles.css" />
-    <script src="..\scripts.js" defer></script>
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Harrison Cook - Opinions</title>
+        <link rel="icon" type="image/png" href="../assets/imgs/favicon.png" />
+        <link rel="stylesheet" href="../styles.css" />
+        <script src="..\scripts.js" defer></script>
+    </head>
 
-  <body>
-    <header>
-      <h1>Harrison's Blogs</h1>
-    </header>
+    <body>
+        <header>
+            <h1>Harrison - Opinions</h1>
+        </header>
 
-    <main>Fetching Blog...</main>
-  </body>
+        <main>Fetching...</main>
 
-  <script type="text/javascript">
-    function loadPage() {
-      const body = document.querySelector("main");
-      const hash = window.location.hash;
+        <div style="max-width: 21cm; margin: 0 auto; border: outset">
+            <ul>
+                <li>
+                    <a href="/blogs/#programming-qualia">
+                        What is a Software Engineer
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </body>
 
-      if (hash === "") {
-        return;
-      }
+    <script type="text/javascript">
+        function loadPage() {
+            const body = document.querySelector("main");
+            const hash = window.location.hash;
 
-      const pageTitle = `${hash.slice(1)}.html`;
-      fetch(pageTitle)
-        .then((res) => {
-          if (!res.ok) throw Error();
-          return res.text();
-        })
-        .then((txt) => (body.innerHTML = txt))
-        .catch((e) => (body.innerHTML = "Oops: Can't find this page."));
-    }
+            if (hash === "") {
+                body.innerHTML = "";
+                return;
+            }
 
-    window.onload = loadPage;
-    window.onhashchange = loadPage;
-  </script>
+            const pageTitle = `${hash.slice(1)}.html`;
+            fetch(pageTitle)
+                .then((res) => {
+                    if (!res.ok) throw Error();
+                    return res.text();
+                })
+                .then((txt) => (body.innerHTML = txt))
+                .catch((e) => (body.innerHTML = "Oops: Can't find this page."));
+        }
+
+        window.onload = loadPage;
+        window.onhashchange = loadPage;
+    </script>
 </html>
