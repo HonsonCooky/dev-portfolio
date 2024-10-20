@@ -22,9 +22,6 @@ footer {
 }
 
 footer {
-    position: sticky;
-    bottom: 0;
-
     div {
         background: black;
         color: white;
@@ -85,6 +82,7 @@ code {
 
 img {
     display: block;
+    cursor: pointer;
     margin: 1em auto;
     border: 2px solid blue;
     max-height: 20em;
@@ -132,6 +130,7 @@ table {
 
     th {
         width: 0;
+        white-space: nowrap;
     }
 
     th,
