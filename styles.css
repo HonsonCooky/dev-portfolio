@@ -96,6 +96,10 @@ img {
     max-height: 20em;
 }
 
+ul {
+    padding: 0 2ch;
+}
+
 details {
     margin: 0.2em 0;
 
