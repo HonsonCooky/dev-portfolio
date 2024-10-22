@@ -1,18 +1,26 @@
+:root {
+    --bse: black;
+    --txt: white;
+    --acc1: dodgerblue;
+    --acc2: lemonchiffon;
+
+    @media (prefers-color-scheme: light) {
+        --bse: white;
+        --txt: black;
+    }
+}
+
 * {
     box-sizing: border-box;
-    border-color: darkgrey;
 }
 
 html,
 body {
     margin: 0;
+    background-color: var(--bse);
     padding: 0;
     min-height: 100dvh;
-}
-
-body {
-    background-color: white;
-    color: black;
+    color: var(--txt);
     font-size: 14px;
     font-family: monospace;
 }
@@ -25,8 +33,8 @@ footer {
 
 footer {
     div {
-        background: black;
-        color: white;
+        background: var(--txt);
+        color: var(--bse);
     }
 
     p {
@@ -42,7 +50,7 @@ main {
 
 section {
     margin: 2em 2ch;
-    border: 2px outset;
+    border: 2px outset var(--txt);
     padding: 1em 2ch;
 }
 
@@ -52,23 +60,23 @@ h3,
 h4,
 h5,
 h6 {
-    color: blue;
+    color: var(--acc1);
     line-height: 1.2em;
 }
 
 a {
     cursor: pointer;
-    color: blue;
+    color: var(--acc1);
 
     &:hover,
     &:active {
-        background-color: blue;
-        color: yellow;
+        background-color: var(--acc1);
+        color: var(--acc2);
     }
 }
 
 b {
-    color: blue;
+    color: var(--acc1);
 }
 
 hr {
@@ -77,16 +85,16 @@ hr {
 
 code {
     display: inline-block;
-    border: 1px dotted blue;
+    border: 2px dotted var(--acc1);
     padding: 0 1ch;
-    white-space: nowrap;
+    var(--bse)-space: nowrap;
 }
 
 img {
     display: block;
     cursor: pointer;
     margin: 1em auto;
-    border: 2px solid blue;
+    border: 2px solid var(--acc1);
     max-height: 20em;
 }
 
@@ -95,11 +103,11 @@ details {
 
     &[open] {
         > summary {
-            background-color: blue;
-            color: yellow;
+            background-color: var(--acc1);
+            color: var(--acc2);
 
             * {
-                color: yellow;
+                color: var(--acc2);
             }
         }
     }
@@ -107,15 +115,15 @@ details {
     summary {
         cursor: pointer;
         padding: 0.1em 1ch;
-        white-space: nowrap;
+        var(--bse)-space: nowrap;
 
         &:hover,
         &:active {
-            background-color: blue;
-            color: yellow;
+            background-color: var(--acc1);
+            color: var(--acc2);
 
             * {
-                color: yellow;
+                color: var(--acc2);
             }
         }
     }
@@ -123,7 +131,7 @@ details {
 
 table {
     margin: 1em auto;
-    border: 1px outset;
+    border: 2px outset var(--acc2);
     width: 100%;
 
     @media (min-width: 768px) {
@@ -132,12 +140,12 @@ table {
 
     th {
         width: 0;
-        white-space: nowrap;
+        var(--bse)-space: nowrap;
     }
 
     th,
     td {
-        border: 1px inset;
+        border: 2px inset var(--acc2);
         padding: 0.5em 2ch 0.5em 1ch;
         text-align: start;
     }
