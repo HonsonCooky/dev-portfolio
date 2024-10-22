@@ -1,12 +1,14 @@
 :root {
     --bse: black;
     --txt: white;
-    --acc1: dodgerblue;
-    --acc2: lemonchiffon;
+    --acc1: gold;
+    --acc2: blue;
 
     @media (prefers-color-scheme: light) {
         --bse: white;
         --txt: black;
+        --acc1: blue;
+        --acc2: gold;
     }
 }
 
@@ -45,6 +47,7 @@ footer {
 
 main {
     margin: 1em auto;
+    padding: 1em 2ch;
     max-width: 21cm;
 }
 

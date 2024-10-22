@@ -6,7 +6,7 @@
         <title>Harrison Cook - Opinions</title>
         <link rel="icon" type="image/png" href="../assets/imgs/favicon.png" />
         <link rel="stylesheet" href="../styles.css" />
-        <script src="..\scripts.js" defer></script>
+        <script src="../scripts.js" defer></script>
     </head>
 
     <body>
@@ -14,37 +14,42 @@
             <h1>Harrison - Opinions</h1>
         </header>
 
-        <main>Fetching...</main>
-
-        <div style="max-width: 21cm; margin: 0 auto; border: outset">
-            <ul>
-                <li>
-                    <a href="/blogs/#programming-qualia">
-                        What is a Software Engineer
-                    </a>
-                </li>
-            </ul>
-        </div>
+        <main>
+            <section id="content">Fetching...</section>
+            <section>
+                <ul>
+                    <li>
+                        <a href="/blogs/#programming-qualia">
+                            What is a Software Engineer
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </main>
     </body>
 
     <script type="text/javascript">
         function loadPage() {
-            const body = document.querySelector("main");
+            const content = document.getElementById("content");
             const hash = window.location.hash;
 
             if (hash === "") {
-                body.innerHTML = "";
+                content.innerHTML = "";
+                content.hidden = true;
                 return;
             }
 
+            content.hidden = false;
             const pageTitle = `${hash.slice(1)}.html`;
             fetch(pageTitle)
                 .then((res) => {
                     if (!res.ok) throw Error();
                     return res.text();
                 })
-                .then((txt) => (body.innerHTML = txt))
-                .catch((e) => (body.innerHTML = "Oops: Can't find this page."));
+                .then((txt) => (content.innerHTML = txt))
+                .catch(
+                    (e) => (content.innerHTML = "Oops: Can't find this page."),
+                );
         }
 
         window.onload = loadPage;
