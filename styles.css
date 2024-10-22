@@ -1,19 +1,15 @@
 :root {
-    --bse: black;
-    --txt: white;
-    --acc1: gold;
-    --acc2: blue;
+    --bse: #f0f0ff;
+    --txt: #0f0f0f;
+    --acc1: #191970;
+    --acc2: #daa520;
 
-    @media (prefers-color-scheme: light) {
-        --bse: white;
-        --txt: black;
-        --acc1: blue;
-        --acc2: gold;
+    @media (prefers-color-scheme: dark){
+    --bse: #0f0f0f;
+    --txt: #f0f0ff;
+    --acc1: #6767dd;
+    --acc2: #e8c160;
     }
-}
-
-* {
-    box-sizing: border-box;
 }
 
 html,
@@ -47,12 +43,11 @@ footer {
 
 main {
     margin: 1em auto;
-    padding: 1em 2ch;
     max-width: 21cm;
 }
 
 section {
-    margin: 2em 2ch;
+    margin: 2em 1ch;
     border: 2px outset var(--txt);
     padding: 1em 2ch;
 }
@@ -64,12 +59,14 @@ h4,
 h5,
 h6 {
     color: var(--acc1);
+    font-weight: bold;
     line-height: 1.2em;
 }
 
 a {
     cursor: pointer;
     color: var(--acc1);
+    font-weight: bold;
 
     &:hover,
     &:active {
@@ -78,19 +75,17 @@ a {
     }
 }
 
-b {
-    color: var(--acc1);
-}
-
 hr {
     margin-bottom: 1em;
+    border: 1px inset var(--txt);
 }
 
 code {
     display: inline-block;
     border: 2px dotted var(--acc1);
     padding: 0 1ch;
-    var(--bse)-space: nowrap;
+    color: var(--acc2);
+    white-space: nowrap;
 }
 
 img {
@@ -102,7 +97,7 @@ img {
 }
 
 details {
-    margin: 0.2em 1ch;
+    margin: 0.2em 0;
 
     &[open] {
         > summary {
@@ -118,7 +113,7 @@ details {
     summary {
         cursor: pointer;
         padding: 0.1em 1ch;
-        var(--bse)-space: nowrap;
+        white-space: nowrap;
 
         &:hover,
         &:active {
@@ -143,7 +138,7 @@ table {
 
     th {
         width: 0;
-        var(--bse)-space: nowrap;
+        white-space: nowrap;
     }
 
     th,
