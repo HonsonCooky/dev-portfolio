@@ -11,8 +11,6 @@ imgs.forEach((img) => {
     }
 
     img.onclick = function () {
-        window.open(
-            img.src ?? img.getAttribute("hover") ?? img.getAttribute("default"),
-        );
+        window.open(img.src ?? img.getAttribute("hover") ?? img.getAttribute("default"));
     };
 });

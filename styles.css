@@ -4,11 +4,11 @@
     --acc1: #191970;
     --acc2: #daa520;
 
-    @media (prefers-color-scheme: dark){
-    --bse: #0f0f0f;
-    --txt: #f0f0ff;
-    --acc1: #6767dd;
-    --acc2: #e8c160;
+    @media (prefers-color-scheme: dark) {
+        --bse: #0f0f0f;
+        --txt: #f0f0ff;
+        --acc1: #6767dd;
+        --acc2: #e8c160;
     }
 }
 
@@ -83,8 +83,9 @@ hr {
 code {
     display: inline-block;
     border: 2px dotted var(--acc1);
-    padding: 0 1ch;
-    color: var(--acc2);
+    padding: 0.1em 1ch;
+    font-weight: bold;
+    line-height: 1em;
     white-space: nowrap;
 }
 

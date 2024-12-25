@@ -4,6 +4,10 @@
     "author": "Harrison Cook",
     "license": "MIT",
     "description": "",
+    "scripts": {
+        "live": "live-server .",
+        "format": "prettier . --write"
+    },
     "devDependencies": {
         "prettier": "^3.3.3",
         "prettier-plugin-css-order": "^2.1.2",
