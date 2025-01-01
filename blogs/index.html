@@ -10,11 +10,9 @@
     </head>
 
     <body>
-        <header>
-            <h1>Harrison - Opinions</h1>
-        </header>
-
         <main>
+            <h1>Harrison - Opinions</h1>
+
             <section id="content">Fetching...</section>
             <section>
                 <h1>Topics:</h1>
@@ -46,7 +44,7 @@
                     return res.text();
                 })
                 .then((txt) => (content.innerHTML = txt))
-                .catch((e) => (content.innerHTML = "Oops: Can't find this page."));
+                .catch(() => (content.innerHTML = "Oops: Can't find this page."));
         }
 
         window.onload = loadPage;

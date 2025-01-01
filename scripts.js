@@ -10,7 +10,7 @@ imgs.forEach((img) => {
         };
     }
 
-    img.onclick = function () {
-        window.open(img.src ?? img.getAttribute("hover") ?? img.getAttribute("default"));
-    };
+    // img.onclick = function () {
+    //     window.open(img.src ?? img.getAttribute("hover") ?? img.getAttribute("default"));
+    // };
 });
