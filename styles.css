@@ -1,15 +1,15 @@
 :root {
-    --base: #ffffff;
-    --text: #000000;
     --white: #ffffff;
     --black: #000000;
     --blue: #188fa7;
     --grey: #736372;
     --orange: #f96900;
+    --base: var(--white);
+    --text: var(--black);
 
     @media (prefers-color-scheme: dark) {
-        --base: #000000;
-        --text: #ffffff;
+        --base: var(--black);
+        --text: var(--white);
     }
 }
 
@@ -87,17 +87,17 @@ a {
 
 table {
     margin: 2em 0 4em 0;
-    border: 2px solid var(--orange);
+    border-collapse: collapse;
     width: 100%;
 
     th {
-        width: 13ch;
+        width: 18ch;
     }
 
     th,
     td {
         border: 2px solid var(--orange);
-        padding: 0.5em 2ch 0.2em 1ch;
+        padding: 0.2em 2ch 0.2em 1ch;
         text-align: left;
         white-space: normal;
     }
@@ -105,8 +105,9 @@ table {
 
 code {
     border: 0.1em dashed var(--blue);
+    border-radius: 0.2em;
     background-color: var(--grey);
-    padding: 0.2em 1ch;
+    padding: 0 1ch;
     color: var(--white);
 }
 
