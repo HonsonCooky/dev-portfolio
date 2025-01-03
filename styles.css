@@ -2,8 +2,8 @@
     --white: #ffffff;
     --black: #000000;
     --blue: #188fa7;
-    --grey: #736372;
     --orange: #f96900;
+    --grey: #888888;
     --base: var(--white);
     --text: var(--black);
 
@@ -24,7 +24,7 @@ body {
     padding: 0;
     min-height: 100dvh;
     color: var(--text);
-    font-size: 14px;
+    font-size: 10pt;
     line-height: 1.5em;
     font-family: monospace;
 }
@@ -109,10 +109,12 @@ code {
     background-color: var(--grey);
     padding: 0 1ch;
     color: var(--white);
+    white-space: nowrap;
 }
 
 blockquote {
-    border: 0.1em dashed var(--orange);
+    margin: 1em 4ch;
+    border-left: 1ch solid var(--blue);
     background-color: var(--grey);
     padding: 1em 2ch;
     color: var(--white);
