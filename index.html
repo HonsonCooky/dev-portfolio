@@ -1,121 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>C:\HarrisonCook&gt;</title>
-    <link rel="icon" href="./assets/imgs/favicon.png" />
-  </head>
 
-  <!--== STYLE ==============================================================-->
-  <style>
-    :root {
-      --base: black;
-      --text: white;
-      --code: lawngreen;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C:\HarrisonCook&gt;</title>
+  <link rel="icon" href="./assets/favicon.png" />
+</head>
+
+<style>
+  :root {
+    --base: black;
+    --text: white;
+    --code: lawngreen;
+  }
+
+  * {
+    box-sizing: border-box;
+    font-family: "Courier New", Courier, monospace;
+    color: var(--text);
+  }
+
+  html,
+  body {
+    background-color: var(--base);
+    margin: 0;
+    padding: 0;
+    font-size: 12pt;
+  }
+
+  body {
+    max-width: 80ch;
+  }
+
+  #input {
+    height: 1.2em;
+    position: relative;
+    padding: 0.2em 1ch;
+  }
+
+  #buffer {
+    .hint {
+      color: gray;
     }
+  }
 
-    * {
-      box-sizing: border-box;
-      font-family: "Courier New", Courier, monospace;
-      color: var(--text);
+  #caret {
+    position: absolute;
+    bottom: 0;
+    height: calc(1.2em * 0.25);
+    width: 1ch;
+    background-color: var(--code);
+    animation: blink 0.75s step-start infinite;
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0%;
     }
+  }
+</style>
 
-    html,
-    body {
-      background-color: var(--base);
-      margin: 0;
-      padding: 0;
-      font-size: 13pt;
-    }
-
-    body {
-      max-width: 80ch;
-    }
-
-    #input {
-      height: 1.2em;
-      position: relative;
-      padding: 0.2em 1ch;
-    }
-
-    #buffer {
-      .hint {
-        color: gray;
-      }
-    }
-
-    #caret {
-      position: absolute;
-      bottom: 0;
-      height: calc(1.2em * 0.25);
-      width: 1ch;
-      background-color: var(--code);
-      animation: blink 0.75s step-start infinite;
-    }
-
-    @keyframes blink {
-      50% {
-        opacity: 0%;
-      }
-    }
-  </style>
-  <!--== /STYLE =============================================================-->
-
-  <!--== ELEMENTS ===========================================================-->
-  <body>
-    <div id="output"></div>
-    <div id="input">
-      <span id="prompt">
-        <span id="root"> C:\HarrisonCook&gt;</span>
-      </span>
+<body>
+  <div id="output"></div>
+  <div id="input">
+    <span id="prompt">
+      <span id="root"> C:\HarrisonCook&gt;</span>
+    </span>
+    <span id="buffer-container">
       <span id="buffer">
-        <span class="hint"> Try "help" command. </span>
+        <span class="hint">For "help" command.</span>
       </span>
       <span id="caret"></span>
-    </div>
-  </body>
-  <!--== /ELEMENTS ==========================================================-->
+    </span>
+  </div>
+</body>
 
-  <!--== ACTIONS ============================================================-->
-  <script type="text/javascript">
-    function get1chInPixels() {
-      // Create a temporary element
-      const tempElement = document.createElement("div");
-      // Set its width to 1ch
-      tempElement.style.width = "1ch";
-      // Append it to the body to get computed styles
-      document.body.appendChild(tempElement);
-      // Get the computed width in pixels
-      const widthInPixels = window.getComputedStyle(tempElement).width;
-      // Remove the temporary element from the DOM
-      document.body.removeChild(tempElement);
-      // Return the width in pixels as a number
-      return parseFloat(widthInPixels);
-    }
+<script type="text/javascript">
+  /**
+   * Renders an element to determine the width of '1ch'. 
+   */
+  function getCharWidth() {
+    const tempElement = document.createElement("div");
+    tempElement.style.width = "1ch";
+    document.body.appendChild(tempElement);
+    const widthInPixels = window.getComputedStyle(tempElement).width;
+    document.body.removeChild(tempElement);
+    return parseFloat(widthInPixels);
+  }
 
-    console.log(get1chInPixels()); // Outputs the width of 1ch in pixels
+  /** 
+   * The css width of '1ch' - this does not change with dimensions. 
+   */
+  var charWidth = getCharWidth();
 
-    function setCaretPos() {
-      const tb = document.getElementById("buffer");
-      const tp = document.getElementById("prompt");
-      const tc = document.getElementById("caret");
-      const spaces = Array.from(tb.children).filter(
-        (e) => e.className === "content"
-      ).length;
+  /** 
+   * Determine the caret position based on the prompt, buffer, and wrap.
+   */
+  function setCaretPos() {
+    const tp = document.getElementById("prompt");
+    const tc = document.getElementById("caret");
+    let caretLeftPx = tp.getBoundingClientRect().right;
+    tc.style.left = caretLeftPx + "px";
+  }
 
-      console.log(tp.getBoundingClientRect());
-      tc.style.left =
-        tp.getBoundingClientRect().right / get1chInPixels() + spaces + "ch";
-    }
+  /**
+   * Evaluate the keypress and respond to user input.
+   * @param {KeyboardEvent} ev
+   */
+  function onKeyDown(ev) {
+    ev.key
+  }
 
-    document.addEventListener("keydown", (ev) => {
-      console.log(ev.key);
-      ev.preventDefault();
-      ev.stopPropagation();
-    });
+  setCaretPos();
+  document.addEventListener("keydown", onKeyDown)
+</script>
 
-    setCaretPos();
-  </script>
-  <!--== /ACTIONS ===========================================================-->
 </html>
