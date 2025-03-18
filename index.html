@@ -3,26 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>C:\HarrisonCook</title>
+    <title>C:\HarrisonCook&gt;</title>
     <link rel="icon" href="./assets/imgs/favicon.png" />
   </head>
 
+  <!--== STYLE ==============================================================-->
   <style>
     :root {
-      --bg: black;
-      --fg: white;
-      --hl: lawngreen;
-      --vl: yellow;
+      --base: black;
+      --text: white;
+      --code: lawngreen;
     }
+
     * {
       box-sizing: border-box;
       font-family: "Courier New", Courier, monospace;
-      color: white;
+      color: var(--text);
     }
 
     html,
     body {
-      background-color: var(--bg);
+      background-color: var(--base);
       margin: 0;
       padding: 0;
       font-size: 13pt;
@@ -32,26 +33,24 @@
       max-width: 80ch;
     }
 
-    button {
-      background-color: transparent;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      font-size: inherit;
-    }
-
-    #terminal-input {
+    #input {
       height: 1.2em;
       position: relative;
       padding: 0.2em 1ch;
     }
 
-    #terminal-caret {
+    #buffer {
+      .hint {
+        color: gray;
+      }
+    }
+
+    #caret {
       position: absolute;
       bottom: 0;
       height: calc(1.2em * 0.25);
       width: 1ch;
-      background-color: var(--hl);
+      background-color: var(--code);
       animation: blink 0.75s step-start infinite;
     }
 
@@ -61,18 +60,62 @@
       }
     }
   </style>
+  <!--== /STYLE =============================================================-->
 
+  <!--== ELEMENTS ===========================================================-->
   <body>
-    <div id="terminal-output"></div>
-    <div id="terminal-input">
-      <span>C:\HarrisonCook&gt;</span>
-      <span id="terminal-caret"></span>
+    <div id="output"></div>
+    <div id="input">
+      <span id="prompt">
+        <span id="root"> C:\HarrisonCook&gt;</span>
+      </span>
+      <span id="buffer">
+        <span class="hint"> Try "help" command. </span>
+      </span>
+      <span id="caret"></span>
     </div>
-
-    <script type="text/javascript">
-      window.addEventListener("keypress", (ev) => {
-        console.log(ev.key);
-      });
-    </script>
   </body>
+  <!--== /ELEMENTS ==========================================================-->
+
+  <!--== ACTIONS ============================================================-->
+  <script type="text/javascript">
+    function get1chInPixels() {
+      // Create a temporary element
+      const tempElement = document.createElement("div");
+      // Set its width to 1ch
+      tempElement.style.width = "1ch";
+      // Append it to the body to get computed styles
+      document.body.appendChild(tempElement);
+      // Get the computed width in pixels
+      const widthInPixels = window.getComputedStyle(tempElement).width;
+      // Remove the temporary element from the DOM
+      document.body.removeChild(tempElement);
+      // Return the width in pixels as a number
+      return parseFloat(widthInPixels);
+    }
+
+    console.log(get1chInPixels()); // Outputs the width of 1ch in pixels
+
+    function setCaretPos() {
+      const tb = document.getElementById("buffer");
+      const tp = document.getElementById("prompt");
+      const tc = document.getElementById("caret");
+      const spaces = Array.from(tb.children).filter(
+        (e) => e.className === "content"
+      ).length;
+
+      console.log(tp.getBoundingClientRect());
+      tc.style.left =
+        tp.getBoundingClientRect().right / get1chInPixels() + spaces + "ch";
+    }
+
+    document.addEventListener("keydown", (ev) => {
+      console.log(ev.key);
+      ev.preventDefault();
+      ev.stopPropagation();
+    });
+
+    setCaretPos();
+  </script>
+  <!--== /ACTIONS ===========================================================-->
 </html>
