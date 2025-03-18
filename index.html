@@ -1,401 +1,121 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Harrison Cook - Software Engineer</title>
-        <link rel="icon" type="image/png" href="./assets/imgs/favicon.png" />
-        <link rel="stylesheet" type="text/css" href="./styles.css" />
-        <script src="./scripts.js" defer></script>
-    </head>
-    <body>
-        <header>
-            <img default="./assets/imgs/profile-pixel.png" hover="./assets/imgs/profile.png" alt="profile.png" />
-            <h1>Harrison Cook</h1>
-        </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C:\HarrisonCook&gt;</title>
+    <link rel="icon" href="./assets/imgs/favicon.png" />
+  </head>
 
-        <main>
-            <section>
-                <h1>Profile</h1>
-                <h3>Overview</h3>
-                <table>
-                    <tr>
-                        <th>First</th>
-                        <td>Harrison</td>
-                    </tr>
-                    <tr>
-                        <th>Last</th>
-                        <td>Cook</td>
-                    </tr>
-                    <tr>
-                        <th>Age</th>
-                        <td>25</td>
-                    </tr>
-                    <tr>
-                        <th>Locale</th>
-                        <td>en-NZ</td>
-                    </tr>
-                    <tr>
-                        <th>Education</th>
-                        <td>Bachelor of Engineering</td>
-                    </tr>
-                    <tr>
-                        <th>Occupation</th>
-                        <td>
-                            <a href="/blogs/#programming-qualia">Software Engineer</a>
-                        </td>
-                    </tr>
-                </table>
-                <p>
-                    Hailing from what my friends affectionately call a 'singing cult,' my formative years were steeped
-                    in music and the performing arts. As I entered my late teens, curiosity beckoned me toward the world
-                    of digital technologies.
-                </p>
-                <p>
-                    Armed with a knack for calculus and a flair for photography and theatre, I discovered programming -
-                    an art form that blends creativity with methodical precision; A canvas with rules, yet near infinite
-                    possibilities. Now, I've traded sheet music for syntax; my compositions resonate through elegant
-                    algorithms, harmonizing data structures and orchestrating efficient solutions. Whether it's a
-                    symphony of assembly code or a concerto in network protocols, I thrive on transforming theoretical
-                    concepts into practical applications.
-                </p>
-                <p>
-                    With 3 years of industry experience as a Software Engineer, my technical specializations are
-                    currently anchored in <code>TypeScript</code> and <code>C#</code>; complemented by a wide array of
-                    integration technologies. I aspire to engineer highly specialized, robust, and efficient software
-                    solutions - delving into the intricate concepts of hardware itself. I am particularly keen on
-                    advancing my knowledge in building solutions that require intimate understanding of the hardware
-                    being built upon.
-                </p>
-                <p>
-                    I'm prepared to bring my distinctive mix of creativity and expertise to exciting projects. Are you
-                    ready for me? Welcome to my melodic journey through bytes, nibbles and bits! Check out some of my
-                    opinions and thoughts <a href="/blogs">here</a>.
-                </p>
-            </section>
+  <!--== STYLE ==============================================================-->
+  <style>
+    :root {
+      --base: black;
+      --text: white;
+      --code: lawngreen;
+    }
 
-            <section>
-                <h1>Quests</h1>
-                <article>
-                    <h1>Active:</h1>
-                    <h2>Xero</h2>
-                    <p><b>|&gt; Aug 2024 - Now</b></p>
-                    <p class="code-list">
-                        <code>AWS</code> <code>C#</code> <code>GitHub Actions</code>
-                        <code>Terraform</code>
-                    </p>
-                    <p>
-                        Switching from Z Energy to Xero has been quite an adventure. At Z Energy, I was behind the
-                        scenes, building and maintaining internal systems. Now at Xero, I'm on a specialized team,
-                        crafting software that plays a crucial role in the business and has a direct impact on users.
-                        This transition has provided me with an exciting perspective shift. I'm surrounded with amazing
-                        team members who are helping me expand my knowledge around developing software in a fast-paced,
-                        user-centric environment.
-                    </p>
-                </article>
-                <article>
-                    <h1>Complete:</h1>
-                    <h2>Z Energy</h2>
-                    <p><b>|&gt; Nov 2021 - Aug 2024</b></p>
-                    <p class="code-list">
-                        <code>Azure Cloud</code> <code>C#</code> <code>GitHub Actions</code> <code>TypeScript</code>
-                        <code>Terraform</code>
-                    </p>
-                    <p>
-                        Fresh from the gates of University, I landed a Graduate Developer role at New Zealand's largest
-                        fuel provider - Z Energy. Primarily developing full-stack microservice data-centric solutions, I
-                        was quickly promoted to an Intermediate Developer.
-                    </p>
-                    <p>
-                        In this development environment the repo always described the cloud infrastructure, where
-                        deployments to production were heavily documented and monitored. I was responsible for building
-                        new systems and maintaining older systems. Additionally, I aided in analysing issues, enhancing
-                        my understanding of system transparency and efficiency.
-                    </p>
+    * {
+      box-sizing: border-box;
+      font-family: "Courier New", Courier, monospace;
+      color: var(--text);
+    }
 
-                    <h2>Raygun</h2>
-                    <p><b>|&gt; Nov 2020 - Feb 2021</b></p>
-                    <p class="code-list"><code>Kotlin</code> <code>React-Native</code></p>
-                    <p>
-                        In the midst of my studies, I interned at Raygun during a summer break. Joining the small
-                        business producing crash reporting and monitoring software, this marked my first role as a
-                        developer in the industry. Working alongside another intern, we produced the React Native NPM
-                        library for easy integration with Raygun's suite of software products. My experience at Raygun
-                        allowed me to understand the production and distribution of libraries, which I've since used to
-                        build internal libraries and frameworks.
-                    </p>
+    html,
+    body {
+      background-color: var(--base);
+      margin: 0;
+      padding: 0;
+      font-size: 13pt;
+    }
 
-                    <h2>Victoria University</h2>
-                    <p><b>|&gt; Mar 2019 - Nov 2021</b></p>
-                    <p class="code-list">
-                        <code>C</code> <code>C++</code> <code>Java</code>
-                        <code>Parallelism</code>
-                    </p>
-                    <p>
-                        It is said that teaching is the best way to learn. During my studies at Victoria University I
-                        put this theory into practice and became a tutor; Providing support to students in Software
-                        Engineering, Networking Engineering, and Computer Science disciplines. Tutoring for classes I've
-                        taken previously, my responsibilities included running workshops and tutorials, also marking
-                        assignments. This role afforded me the opportunity to master the art of conveying complex
-                        technical subjects (such as C pointers and CPU threads) to a diverse student body with varying
-                        degrees of technical proficiency. The ability to simplify and communicate intricate concepts
-                        effectively has been invaluable in my current career, where I engage effectively with business
-                        analysts, scrum masters, and product owners, facilitating clear and productive discussions.
-                    </p>
-                </article>
-            </section>
+    body {
+      max-width: 80ch;
+    }
 
-            <section>
-                <h1>Inventory</h1>
-                <h2>Education</h2>
-                <div>
-                    <table>
-                        <tr>
-                            <th colspan="2" style="text-align: center">
-                                <b>Bachelor of Engineering with First Class Honors</b>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>Major</th>
-                            <td>Software Engineering</td>
-                        </tr>
-                        <tr>
-                            <th>Specialization</th>
-                            <td>Networked Applications</td>
-                        </tr>
-                        <tr>
-                            <th>Accreditation</th>
-                            <td>Washington and Seoul Accords</td>
-                        </tr>
-                        <tr>
-                            <th>Institution</th>
-                            <td>Victoria University of Wellington</td>
-                        </tr>
-                        <tr>
-                            <th>Years</th>
-                            <td>2018 - 2021</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" style="text-align: center">
-                                <a href="./assets/docs/HarrisonCookTranscriptOfAcademicRecord.pdf" target="_blank"
-                                    >Transcript.pdf</a
-                                >
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div>
-                    <table>
-                        <tr>
-                            <th colspan="2" style="text-align: center">
-                                <b>National Certificate of Educational Achievement</b>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>Level 3</th>
-                            <td>Excellence Endorsed</td>
-                        </tr>
-                        <tr>
-                            <th>Level 2</th>
-                            <td>Excellence Endorsed</td>
-                        </tr>
-                        <tr>
-                            <th>Level 1</th>
-                            <td>Excellence Endorsed</td>
-                        </tr>
-                        <tr>
-                            <th>Years</th>
-                            <td>2015 - 2017</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" style="text-align: center">
-                                <a href="./assets/docs/Harrison_Cook_academic_record.pdf" target="_blank"
-                                    >Transcript.pdf</a
-                                >
-                            </td>
-                        </tr>
-                    </table>
-                </div>
+    #input {
+      height: 1.2em;
+      position: relative;
+      padding: 0.2em 1ch;
+    }
 
-                <h2>Toolbox</h2>
-                <p>
-                    The following technologies are ordered by development environments; Where individual interpretations
-                    of competency grows more subjective (top down). I've only listed tools that I'd be comfortable in
-                    saying "I could work with". However, If you'd like to know more about my comprehension in some
-                    technology, let's have a chat!
-                </p>
+    #buffer {
+      .hint {
+        color: gray;
+      }
+    }
 
-                <table>
-                    <tr>
-                        <th colspan="2" style="text-align: center">
-                            <b> Languages </b>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>Professional</th>
-                        <td>C#, TypeScript</td>
-                    </tr>
-                    <tr>
-                        <th>Educational</th>
-                        <td>C, C++, F#, HTML + CSS, JavaScript, Java, Ruby, Rust</td>
-                    </tr>
-                    <tr>
-                        <th>Personal</th>
-                        <td>Dart, Lua, PowerShell, Zig</td>
-                    </tr>
-                </table>
+    #caret {
+      position: absolute;
+      bottom: 0;
+      height: calc(1.2em * 0.25);
+      width: 1ch;
+      background-color: var(--code);
+      animation: blink 0.75s step-start infinite;
+    }
 
-                <table>
-                    <tr>
-                        <th colspan="2" style="text-align: center">
-                            <b> Frameworks </b>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>Professional</th>
-                        <td>ASP.NET, React-Native, Vue.js</td>
-                    </tr>
-                    <tr>
-                        <th>Educational</th>
-                        <td>React</td>
-                    </tr>
-                    <tr>
-                        <th>Personal</th>
-                        <td>Blazor, Flutter, Next.js, Tailwind, Webpack</td>
-                    </tr>
-                </table>
+    @keyframes blink {
+      50% {
+        opacity: 0%;
+      }
+    }
+  </style>
+  <!--== /STYLE =============================================================-->
 
-                <table>
-                    <tr>
-                        <th colspan="2" style="text-align: center">
-                            <b> DevOps </b>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>Professional</th>
-                        <td>
-                            AWS, Azure, Azure-Pipelines, Cortex, GitHub, GitHub-Actions, GitHub-Pages, Jenkins,
-                            NewRelic, Terraform
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Educational</th>
-                        <td>GitLab</td>
-                    </tr>
-                </table>
+  <!--== ELEMENTS ===========================================================-->
+  <body>
+    <div id="output"></div>
+    <div id="input">
+      <span id="prompt">
+        <span id="root"> C:\HarrisonCook&gt;</span>
+      </span>
+      <span id="buffer">
+        <span class="hint"> Try "help" command. </span>
+      </span>
+      <span id="caret"></span>
+    </div>
+  </body>
+  <!--== /ELEMENTS ==========================================================-->
 
-                <h2>Side Projects</h2>
-                <table>
-                    <tr>
-                        <th>
-                            <a href="https://github.com/HonsonCooky/cookie-nvim" target="_blank">Neovim</a>
-                        </th>
-                        <td rowspan="2">
-                            Proper finger placement wasn't a skill I found necessary during my academic years. With time
-                            to pause and think - improper placement rendered little impact to my physical health. Upon
-                            entering the commercial domain, the addition of dedicated architects, hybrid working, and
-                            the sheer verbosity of commercial <code>TypeScript</code> and <code>C#</code>, I saw a
-                            significant increase in keystrokes per day; Highlighting the physical health concerns of my
-                            existing typing style. After adopting proper finger placement and ergonomic keyboards, I
-                            found the keyboard-mouse transition problematic and adopted a mouse-less setup with command
-                            line interactions and keyboard shortcuts. Discovering Neovim for text-based needs, I started
-                            with community configs and later built my own. Cross-platform, VSCode-like setups were slow,
-                            so I trimmed my config to specific workloads. When attempting to learn unsupported
-                            languages, I adopted an LSP-less setup (<a
-                                href="https://www.reddit.com/r/neovim/comments/1f8l75i/neovim_raw_lsp/"
-                                target="_blank"
-                                >Reddit Post</a
-                            >) and eventually switched to Vim. Using Vim, I uncovered immense enjoyment in the
-                            requirement to understand everything that made a language viable - opting for simpler
-                            languages like <code>Zig</code>. However, these setups were not viable for the commercial
-                            environment I work in, and so I no longer use these tools. I spent 2 years exploring a pure
-                            keyboard-centric programming style and may return to it in the future if I find myself in an
-                            environment where deep knowledge and understanding of code are required. For now, I still
-                            practice proper finger placement, albeit, with a slower approach to allow for mouse
-                            utilization.
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            <a href="https://github.com/HonsonCooky/cookie-vim" target="_blank">Vim</a>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <a href="https://github.com/HonsonCooky/advent-of-code" target="_blank">Advent of Code</a>
-                        </th>
-                        <td>
-                            Forget advent calendars (I avoid sugar where possible, so they're off the table), but
-                            discovering the Advent of Code challenges has been a game-changer for me. When I find free
-                            time during December nights, I dive into these puzzles with the same excitement I had as a
-                            kid awaiting the holidays. They're a fantastic way for me to learn new programming languages
-                            and explore innovative ideas, which might not fit into my usual routine. These experiences
-                            have not only kept my technical skills sharp but have also rekindled a sense of wonder and
-                            anticipation that makes December truly special.
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            <a href="https://github.com/HonsonCooky/modular-monolith-mediator-example" target="_blank">
-                                MMCAM
-                            </a>
-                        </th>
-                        <td>
-                            Occasionally, I use my free time to explore new ideas and concepts from work (to prove
-                            viability in an alternative approach). This repository represents one such instance where I
-                            was attempting to figure out how to build a "Modular Monolith" using "Clean Architecture"
-                            with the "MediatR" library. After some discussions about implementation ideas, I opted to
-                            build and demonstrate my understanding - ultimately aiding in my own ideas and gut instincts
-                            around the approach.
-                        </td>
-                    </tr>
-                </table>
-            </section>
+  <!--== ACTIONS ============================================================-->
+  <script type="text/javascript">
+    function get1chInPixels() {
+      // Create a temporary element
+      const tempElement = document.createElement("div");
+      // Set its width to 1ch
+      tempElement.style.width = "1ch";
+      // Append it to the body to get computed styles
+      document.body.appendChild(tempElement);
+      // Get the computed width in pixels
+      const widthInPixels = window.getComputedStyle(tempElement).width;
+      // Remove the temporary element from the DOM
+      document.body.removeChild(tempElement);
+      // Return the width in pixels as a number
+      return parseFloat(widthInPixels);
+    }
 
-            <section>
-                <h1>Traits</h1>
-                <h3>Teamwork</h3>
-                <p>
-                    Throughout my life, I've actively engaged in various groups and teams; Participating in sports,
-                    bands, university projects, and diverse work environments. Whether leading or following, I've honed
-                    my ability to adapt swiftly to different team dynamics.
-                </p>
+    console.log(get1chInPixels()); // Outputs the width of 1ch in pixels
 
-                <h3>Communication</h3>
-                <p>
-                    Drawing from my thespian background and 3 years of tutoring, I have developed robust verbal
-                    communication skills. Whether interacting with clients or colleagues, I excel in conveying ideas
-                    effectively and fostering meaningful connections.
-                </p>
+    function setCaretPos() {
+      const tb = document.getElementById("buffer");
+      const tp = document.getElementById("prompt");
+      const tc = document.getElementById("caret");
+      const spaces = Array.from(tb.children).filter(
+        (e) => e.className === "content"
+      ).length;
 
-                <h3>Personality</h3>
-                <p>
-                    My colleagues, mentors, and supervisors have praised my organizational skills, enthusiasm, and
-                    reliability. I thrive in collaborative environments that value teamwork. I'm passionate about
-                    creating and nurturing a workspace that inspires daily motivation and enthusiasm, making it worth
-                    the early morning rise.
-                </p>
+      console.log(tp.getBoundingClientRect());
+      tc.style.left =
+        tp.getBoundingClientRect().right / get1chInPixels() + spaces + "ch";
+    }
 
-                <h3>Detail-Orientated</h3>
-                <p>
-                    With an education in Software Engineering, I'm wired to build most of my understandings from the
-                    ground up; Engineering solutions with a comprehensive understanding. Whilst this can be a hindrance
-                    during the initial build of a system, I've found this trait of mine to be critical for quick and
-                    effective maintenance and debugging of production code.
-                </p>
-            </section>
-        </main>
-        <footer>
-            <div>© 2024 HonsonCooky</div>
-            <p style="padding-bottom: 0">
-                <a href="mailto:contact@honsoncooky.dev">contact@honsoncooky.dev</a>
-            </p>
-            <p>
-                <a href="https://github.com/HonsonCooky">GitHub</a>
-                <a href="https://www.linkedin.com/in/harrison-cook-software-engineer/">LinkedIn</a>
-                <a href="https://www.reddit.com/user/HonsonCooky/">Reddit</a>
-                <a href="/blogs" target="_blank">/Blogs</a>
-            </p>
-        </footer>
-    </body>
+    document.addEventListener("keydown", (ev) => {
+      console.log(ev.key);
+      ev.preventDefault();
+      ev.stopPropagation();
+    });
+
+    setCaretPos();
+  </script>
+  <!--== /ACTIONS ===========================================================-->
 </html>
