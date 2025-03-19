@@ -1,119 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>C:\HarrisonCook&gt;</title>
+		<link rel="icon" href="./assets/favicon.png" />
+	</head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>C:\HarrisonCook&gt;</title>
-  <link rel="icon" href="./assets/favicon.png" />
-</head>
+	<style>
+		:root {
+			--base: black;
+			--text: white;
+			--code: lawngreen;
+		}
 
-<style>
-  :root {
-    --base: black;
-    --text: white;
-    --code: lawngreen;
-  }
+		* {
+			box-sizing: border-box;
+			font-family: "Courier New", Courier, monospace;
+			color: var(--text);
+		}
 
-  * {
-    box-sizing: border-box;
-    font-family: "Courier New", Courier, monospace;
-    color: var(--text);
-  }
+		html,
+		body {
+			background-color: var(--base);
+			border: none;
+			font-size: 12pt;
+			margin: 0;
+			padding: 0;
+		}
 
-  html,
-  body {
-    background-color: var(--base);
-    margin: 0;
-    padding: 0;
-    font-size: 12pt;
-  }
+		#input {
+			display: flex;
+			flex-direction: row;
+			column-gap: 1ch;
+			align-items: center;
+			bottom: 0;
+			height: 1.4em;
+			padding: 0.2em 1ch;
+			position: sticky;
+		}
 
-  body {
-    max-width: 80ch;
-  }
+		#buffer-container {
+			display: inline-block;
+			position: relative;
+			height: 1.2em;
+		}
 
-  #input {
-    height: 1.2em;
-    position: relative;
-    padding: 0.2em 1ch;
-  }
+		#buffer {
+			.hint {
+				color: gray;
+			}
+		}
 
-  #buffer {
-    .hint {
-      color: gray;
-    }
-  }
+		#caret {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: calc(1.2em * 0.25);
+			width: 1ch;
+			background-color: var(--code);
+			animation: blink 0.75s step-start infinite;
+		}
 
-  #caret {
-    position: absolute;
-    bottom: 0;
-    height: calc(1.2em * 0.25);
-    width: 1ch;
-    background-color: var(--code);
-    animation: blink 0.75s step-start infinite;
-  }
+		@keyframes blink {
+			50% {
+				opacity: 0%;
+			}
+		}
+	</style>
 
-  @keyframes blink {
-    50% {
-      opacity: 0%;
-    }
-  }
-</style>
+	<body>
+		<div id="output"></div>
+		<div id="input">
+			<span id="prompt">
+				<span id="root">C:\HarrisonCook&gt;</span>
+			</span>
+			<div id="buffer-container">
+				<span id="buffer">
+					<span class="hint">Type 'help' for a list of options.</span>
+				</span>
+				<span id="caret"></span>
+			</div>
+		</div>
+	</body>
 
-<body>
-  <div id="output"></div>
-  <div id="input">
-    <span id="prompt">
-      <span id="root"> C:\HarrisonCook&gt;</span>
-    </span>
-    <span id="buffer-container">
-      <span id="buffer">
-        <span class="hint">For "help" command.</span>
-      </span>
-      <span id="caret"></span>
-    </span>
-  </div>
-</body>
+	<script type="text/javascript">
+		/**
+		 * The user INput BUFfer. 64 chars is all the should be necessary for a
+		 * command. The index keeps track of how much of this buffer is used.
+		 */
+		var inBuf = Array(64).fill("\0");
+		var inBufIndex = 0;
 
-<script type="text/javascript">
-  /**
-   * Renders an element to determine the width of '1ch'. 
-   */
-  function getCharWidth() {
-    const tempElement = document.createElement("div");
-    tempElement.style.width = "1ch";
-    document.body.appendChild(tempElement);
-    const widthInPixels = window.getComputedStyle(tempElement).width;
-    document.body.removeChild(tempElement);
-    return parseFloat(widthInPixels);
-  }
+		/**
+		 * Update the visual elements with the contents from the input buffer.
+		 */
+		function updateBufText() {
+			const b = document.getElementById("buffer");
+			b.innerText = inBuf.slice(0, inBufIndex).join("");
+		}
 
-  /** 
-   * The css width of '1ch' - this does not change with dimensions. 
-   */
-  var charWidth = getCharWidth();
+		/**
+		 * Add a character to the input buffer.
+		 * @param {string} char
+		 */
+		function addInBufChar(char) {
+			if (char.length > 1) {
+				console.alert(`Attempt to add string to buf: ${char}`);
+				return;
+			}
 
-  /** 
-   * Determine the caret position based on the prompt, buffer, and wrap.
-   */
-  function setCaretPos() {
-    const tp = document.getElementById("prompt");
-    const tc = document.getElementById("caret");
-    let caretLeftPx = tp.getBoundingClientRect().right;
-    tc.style.left = caretLeftPx + "px";
-  }
+			if (inBufIndex >= inBuf.length) {
+				alert("Buffer Length Exceeded (64 chars)");
+				return;
+			}
 
-  /**
-   * Evaluate the keypress and respond to user input.
-   * @param {KeyboardEvent} ev
-   */
-  function onKeyDown(ev) {
-    ev.key
-  }
+			inBuf[inBufIndex] = char;
+			inBufIndex++;
 
-  setCaretPos();
-  document.addEventListener("keydown", onKeyDown)
-</script>
+			updateBufText();
+			updateCaretPos();
+		}
 
+		/**
+		 * Remove the last character from the input buffer.
+		 */
+		function removeInBufChar() {
+			if (inBufIndex <= 0) return;
+			inBuf[inBuf] = "\0";
+			inBufIndex--;
+
+			updateBufText();
+			updateCaretPos();
+		}
+
+		/**
+		 * Determine the caret position based on the buffer.
+		 */
+		function updateCaretPos() {
+			const c = document.getElementById("caret");
+			c.style.left = inBufIndex + "ch";
+		}
+
+		/**
+		 * Evaluate the keypress and respond to user input.
+		 * @param {KeyboardEvent} ev
+		 */
+		function onKeyDown(ev) {
+			if (ev.key.length === 1) {
+				addInBufChar(ev.key);
+			} else if (ev.key === "Backspace") {
+				removeInBufChar();
+			} else {
+				console.log(ev.key);
+			}
+		}
+
+		/** MAIN FUNCTIONALITY */
+		document.addEventListener("keydown", onKeyDown);
+	</script>
 </html>
