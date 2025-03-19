@@ -11,7 +11,13 @@
 		:root {
 			--base: black;
 			--text: white;
-			--code: lawngreen;
+			--code: green;
+			--mute: gray;
+
+			@media (prefers-color-scheme: light) {
+				--base: white;
+				--text: black;
+			}
 		}
 
 		* {
@@ -48,7 +54,7 @@
 
 		#buffer {
 			.hint {
-				color: gray;
+				color: var(--mute);
 			}
 		}
 
@@ -84,79 +90,98 @@
 		</div>
 	</body>
 
-	<script type="text/javascript">
-		/**
-		 * The user INput BUFfer. 64 chars is all the should be necessary for a
-		 * command. The index keeps track of how much of this buffer is used.
-		 */
-		var inBuf = Array(64).fill("\0");
-		var inBufIndex = 0;
+	<script id="keyword-analysis" type="text/javascript">
+		const cmds = new Set(["whoami", "ls", "cd", "cat"]);
 
 		/**
-		 * Update the visual elements with the contents from the input buffer.
+		 * Given an array of character inputs from the user - convert to a
+		 * series of HTML token elements.
+		 * @param {string[]} b
 		 */
-		function updateBufText() {
-			const b = document.getElementById("buffer");
-			b.innerText = inBuf.slice(0, inBufIndex).join("");
+		function parseBufferToHtml(b) {
+			let tokens = b.join("").split(" ");
+			let spans = tokens.map(tokenToHtmlSpan);
+			return spans;
 		}
 
 		/**
-		 * Add a character to the input buffer.
-		 * @param {string} char
+		 * @param {string} s
+		 * @param {number} i
 		 */
-		function addInBufChar(char) {
-			if (char.length > 1) {
-				console.alert(`Attempt to add string to buf: ${char}`);
-				return;
+		function tokenToHtmlSpan(s, i) {
+			const span = document.createElement("span");
+			span.id = `${i}-${s}`;
+			span.innerText = s;
+
+			if (cmds.has(s)) span.className = "cmd";
+
+			return span;
+		}
+	</script>
+
+	<script id="input-buffer" type="text/javascript">
+		const inBufEle = document.getElementById("buffer");
+		const inBufCar = document.getElementById("caret");
+		let inBufArr = [];
+		let inBufCarPos = 0;
+
+		function _renderBuffer() {
+			inBufEle.children = parseBufferToHtml(inBufArr);
+			inBufCar.style.left = inBufCarPos + "ch";
+		}
+
+		function _getCtrlBackspaceDiff() {
+			let i = inBufCarPos - 1;
+			while (i > 0) {
+				if (inBufArr[i] === " ") break;
+				i--;
 			}
+			return inBufCarPos - i;
+		}
 
-			if (inBufIndex >= inBuf.length) {
-				alert("Buffer Length Exceeded (64 chars)");
-				return;
+		function _getCtrlDeleteDiff() {
+			let i = inBufCarPos + 1;
+			while (i < inBufArr.length) {
+				if (inBufArr[i] === " ") break;
+				i++;
 			}
-
-			inBuf[inBufIndex] = char;
-			inBufIndex++;
-
-			updateBufText();
-			updateCaretPos();
+			return i - inBufCarPos;
 		}
 
-		/**
-		 * Remove the last character from the input buffer.
-		 */
-		function removeInBufChar() {
-			if (inBufIndex <= 0) return;
-			inBuf[inBuf] = "\0";
-			inBufIndex--;
-
-			updateBufText();
-			updateCaretPos();
-		}
-
-		/**
-		 * Determine the caret position based on the buffer.
-		 */
-		function updateCaretPos() {
-			const c = document.getElementById("caret");
-			c.style.left = inBufIndex + "ch";
-		}
-
-		/**
-		 * Evaluate the keypress and respond to user input.
-		 * @param {KeyboardEvent} ev
-		 */
+		/** @param {KeyboardEvent} ev */
 		function onKeyDown(ev) {
-			if (ev.key.length === 1) {
-				addInBufChar(ev.key);
-			} else if (ev.key === "Backspace") {
-				removeInBufChar();
-			} else {
-				console.log(ev.key);
+			switch (ev.key) {
+				case "Backspace":
+					let bsDiff = ev.ctrlKey ? _getCtrlBackspaceDiff() : 1;
+					inBufCarPos = Math.max(0, inBufCarPos - bsDiff);
+					inBufArr.splice(inBufCarPos, bsDiff);
+					break;
+				case "Delete":
+					let delDiff = ev.ctrlKey ? _getCtrlDeleteDiff() : 1;
+					inBufArr.splice(inBufCarPos, delDiff);
+					break;
+				case "ArrowLeft":
+					inBufCarPos = Math.max(0, inBufCarPos - 1);
+					break;
+				case "ArrowRight":
+					inBufCarPos = Math.min(inBufArr.length, inBufCarPos + 1);
+					break;
+				default:
+					if (inBufArr.length >= 64) {
+						alert("Too Much Input (64 char limit)");
+						break;
+					}
+					if (ev.key.length > 1 || ev.ctrlKey) {
+						console.log(`Unmapped Input ${ev.key}`);
+						break;
+					}
+					inBufArr.splice(inBufCarPos, 0, ev.key);
+					inBufCarPos += ev.key.length;
 			}
+
+			_renderBuffer();
 		}
 
-		/** MAIN FUNCTIONALITY */
 		document.addEventListener("keydown", onKeyDown);
 	</script>
 </html>
