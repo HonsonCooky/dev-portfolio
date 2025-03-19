@@ -100,7 +100,7 @@
 		 */
 		function parseBufferToHtml(b) {
 			let tokens = b.join("").split(" ");
-			let spans = tokens.map(tokenToHtmlSpan);
+			let spans = tokens.map(_tokenToHtmlSpan);
 			return spans;
 		}
 
@@ -108,7 +108,7 @@
 		 * @param {string} s
 		 * @param {number} i
 		 */
-		function tokenToHtmlSpan(s, i) {
+		function _tokenToHtmlSpan(s, i) {
 			const span = document.createElement("span");
 			span.id = `${i}-${s}`;
 			span.innerText = s;
