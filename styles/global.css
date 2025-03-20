@@ -1,0 +1,28 @@
+:root {
+	--base: black;
+	--text: white;
+	--error: red;
+	--code: green;
+	--param: blue;
+	--mute: grey;
+
+	@media (prefers-color-scheme: light) {
+		--base: white;
+		--text: black;
+	}
+}
+
+* {
+	font-size: 12pt;
+	font-family: "OCR A", "Courier New", Courier, monospace;
+	color: inherit;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	background-color: var(--base);
+	color: var(--text);
+	margin: 0;
+	padding: 0;
+}

@@ -1,0 +1,28 @@
+@keyframes blink {
+	50% {
+		opacity: 0;
+	}
+}
+
+#input {
+	display: flex;
+	flex-direction: row;
+
+	#prompt {
+		display: inline-flex;
+	}
+
+	#textbox {
+        display: inline-flex;
+        position: relative;
+
+		#caret {
+            position: absolute;
+            bottom: 0;
+			height: 25%;
+			width: 1ch;
+			background-color: var(--code);
+			animation: blink 750ms infinite step-end;
+		}
+	}
+}
