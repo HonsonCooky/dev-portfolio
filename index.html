@@ -5,183 +5,21 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>C:\HarrisonCook&gt;</title>
 		<link rel="icon" href="./assets/favicon.png" />
+		<link rel="stylesheet" type="text/css" href="./styles.css" />
+		<script src="./scripts.js" type="module" defer></script>
 	</head>
-
-	<style>
-		:root {
-			--base: black;
-			--text: white;
-			--code: green;
-			--mute: gray;
-
-			@media (prefers-color-scheme: light) {
-				--base: white;
-				--text: black;
-			}
-		}
-
-		* {
-			box-sizing: border-box;
-			font-family: "Courier New", Courier, monospace;
-			color: var(--text);
-		}
-
-		html,
-		body {
-			background-color: var(--base);
-			border: none;
-			font-size: 12pt;
-			margin: 0;
-			padding: 0;
-		}
-
-		#input {
-			display: flex;
-			flex-direction: row;
-			column-gap: 1ch;
-			align-items: center;
-			bottom: 0;
-			height: 1.4em;
-			padding: 0.2em 1ch;
-			position: sticky;
-		}
-
-		#buffer-container {
-			display: inline-block;
-			position: relative;
-			height: 1.2em;
-		}
-
-		#buffer {
-			.hint {
-				color: var(--mute);
-			}
-		}
-
-		#caret {
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			height: calc(1.2em * 0.25);
-			width: 1ch;
-			background-color: var(--code);
-			animation: blink 0.75s step-start infinite;
-		}
-
-		@keyframes blink {
-			50% {
-				opacity: 0%;
-			}
-		}
-	</style>
-
 	<body>
 		<div id="output"></div>
 		<div id="input">
 			<span id="prompt">
-				<span id="root">C:\HarrisonCook&gt;</span>
+				<span id="root">C:\HarrisonCook</span>
+				<span id="cwd-path"></span>
+				<span id="seperator">&gt;</span>
 			</span>
 			<div id="buffer-container">
-				<span id="buffer">
-					<span class="hint">Type 'help' for a list of options.</span>
-				</span>
+				<span id="buffer"></span>
 				<span id="caret"></span>
 			</div>
 		</div>
 	</body>
-
-	<script id="keyword-analysis" type="text/javascript">
-		const cmds = new Set(["whoami", "ls", "cd", "cat"]);
-
-		/**
-		 * Given an array of character inputs from the user - convert to a
-		 * series of HTML token elements.
-		 * @param {string[]} b
-		 */
-		function parseBufferToHtml(b) {
-			let tokens = b.join("").split(" ");
-			let spans = tokens.map(_tokenToHtmlSpan);
-			return spans;
-		}
-
-		/**
-		 * @param {string} s
-		 * @param {number} i
-		 */
-		function _tokenToHtmlSpan(s, i) {
-			const span = document.createElement("span");
-			span.id = `${i}-${s}`;
-			span.innerText = s;
-
-			if (cmds.has(s)) span.className = "cmd";
-
-			return span;
-		}
-	</script>
-
-	<script id="input-buffer" type="text/javascript">
-		const inBufEle = document.getElementById("buffer");
-		const inBufCar = document.getElementById("caret");
-		let inBufArr = [];
-		let inBufCarPos = 0;
-
-		function _renderBuffer() {
-			inBufEle.children = parseBufferToHtml(inBufArr);
-			inBufCar.style.left = inBufCarPos + "ch";
-		}
-
-		function _getCtrlBackspaceDiff() {
-			let i = inBufCarPos - 1;
-			while (i > 0) {
-				if (inBufArr[i] === " ") break;
-				i--;
-			}
-			return inBufCarPos - i;
-		}
-
-		function _getCtrlDeleteDiff() {
-			let i = inBufCarPos + 1;
-			while (i < inBufArr.length) {
-				if (inBufArr[i] === " ") break;
-				i++;
-			}
-			return i - inBufCarPos;
-		}
-
-		/** @param {KeyboardEvent} ev */
-		function onKeyDown(ev) {
-			switch (ev.key) {
-				case "Backspace":
-					let bsDiff = ev.ctrlKey ? _getCtrlBackspaceDiff() : 1;
-					inBufCarPos = Math.max(0, inBufCarPos - bsDiff);
-					inBufArr.splice(inBufCarPos, bsDiff);
-					break;
-				case "Delete":
-					let delDiff = ev.ctrlKey ? _getCtrlDeleteDiff() : 1;
-					inBufArr.splice(inBufCarPos, delDiff);
-					break;
-				case "ArrowLeft":
-					inBufCarPos = Math.max(0, inBufCarPos - 1);
-					break;
-				case "ArrowRight":
-					inBufCarPos = Math.min(inBufArr.length, inBufCarPos + 1);
-					break;
-				default:
-					if (inBufArr.length >= 64) {
-						alert("Too Much Input (64 char limit)");
-						break;
-					}
-					if (ev.key.length > 1 || ev.ctrlKey) {
-						console.log(`Unmapped Input ${ev.key}`);
-						break;
-					}
-					inBufArr.splice(inBufCarPos, 0, ev.key);
-					inBufCarPos += ev.key.length;
-			}
-
-			_renderBuffer();
-		}
-
-		document.addEventListener("keydown", onKeyDown);
-	</script>
 </html>

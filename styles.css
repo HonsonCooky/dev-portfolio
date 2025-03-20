@@ -1,0 +1,92 @@
+:root {
+	--base: black;
+	--text: white;
+	--error: red;
+	--cmd: green;
+	--param: blue;
+	--mute: gray;
+
+	@media (prefers-color-scheme: light) {
+		--base: white;
+		--text: black;
+	}
+}
+
+* {
+	box-sizing: border-box;
+	font-family: "Courier New", Courier, monospace;
+	color: var(--text);
+}
+
+@keyframes blink {
+	50% {
+		opacity: 0%;
+	}
+}
+
+html,
+body {
+	background-color: var(--base);
+	border: none;
+	font-size: 12pt;
+	margin: 0;
+}
+
+#input,
+#output {
+	max-width: 82ch;
+	border-right: 2px solid var(--mute);
+	padding: 0.2em 1ch;
+}
+
+#input {
+	display: flex;
+	flex-direction: row;
+	column-gap: 1ch;
+	align-items: center;
+	bottom: 0;
+	height: 1.4em;
+	position: sticky;
+}
+
+#prompt {
+	display: flex;
+}
+
+#buffer-container {
+	display: inline-block;
+	position: relative;
+	height: 1.2em;
+}
+
+#buffer {
+	display: flex;
+	flex-direction: row;
+	column-gap: 1ch;
+
+	.cmd {
+		color: var(--cmd);
+	}
+
+	.param {
+		color: var(--param);
+	}
+
+	.hint {
+		color: var(--mute);
+	}
+
+	.unknown {
+		color: var(--error);
+	}
+}
+
+#caret {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: calc(1.2em * 0.25);
+	width: 1ch;
+	background-color: var(--cmd);
+	animation: blink 0.75s step-start infinite;
+}
