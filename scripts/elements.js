@@ -1,13 +1,13 @@
 const _es = {
-	titleElement: document.querySelector("title"),
+    titleElement: document.querySelector("title"),
+    inputField: document.querySelector("input"),
 	outputElement: document.getElementById("output"),
 	inputElement: document.getElementById("input"),
-	inputPromptElement: document.getElementById("prompt"),
+	inputPromptElement: document.getElementById("input").querySelector(".prompt"),
 	inputPromptCwdElement: document.getElementById("cwd-path"),
 	inputTextboxElement: document.getElementById("textbox"),
 	inputTextboxBufferElement: document.getElementById("textbox").querySelector(".buffer"),
-	inputTextboxBufferCmdElement: document.getElementById("cmd"),
-	inputTextboxBufferParamsElement: document.getElementById("params"),
+    inputTextboxCaretElement: document.getElementById("caret"),
 	mobileInputElement: document.getElementById("mobile-input"),
 };
 

@@ -26,3 +26,15 @@ body {
 	margin: 0;
 	padding: 0;
 }
+
+.prompt {
+	display: inline-flex;
+}
+
+.buffer {
+	* {
+		.unknown {
+			color: var(--error);
+		}
+	}
+}

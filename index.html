@@ -7,25 +7,27 @@
 		<link rel="icon" href="./assets/favicon.png" />
 		<link rel="stylesheet" href="./styles/global.css" />
 		<link rel="stylesheet" href="./styles/input.css" />
-		<script src="./scripts/utils.js" type="module" defer async></script>
+		<script src="./scripts/input.js" type="module" defer async></script>
 	</head>
 
 	<body>
-		<div id="output"></div>
+		<input title="input-buffer" />
+		<div id="output">
+			<!-- Copies of the input buffer, followed by outputs from commands are left here -->
+		</div>
 		<div id="input">
-			<span id="prompt">
+			<span class="prompt">
 				<span id="root">C:\HarrisonCook</span>
 				<span id="cwd-path"></span>
 				<span id="seperator">&gt;</span>
 			</span>
 			<div id="textbox">
-				<span class="buffer">
-					<span id="cmd"></span>
-					<span id="params"></span>
-				</span>
+				<span class="buffer"></span>
 				<span id="caret"></span>
 			</div>
 		</div>
-		<div id="mobile-input"></div>
+		<div id="mobile-input">
+			<!-- mobile devices will  -->
+		</div>
 	</body>
 </html>

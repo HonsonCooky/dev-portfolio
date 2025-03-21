@@ -1,7 +1,0 @@
-.buffer {
-    * {
-        .unknown {
-            color: var(--error);
-        }
-    }
-}
