@@ -7,7 +7,7 @@
 		<link rel="icon" href="./assets/favicon.png" />
 		<link rel="stylesheet" href="./styles/global.css" />
 		<link rel="stylesheet" href="./styles/input.css" />
-		<script src="./scripts/utils.js" defer async></script>
+		<script src="./scripts/utils.js" type="module" defer async></script>
 	</head>
 
 	<body>
@@ -19,9 +19,13 @@
 				<span id="seperator">&gt;</span>
 			</span>
 			<div id="textbox">
-				<span id="buffer"></span>
+				<span class="buffer">
+					<span id="cmd"></span>
+					<span id="params"></span>
+				</span>
 				<span id="caret"></span>
 			</div>
 		</div>
+		<div id="mobile-input"></div>
 	</body>
 </html>

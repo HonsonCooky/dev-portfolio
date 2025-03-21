@@ -13,12 +13,14 @@
 	}
 
 	#textbox {
-        display: inline-flex;
-        position: relative;
+		/* Note: Given the Buffer is used in the input and output - it's a class that has it's own `.css` file. */
+
+		display: inline-flex;
+		position: relative;
 
 		#caret {
-            position: absolute;
-            bottom: 0;
+			position: absolute;
+			bottom: 0;
 			height: 25%;
 			width: 1ch;
 			background-color: var(--code);
