@@ -10,15 +10,15 @@ input {
 }
 
 #input {
+	bottom: 0;
+	column-gap: 1ch;
 	display: flex;
 	flex-direction: row;
 	position: sticky;
-	bottom: 0;
 	
 	/* Note: The 'prompt' and 'buffer' elements are copied into the output - thus, their css is held in the 'global.css' file */
 
 	#textbox {
-
 		display: inline-flex;
 		position: relative;
 

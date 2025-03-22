@@ -9,6 +9,11 @@ function _inputUpdateHighlight(ev) {
 }
 
 function _inputUpdate(ev) {
+	if (ev.key === "Enter" && elements.inputField.value.length ){
+		_evaluateInput(ev);
+		return;
+	}
+
 	// Update Custom Caret Position - Timeout Blinking
 	const caret = elements.inputTextboxCaretElement;
 	caret.style.left = ev.target.selectionStart + "ch";
@@ -17,10 +22,11 @@ function _inputUpdate(ev) {
 	caret.pauseTimeout = setTimeout(() => caret.classList.remove("paused"), 100);
 
 	// Update the value inside our custom buffer - Highlighting keywords
-	elements.inputTextboxBufferElement.innerText = ev.target.value;
+	elements.inputTextboxBufferElement.innerHTML = ev.target.value;
 }
 
 function _evaluateInput(ev) {
+	console.log(ev);
 	// Output Section
 	elements.outputElement.historyCount = (elements.outputElement.historyCount ?? 0) + 1;
 
@@ -52,5 +58,4 @@ elements.inputField.addEventListener("focusout", _focusInputField);
 elements.inputField.addEventListener("keydown", _inputUpdate);
 elements.inputField.addEventListener("input", _inputUpdateHighlight);
 elements.inputField.addEventListener("keyup", _inputUpdate);
-elements.inputField.addEventListener("change", _evaluateInput);
 _focusInputField();
