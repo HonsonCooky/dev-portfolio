@@ -1,2 +1,6 @@
 #output {
+    .command {
+        display: flex;
+        flex-direction: row;    
+    }
 }

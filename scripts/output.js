@@ -9,6 +9,7 @@ export function printCommand() {
 
 	const outputPrompt = document.createElement("div");
 	outputPrompt.id = `prompt-${elements.outputElement.historyCount}`;
+	outputPrompt.className = "command";
 	outputPrompt.appendChild(elements.inputPromptElement.cloneNode(true));
 	outputPrompt.appendChild(elements.inputTextboxBufferElement.cloneNode(true));
 	outputSection.appendChild(outputPrompt);

@@ -1,5 +1,5 @@
 import elements from "./elements.js";
-import { clearInputElement, updateInputElement } from "./input.js";
+import { clearTextbox, updateTextbox } from "./input.js";
 import { printCommand, printCommandOutput } from "./output.js";
 
 function _focusInputField(_ev) {
@@ -10,11 +10,11 @@ function _userInput(ev) {
 	if (ev.key === "Enter" && elements.inputField.value.length) {
 		printCommand();
 		printCommandOutput();
-		clearInputElement();
+		clearTextbox();
 		return;
 	}
 
-	updateInputElement(ev);
+	updateTextbox(ev);
 }
 
 document.addEventListener("focus", _focusInputField);

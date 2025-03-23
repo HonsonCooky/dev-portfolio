@@ -24,7 +24,7 @@ body {
 	background-color: var(--base);
 	color: var(--text);
 	margin: 0;
-	padding: 1em;
+	padding: .2em;
 }
 
 .prompt {
@@ -33,9 +33,25 @@ body {
 }
 
 .buffer {
+	display: flex;
+	flex-direction: row;
+	column-gap: 1ch;
+
 	* {
-		.unknown {
+		display: flex;
+		flex-direction: row;
+		column-gap: 1ch;
+
+		&.unknown {
 			color: var(--error);
+		}
+
+		&.cmd {
+			color: var(--code);
+		}
+
+		&.param {
+			color: var(--param);
 		}
 	}
 }
