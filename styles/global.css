@@ -29,6 +29,7 @@ body {
 
 .prompt {
 	display: inline-flex;
+	margin-right: 1ch;
 }
 
 .buffer {

@@ -11,7 +11,6 @@ input {
 
 #input {
 	bottom: 0;
-	column-gap: 1ch;
 	display: flex;
 	flex-direction: row;
 	position: sticky;
