@@ -14,7 +14,7 @@
 
 * {
 	font-size: 12pt;
-	font-family: "OCR A", "Courier New", Courier, monospace;
+	font-family: "Lucida Sans Typewriter", "Courier New", Courier, monospace;
 	color: inherit;
 	box-sizing: border-box;
 }
@@ -27,6 +27,11 @@ body {
 	padding: .2em;
 }
 
+pre {
+	margin: 0;
+	padding: 0;
+}
+
 .prompt {
 	display: inline-flex;
 	margin-right: 1ch;
@@ -35,7 +40,6 @@ body {
 .buffer {
 	display: flex;
 	flex-direction: row;
-	column-gap: 1ch;
 
 	* {
 		display: flex;

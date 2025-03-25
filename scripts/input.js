@@ -2,6 +2,12 @@ import commands from "./commands.js";
 import elements from "./elements.js";
 
 export function updateTextbox(ev) {
+	if(ev.target.value.length > 64 && ev.key.length === 1) {
+		alert("Maximum Character Limit Reached");
+		ev.preventDefault();
+		return;
+	}
+
 	_updateCaret(ev);
 	_updateInput(ev);
 }
@@ -19,35 +25,39 @@ async function _updateInput(ev) {
 	// Saftey Clear
 	elements.inputTextboxBufferElement.innerHTML = "";
 
+	// {cmd} {param1} {param2}
 	const words = ev.target.value.split(" ");
-	let cmd = commands[words[0]];
 
-	if (!cmd) {
-		const unknownText = document.createElement("span");
-		unknownText.innerText = ev.target.value;
-		if (words.length > 1) unknownText.classList.add("unknown");
-
-		elements.inputTextboxBufferElement.appendChild(unknownText);
+	if (words.length < 2) {
+		const textElement = _wordToken(ev.target.value);
+		elements.inputTextboxBufferElement.appendChild(textElement);
 		return;
 	}
 
-	const commandText = document.createElement("span");
-	commandText.innerText = words[0];
-	commandText.classList.add("cmd");
-	elements.inputTextboxBufferElement.appendChild(commandText);
+	const firstWord = words[0];
+	const cmd = commands[firstWord];
 
-	const params = words.slice(1);
-	const paramsText = document.createElement("span");
-	paramsText.id = "parameters";
-	params.forEach((p, i) => {
-		const paramText = document.createElement("span");
-		paramText.innerText = p;
-		paramsText.appendChild(paramText);
+	// If the first word is unknown, then the whole thing is an error
+	if (!cmd) {
+		const token = _wordToken(ev.target.value, "unknown");
+		elements.inputTextboxBufferElement.appendChild(token);
+		return;
+	}
 
-		if (cmd[p]) paramText.classList.add("param");
-		else if (i != params.length - 1) paramText.classList.add("unknown");
-	});
-	elements.inputTextboxBufferElement.appendChild(paramsText);
+	// We have a command - do we have correct parameters
+	const cmdToken = _wordToken(firstWord, "cmd");
+	elements.inputTextboxBufferElement.appendChild(cmdToken);
+
+	const paramsToken = _wordToken(ev.target.value.split(firstWord)[1], "param");
+	elements.inputTextboxBufferElement.appendChild(paramsToken);
+}
+
+function _wordToken(word, type) {
+	console.log(word);
+	const spanElement = document.createElement("pre");
+	spanElement.className = type ?? "";
+	spanElement.innerText = word;
+	return spanElement;
 }
 
 export function clearTextbox() {
