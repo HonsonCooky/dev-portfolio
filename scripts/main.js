@@ -2,10 +2,12 @@ import commands from "./commands.js";
 import elements from "./elements.js";
 import { printCommand, printCommandOutput } from "./output.js";
 
+/** Force focus onto the invisible input field - the only way users can interact with the document */
 function focusInputField(_ev) {
 	elements.inputField.focus();
 }
 
+/** Create an HTML Element token for a word */
 function wordToken(word, type) {
 	const spanElement = document.createElement("pre");
 	spanElement.className = type ?? "";
@@ -13,6 +15,7 @@ function wordToken(word, type) {
 	return spanElement;
 }
 
+/** Evaluate the users keyboard input */
 async function updateInput(ev) {
 	// Saftey Clear
 	elements.inputTextboxBufferElement.innerHTML = "";
@@ -29,7 +32,7 @@ async function updateInput(ev) {
 	const firstWord = words[0];
 	const cmd = commands[firstWord];
 
-	// If the first word is unknown, then the whole thing is an error
+	// If the first word is an unknown cmd, then the whole thing is unknown
 	if (!cmd) {
 		const token = wordToken(ev.target.value, "unknown");
 		elements.inputTextboxBufferElement.appendChild(token);
