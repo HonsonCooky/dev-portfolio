@@ -20,4 +20,7 @@ export function printCommand() {
 	elements.outputElement.appendChild(outputSection);
 }
 
-export function printCommandOutput() {}
+export function printCommandOutput() {
+	const outputEvalutationElement = document.createElement("div");
+	elements.outputElement.appendChild
+}
