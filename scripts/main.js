@@ -1,5 +1,5 @@
 import elements from "./elements.js";
-import { generateTokenElements } from "./tokenizer.js";
+import { generateTokenElements, syntaxHighlight } from "./tokenizer.js";
 
 /**
  * Force focus onto the invisible input field - the only interface for user
@@ -37,7 +37,8 @@ function updateCaret() {
  */
 function updateTextbox() {
 	elements.inputTextboxBufferElement.innerHTML = "";
-	generateTokenElements(elements.inputField).forEach((token) => {
+	generateTokenElements(elements.inputField.value).forEach((token) => {
+		syntaxHighlight(token);
 		elements.inputTextboxBufferElement.appendChild(token);
 	});
 
@@ -47,10 +48,11 @@ function updateTextbox() {
 
 /**
  * Clear the invisible input field, and update the custom textbox render.
+ * Truly nothing special - but in the case this element changes, might as well 
+ * have these behaviours isolated to some space.
  */
 function clearTextbox() {
 	elements.inputField.value = "";
-	updateTextbox();
 }
 
 /**
@@ -70,7 +72,7 @@ function userInput(ev) {
 	}
 
 	// Impose limitations on input.
-	else if (elements.inputField.value.length >= 64 && ev.key.length === 1) {
+	else if (elements.inputField.value.length >= 64 && ev.key?.length === 1) {
 		alert("Maximum Character Limit Reached");
 		ev.preventDefault();
 	}
