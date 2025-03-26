@@ -24,7 +24,7 @@ body {
 	background-color: var(--base);
 	color: var(--text);
 	margin: 0;
-	padding: .2em;
+	padding: 0.2em;
 }
 
 pre {
@@ -42,10 +42,6 @@ pre {
 	flex-direction: row;
 
 	* {
-		display: flex;
-		flex-direction: row;
-		column-gap: 1ch;
-
 		&.unknown {
 			color: var(--error);
 		}

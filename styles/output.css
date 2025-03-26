@@ -1,6 +1,6 @@
 #output {
-    .command {
-        display: flex;
-        flex-direction: row;    
-    }
+	.command {
+		display: flex;
+		flex-direction: row;
+	}
 }

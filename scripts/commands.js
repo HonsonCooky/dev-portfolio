@@ -1,7 +1,7 @@
-export default {
+const commands = {
 	whoami: {
-		eval: function(_){
-
-		}
+		eval: function (_) {},
 	},
 };
+
+export default commands;

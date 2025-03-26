@@ -14,7 +14,7 @@ input {
 	display: flex;
 	flex-direction: row;
 	position: sticky;
-	
+
 	/* Note: The 'prompt' and 'buffer' elements are copied into the output - thus, their css is held in the 'global.css' file */
 
 	#textbox {

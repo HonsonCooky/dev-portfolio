@@ -1,88 +1,89 @@
-import commands from "./commands.js";
 import elements from "./elements.js";
-import { printCommand, printCommandOutput } from "./output.js";
+import { generateTokenElements } from "./tokenizer.js";
 
-/** Force focus onto the invisible input field - the only way users can interact with the document */
-function focusInputField(_ev) {
+/**
+ * Force focus onto the invisible input field - the only interface for user
+ * interactions.
+ */
+function focusInputField() {
 	elements.inputField.focus();
 }
 
-/** Create an HTML Element token for a word */
-function wordToken(word, type) {
-	const spanElement = document.createElement("pre");
-	spanElement.className = type ?? "";
-	spanElement.innerText = word;
-	return spanElement;
-}
-
-/** Evaluate the users keyboard input */
-async function updateInput(ev) {
-	// Saftey Clear
-	elements.inputTextboxBufferElement.innerHTML = "";
-
-	// {cmd} {param1} {param2}
-	const words = ev.target.value.split(" ");
-
-	if (words.length < 2) {
-		const textElement = wordToken(ev.target.value);
-		elements.inputTextboxBufferElement.appendChild(textElement);
-		return;
-	}
-
-	const firstWord = words[0];
-	const cmd = commands[firstWord];
-
-	// If the first word is an unknown cmd, then the whole thing is unknown
-	if (!cmd) {
-		const token = wordToken(ev.target.value, "unknown");
-		elements.inputTextboxBufferElement.appendChild(token);
-		return;
-	}
-
-	// We have a command - do we have correct parameters
-	const cmdToken = wordToken(firstWord, "cmd");
-	elements.inputTextboxBufferElement.appendChild(cmdToken);
-
-	const paramsToken = wordToken(ev.target.value.split(firstWord)[1], "param");
-	elements.inputTextboxBufferElement.appendChild(paramsToken);
-}
-
-async function updateCaret() {
+/**
+ * Updates the position of our custom text caret, based on the location of the
+ * caret in the invisible input field
+ */
+function updateCaret() {
+	// Move
 	const caret = elements.inputTextboxCaretElement;
 	caret.style.left = elements.inputField.selectionStart + "ch";
+
+	// Pause Animation
 	caret.classList.add("paused");
 	clearTimeout(caret.pauseTimeout);
-	caret.pauseTimeout = setTimeout(() => caret.classList.remove("paused"), 100);
+	caret.pauseTimeout = setTimeout(
+		() => caret.classList.remove("paused"),
+		100
+	);
+
+	// Ensure On Screen
 	caret.scrollIntoView();
 }
 
-function updateTextbox(ev) {
-	if (ev.target.value.length > 64 && ev.key.length === 1) {
-		alert("Maximum Character Limit Reached");
-		ev.preventDefault();
-		return;
-	}
+/**
+ * Update the contents of our custom textbox, to match the value of the
+ * invisible input field that the user is secretly inputing to.
+ * @returns
+ */
+function updateTextbox() {
+	elements.inputTextboxBufferElement.innerHTML = "";
+	generateTokenElements(elements.inputField).forEach((token) => {
+		elements.inputTextboxBufferElement.appendChild(token);
+	});
 
-	updateInput(ev);
+	// If the textbox needed updating, so too will the caret.
 	updateCaret();
 }
 
-function clearTextbox(ev) {
+/**
+ * Clear the invisible input field, and update the custom textbox render.
+ */
+function clearTextbox() {
 	elements.inputField.value = "";
-	updateTextbox(ev);
+	updateTextbox();
 }
 
+/**
+ * Evaluate the user input - be that a keydown, keyup, or other input like caret
+ * movement.
+ * @param {Event | KeyboardEvent} ev - The generated event.
+ */
 function userInput(ev) {
-	if (ev.key === "Enter" && elements.inputField.value.length) {
-		printCommand();
-		printCommandOutput();
-		clearTextbox(ev);
-		return;
+	// Evaluate command entered.
+	if (ev.key === "Enter") {
+		clearTextbox();
 	}
 
-	updateTextbox(ev);
+	// Quick clear the textbox.
+	else if (ev.key === "Escape") {
+		clearTextbox();
+	}
+
+	// Impose limitations on input.
+	else if (elements.inputField.value.length >= 64 && ev.key.length === 1) {
+		alert("Maximum Character Limit Reached");
+		ev.preventDefault();
+	}
+
+	// Update the text and caret in our custom text box.
+	updateTextbox();
 }
 
+/** ============================================================================
+ * EVENTS:
+ * - Enure that at all times, the invisible input field is focused. 
+ * - Respond to any and all events from the user in this input field.
+ ============================================================================ */
 document.addEventListener("focus", focusInputField);
 document.addEventListener("focusin", focusInputField);
 document.addEventListener("focusout", focusInputField);
