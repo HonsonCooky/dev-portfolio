@@ -16,8 +16,11 @@ const elements = {
 };
 
 ((elements) => {
-	for (let e in elements)
-		if (elements[e] === null) throw Error(`Cannot find element: ${e}`);
+	for (let e in elements) {
+		if (elements[e] === null) {
+			throw Error(`Cannot find element: ${e}`);
+		}
+	}
 })(elements);
 
 export default elements;

@@ -38,8 +38,8 @@ function updateCaret() {
 function updateTextbox() {
 	elements.inputTextboxBufferElement.innerHTML = "";
 	generateTokenElements(elements.inputField.value).forEach((token) => {
-		syntaxHighlight(token);
 		elements.inputTextboxBufferElement.appendChild(token);
+		syntaxHighlight(token);
 	});
 
 	// If the textbox needed updating, so too will the caret.

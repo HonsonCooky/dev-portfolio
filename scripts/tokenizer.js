@@ -1,4 +1,5 @@
-import commands from "./commands.js"
+import commands from "./commands.js";
+import elements from "./elements.js";
 
 /**
  * Given a string, generate an array of HTML elements, where each element
@@ -32,10 +33,27 @@ export function generateTokenElements(value) {
  * @param {HTMLPreElement} token
  */
 export function syntaxHighlight(token) {
-	if(token.tokenIndex === undefined) return;
+	if (token.tokenIndex === undefined) return;
 
 	// If this is the first token, it has to be a command.
-	if(token.tokenIndex === 0){
-		const isCmd = commands[token.innerText]
+	if (token.tokenIndex === 0) {
+		if (commands[token.innerText]) {
+			token.classList.add("cmd");
+		}
+		return;
 	}
+
+	const cmdToken = elements.inputTextboxBufferElement.querySelector(".cmd");
+	
+	// Should be a cmd token first. If not, the whole thing is borked.
+	if (!cmdToken) {
+		Array.from(
+			elements.inputTextboxBufferElement.querySelectorAll(".token")
+		).forEach((e) => {
+			e.classList.add("unknown");
+		});
+		return;
+	}
+
+	
 }
