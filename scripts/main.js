@@ -1,5 +1,7 @@
 import elements from "./elements.js";
-import { generateTokenElements, syntaxHighlight } from "./tokenizer.js";
+import { generateTokenElements, getCurrentTokens, syntaxHighlight } from "./tokenizer.js";
+
+const cmdHistory = [];
 
 /**
  * Force focus onto the invisible input field - the only interface for user
@@ -62,7 +64,9 @@ function clearTextbox() {
  */
 function userInput(ev) {
 	// Evaluate command entered.
-	if (ev.key === "Enter") {
+	if (ev.key === "Enter" && ev.type == "keyup") {
+		const tokens = getCurrentTokens();
+		
 		clearTextbox();
 	}
 

@@ -44,7 +44,7 @@ export function syntaxHighlight(token) {
 	}
 
 	const cmdToken = elements.inputTextboxBufferElement.querySelector(".cmd");
-	
+
 	// Should be a cmd token first. If not, the whole thing is borked.
 	if (!cmdToken) {
 		Array.from(
@@ -55,5 +55,18 @@ export function syntaxHighlight(token) {
 		return;
 	}
 
-	
+	token.classList.add("param");
+}
+
+/**
+ * Get an array of strings representing the tokens currently in the input
+ * buffer.
+ * @returns
+ */
+export function getCurrentTokens() {
+	const tokens = Array.from(
+		elements.inputTextboxBufferElement.querySelectorAll(".token")
+	);
+
+	return tokens.map((e) => e.innerText);
 }
