@@ -35,12 +35,6 @@ export const fileStructure = {
 	},
 };
 
-export const commands = {
-	cd: function (path){},
-	ls: function(_){},
-	cat: function(path){},
-};
-
 export const history = {
 	commands: [],
 	index: 0,
