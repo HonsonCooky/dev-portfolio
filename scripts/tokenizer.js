@@ -1,4 +1,4 @@
-import commands from "./commands.js";
+import { commands } from "./environment.js";
 import elements from "./elements.js";
 
 /**
@@ -70,3 +70,10 @@ export function getCurrentTokens() {
 
 	return tokens.map((e) => e.innerText);
 }
+
+/**
+ * TODO: Token Hints
+ * - Autocomplete "suggestions"
+ * - Ambiguity, show list of options
+ */
+export function provideTabHints() {}

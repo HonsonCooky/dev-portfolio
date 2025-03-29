@@ -24,7 +24,11 @@ body {
 	background-color: var(--base);
 	color: var(--text);
 	margin: 0;
-	padding: 0.2em;
+	padding: 0;
+}
+
+body {
+	padding: 8px;
 }
 
 pre {

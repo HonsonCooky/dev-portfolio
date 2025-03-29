@@ -11,8 +11,9 @@ const elements = {
 	inputTextboxBufferElement: document
 		.getElementById("textbox")
 		.querySelector(".buffer"),
+	inputTextboxAutoFillElement: document.getElementById(""),
 	inputTextboxCaretElement: document.getElementById("caret"),
-	mobileInputElement: document.getElementById("mobile-input"),
+	inputTabHintElement: document.getElementById("tab-hint"),
 };
 
 ((elements) => {

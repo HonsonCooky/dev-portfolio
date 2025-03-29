@@ -1,7 +1,12 @@
 import elements from "./elements.js";
-import { generateTokenElements, getCurrentTokens, syntaxHighlight } from "./tokenizer.js";
+import {
+	generateTokenElements,
+	getCurrentTokens,
+	syntaxHighlight,
+} from "./tokenizer.js";
 
-const cmdHistory = [];
+let historyCommands = [];
+let historyIndex = 0;
 
 /**
  * Force focus onto the invisible input field - the only interface for user
@@ -50,11 +55,36 @@ function updateTextbox() {
 
 /**
  * Clear the invisible input field, and update the custom textbox render.
- * Truly nothing special - but in the case this element changes, might as well 
+ * Truly nothing special - but in the case this element changes, might as well
  * have these behaviours isolated to some space.
  */
 function clearTextbox() {
 	elements.inputField.value = "";
+}
+
+/**
+ * Pull in a command from the history of commands entered.
+ * @param {number} indexDirection (-1 or 1)
+ */
+function navigateHistory(indexDirection) {
+	if (indexDirection != -1 && indexDirection != 1)
+		throw Error("Expected value from list [-1, 1].");
+	historyIndex += indexDirection;
+	if (historyIndex === 0) {
+		elements.inputField.value = "";
+	} else if (historyIndex < 0) {
+		historyIndex = 0;
+	} else if (historyIndex > historyCommands.length) {
+		historyIndex = historyCommands.length;
+	} else {
+		elements.inputField.value =
+			historyCommands[historyCommands.length - historyIndex];
+	}
+}
+
+/** */
+function evaluateCmd() {
+	const tokens = getCurrentTokens();
 }
 
 /**
@@ -64,15 +94,29 @@ function clearTextbox() {
  */
 function userInput(ev) {
 	// Evaluate command entered.
-	if (ev.key === "Enter" && ev.type == "keyup") {
-		const tokens = getCurrentTokens();
-		
+	if (ev.key === "Enter") {
+		// Append to the history
+		historyCommands.push(elements.inputField.value);
+		evaluateCmd();
 		clearTextbox();
 	}
 
 	// Quick clear the textbox.
 	else if (ev.key === "Escape") {
+		historyIndex = 0;
 		clearTextbox();
+	}
+
+	// Navigate History - Backwards
+	else if (ev.key === "ArrowUp") {
+		navigateHistory(1);
+		ev.preventDefault();
+	}
+
+	// Navigate History - Forwards
+	else if (ev.key === "ArrowDown") {
+		navigateHistory(-1);
+		ev.preventDefault();
 	}
 
 	// Impose limitations on input.
@@ -96,5 +140,4 @@ document.addEventListener("focusout", focusInputField);
 elements.inputField.addEventListener("focusout", focusInputField);
 elements.inputField.addEventListener("keydown", userInput);
 elements.inputField.addEventListener("input", userInput);
-elements.inputField.addEventListener("keyup", userInput);
 focusInputField();
