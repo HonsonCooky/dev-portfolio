@@ -5,27 +5,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>C:\HarrisonCook&gt;</title>
 		<link rel="icon" href="./assets/imgs/favicon.png" />
-		<link rel="stylesheet" href="./styles/styles.css" />
-		<script src="./scripts/scripts.js" type="module" defer async></script>
+		<script src="./scripts/scripts.js" type="module" async defer></script>
 	</head>
 
 	<body>
-		<input />
-		<div id="output"></div>
-		<div id="input">
-			<span class="prompt">
-				<span id="root">C:\HarrisonCook</span>
-				<span id="cwd-path"></span>
-				<span id="seperator">&gt;</span>
-			</span>
-			<div id="textbox">
-				<span class="buffer"></span>
-				<span id="auto-fill-hint"></span>
-				<span id="caret"></span>
-			</div>
-			<div id="tab-hint">
-				<!-- mobile devices will  -->
-			</div>
-		</div>
+		<terminal-history></terminal-history>
+		<terminal-input></terminal-input>
 	</body>
 </html>

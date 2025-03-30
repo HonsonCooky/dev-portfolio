@@ -1,4 +1,4 @@
-export const fileStructure = {
+export const file_struct = {
 	profile: {
 		"basic.txt": null,
 		"description.txt": null,
@@ -34,8 +34,3 @@ export const fileStructure = {
 		},
 	},
 };
-
-export const history = {
-	commands: [],
-	index: 0,
-}
