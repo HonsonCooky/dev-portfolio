@@ -1,18 +1,20 @@
 <script setup>
-import {RouterLink, RouterView} from 'vue-router'
+import {RouterView} from 'vue-router'
+import MyHeader from "@/components/header/MyHeader.vue";
 </script>
 
 <template>
-  <header>
-    <h1>C:\HarrisonCook&gt;</h1>
-    <nav>
-      <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/about">About</RouterLink>
-    </nav>
-  </header>
+  <MyHeader/>
 
-  <RouterView/>
+  <main>
+    <RouterView/>
+  </main>
 </template>
 
 <style scoped>
+
+main {
+  flex: 1;
+}
+
 </style>
