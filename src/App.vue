@@ -1,20 +1,22 @@
 <script setup>
-import {RouterView} from 'vue-router'
-import MyHeader from "@/components/header/MyHeader.vue";
+import NavBar from "@/components/NavBar.vue";
 </script>
 
 <template>
-  <MyHeader/>
-
-  <main>
-    <RouterView/>
-  </main>
+  <v-app full-height>
+    <nav-bar/>
+    <v-main scrollable>
+      <router-view/>
+    </v-main>
+  </v-app>
 </template>
 
-<style scoped>
-
-main {
-  flex: 1;
+<style>
+* {
+  font-family: "JetBrains Mono", monospace;
 }
 
+.v-main {
+  padding: 2rem;
+}
 </style>
