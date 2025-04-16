@@ -1,77 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <link href="./assets/imgs/favicon.png" rel="icon" type="image/png">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="icon" href="./assets/imgs/favicon.png">
+    <title>C:\HarrisonCook>_</title>
 
-    <title>C:\HarrisonCook&gt;</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/fontawesome.min.css"
+          rel="stylesheet">
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
           rel="stylesheet">
 
-    <style>
-        * {
-            font-family: 'JetBrains Mono', monospace;
-        }
-    </style>
+    <link href="./styles.css" rel="stylesheet">
+    <script defer src="./scripts.js" type="module"></script>
 </head>
-
 <body>
-<nav aria-label="dropdown navigation" class="navbar" role="navigation">
-    <div class="navbar-brand">
-        <a class="navbar-item" href="">
-            <img alt="Harrison Cook" src="./assets/imgs/favicon.png"/>
-            <h1>C:\Harrison Cook&gt;</h1>
-        </a>
-
-        <a aria-expanded="false" aria-label="menu" class="navbar-burger" role="button">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </a>
-    </div>
-
-    <div class="navbar-menu">
-        <div class="navbar-start">
-            <a class="navbar-item" href="/about">About</a>
-            <a class="navbar-item" href="">Experience</a>
-            <a class="navbar-item" href="">Projects</a>
-            <a class="navbar-item" href="">Education</a>
-            <a class="navbar-item" href="">Skills</a>
-        </div>
-        <div class="navbar-end">
-            <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link">Theme</a>
-                <div class="navbar-dropdown is-right">
-                    <a class="navbar-item" onclick="setTheme('light')">Light</a>
-                    <a class="navbar-item" onclick="setTheme('dark')">Dark</a>
-                    <a class="navbar-item" onclick="setTheme('')">System</a>
-                </div>
-            </div>
-        </div>
+<nav>
+    <div class="clickable" onclick="console.log('here')">
+        <h1>C:\HarrisonCook>_</h1>
     </div>
 </nav>
-
-<script>
-    const nav_burger = document.querySelector('.navbar-burger');
-    const nav_menu = document.querySelector('.navbar-menu');
-    nav_burger.addEventListener('click', () => {
-        nav_burger.classList.toggle('is-active');
-        nav_menu.classList.toggle('is-active');
-    });
-
-    function setTheme(theme) {
-        document.documentElement.setAttribute("data-theme", theme);
-    }
-
-    function showPage(pageName) {
-        
-    }
-</script>
 </body>
 </html>
