@@ -28,7 +28,7 @@
     --mantle: #e6e9ef;
     --crust: #dce0e8;
 
-    @media screen and (prefers-color-scheme: dark) {
+    [data-theme='dark'] {
         --rosewater: #f5e0dc;
         --flamingo: #f2cdcd;
         --pink: #f5c2e7;
@@ -86,11 +86,11 @@ p {
     cursor: pointer;
 
     &:hover {
-        background-color: var(--overlay0);
+        background-color: var(--mantle);
     }
 
     &:active {
-        background-color: var(--crust);
+        background-color: var(--base);
     }
 }
 
@@ -101,5 +101,11 @@ nav {
 
     > * {
         padding: 1ch;
+    }
+
+    .nav-brand {
+        h1 {
+            color: var(--blue);
+        }
     }
 }
