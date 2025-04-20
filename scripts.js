@@ -1,24 +1,49 @@
-function goToPage(page) {
-    document.querySelectorAll(".page").forEach(p => {
-        if (p.id === page) p.classList.add("active");
-        else p.classList.remove("active");
-    });
-}
+// ============================================
+// Theme Management
+// ============================================
 
-function toggleTheme() {
-    const currentTheme = document.getAttribute("data-theme");
+const initTheme = () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    } else {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+    }
+};
+
+const toggleTheme = () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    document.setAttribute("data-theme", newTheme);
-}
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+};
 
-/* =============================================================================
-Start Up Actions - Wrapped to ensure however this script is loaded, we're
-executing with references to DOM elements.
-============================================================================= */
+// ============================================
+// Event Listeners
+// ============================================
+
+document.addEventListener('DOMContentLoaded', initTheme);
+
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) {
+        document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+    }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Light theme is the default. Toggle the theme if dark is preferred.
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) toggleTheme();
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
 
-    // Listen to hash changes, and open the page matching the hash
-    
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
 });

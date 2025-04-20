@@ -1,111 +1,132 @@
 :root {
-    --mobile: 768px;
-
-    --rosewater: #dc8a78;
-    --flamingo: #dd7878;
-    --pink: #ea76cb;
-    --mauve: #8839ef;
-    --red: #d20f39;
-    --maroon: #e64553;
-    --peach: #fe640b;
-    --yellow: #df8e1d;
-    --green: #40a02b;
-    --teal: #179299;
-    --sky: #04a5e5;
-    --sapphire: #209fb5;
-    --blue: #1e66f5;
-    --lavender: #7287fd;
-    --text: #4c4f69;
-    --subtext1: #5c5f77;
-    --subtext0: #6c6f85;
-    --overlay2: #7c7f93;
-    --overlay1: #8c8fa1;
-    --overlay0: #9ca0b0;
-    --surface2: #acb0be;
-    --surface1: #bcc0cc;
-    --surface0: #ccd0da;
-    --base: #eff1f5;
-    --mantle: #e6e9ef;
-    --crust: #dce0e8;
-
-    [data-theme='dark'] {
-        --rosewater: #f5e0dc;
-        --flamingo: #f2cdcd;
-        --pink: #f5c2e7;
-        --mauve: #cba6f7;
-        --red: #f38ba8;
-        --maroon: #eba0ac;
-        --peach: #fab387;
-        --yellow: #f9e2af;
-        --green: #a6e3a1;
-        --teal: #94e2d5;
-        --sky: #89dceb;
-        --sapphire: #74c7ec;
-        --blue: #89b4fa;
-        --lavender: #b4befe;
-        --text: #cdd6f4;
-        --subtext1: #bac2de;
-        --subtext0: #a6adc8;
-        --overlay2: #9399b2;
-        --overlay1: #7f849c;
-        --overlay0: #6c7086;
-        --surface2: #585b70;
-        --surface1: #45475a;
-        --surface0: #313244;
-        --base: #1e1e2e;
-        --mantle: #181825;
-        --crust: #11111b;
-    }
+    --primary: #2563eb;
+    --secondary: #4f46e5;
+    --accent: #8b5cf6;
+    --background: #ffffff;
+    --surface: #f3f4f6;
+    --text: #1f2937;
+    --text-light: #6b7280;
 }
 
+[data-theme="dark"] {
+    --primary: #3b82f6;
+    --secondary: #6366f1;
+    --accent: #a78bfa;
+    --background: #1f2937;
+    --surface: #374151;
+    --text: #f3f4f6;
+    --text-light: #9ca3af;
+}
+
+/* Reset default styles */
 * {
-    font-family: "JetBrainsMono NF", monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     color: var(--text);
 }
 
-html,
 body {
-    background-color: var(--base);
-    margin: 0;
-    padding: 0;
+    font-family: "Courier New", Courier, monospace;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--background);
+    padding-top: 6rem;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-    padding: 0;
-    margin: 0;
-}
-
-.clickable {
-    user-select: none;
-    cursor: pointer;
-
-    &:hover {
-        background-color: var(--mantle);
-    }
-
-    &:active {
-        background-color: var(--base);
-    }
+/* Header and Navigation */
+header {
+    background-color: var(--surface);
+    box-shadow: 0 2px 5px rgba(var(--text), 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 nav {
     display: flex;
-    width: 100%;
-    background-color: var(--surface0);
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: relative;
+    background-color: var(--surface);
+}
 
-    > * {
-        padding: 1ch;
+a {
+    text-decoration: none;
+
+    &:hover {
+        color: var(--accent);
+
+        * {
+            color: var(--accent);
+            fill: var(--accent);
+        }
+    }
+}
+
+.logo > a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 18pt;
+    column-gap: 1ch;
+    cursor: pointer;
+}
+
+.hamburger {
+     display: block;
+     background: none;
+     border: none;
+     cursor: pointer;
+     padding: 0;
+     width: 30px;
+     height: 24px;
+     position: relative;
+     z-index: 1001;
+
+
+    .hamburger-line {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: var(--text);
+        margin: 5px 0;
+        transition: transform 0.3s ease-in-out;
     }
 
-    .nav-brand {
-        h1 {
-            color: var(--blue);
-        }
+    /* Hamburger Animation */
+    &.active .hamburger-line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    &.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+
+    &.active .hamburger-line:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    padding: 1rem;
+    row-gap: .5rem;
+    width: 100%;
+    background-color: var(--surface);
+    z-index: -1;
+    font-size: 16pt;
+
+    &.active {
+        transform: translateY(0);
     }
 }

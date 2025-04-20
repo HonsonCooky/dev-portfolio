@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .bracket {
+        fill: none;
+        stroke: #1f2937;
+        stroke-width: 2;
+        }
+        .letters {
+        fill: #1f2937;
+        font-family: monospace;
+        font-weight: bold;
+        }
+
+        @media (prefers-color-scheme: dark) {
+        .bracket {
+        stroke: #f3f4f6;
+        }
+        .letters {
+        fill: #f3f4f6;
+        }
+        }
+    </style>
+    <!-- Left bracket -->
+    <path class="bracket" d="M12,4 L3,4 L3,28 L12,28"/>
+    <!-- Right bracket -->
+    <path class="bracket" d="M20,4 L29,4 L29,28 L20,28"/>
+    <!-- HC text -->
+    <text class="letters" x="16" y="17.5" text-anchor="middle" dominant-baseline="middle" font-size="18">HC</text>
+</svg>
+
