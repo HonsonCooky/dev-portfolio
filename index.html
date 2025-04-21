@@ -10,36 +10,33 @@
 </head>
 <body>
 <header>
-    <nav>
-        <div class="logo">
-            <a href="#home">
-                <img alt="HC Logo" src="assets/imgs/favicon.svg"/>
-                Harrison Cook
-            </a>
-        </div>
+    <div class="banner">
+        <img alt="HC Logo" class="logo" onclick="window.location.href='#home'" src="assets/imgs/favicon.svg"/>
 
         <button aria-label="Menu" class="hamburger" type="button">
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
         </button>
+    </div>
 
-        <div class="nav-menu">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact">Contact</a>
-        </div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
     </nav>
 </header>
 
-<section class="hero" id="home">
-    <div class="hero-content">
-        <h1>Hi, I'm Harrison Cook</h1>
-        <p>A Software Engineer ... </p>
-    </div>
-</section>
+<main>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Hi, I'm Harrison Cook</h1>
+            <p>A Software Engineer ... </p>
+        </div>
+    </section>
+</main>
 
 <footer>
     <p>&copy; 2024 Harrison Cook. All rights reserved.</p>
