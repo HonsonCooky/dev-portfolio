@@ -3,22 +3,13 @@
     <style>
         .bracket {
         fill: none;
-        stroke: #1f2937;
+        stroke: currentColor;
         stroke-width: 2;
         }
         .letters {
-        fill: #1f2937;
+        fill: currentColor;
         font-family: monospace;
         font-weight: bold;
-        }
-
-        @media (prefers-color-scheme: dark) {
-        .bracket {
-        stroke: #f3f4f6;
-        }
-        .letters {
-        fill: #f3f4f6;
-        }
         }
     </style>
     <!-- Left bracket -->
