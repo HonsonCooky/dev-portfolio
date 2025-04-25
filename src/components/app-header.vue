@@ -1,69 +1,92 @@
 <script setup>
-import { useDevice } from '@/composables/use-device.js'
-import { useRouter } from 'vue-router'
 import { computed } from 'vue'
+import { useRouter } from 'vue-router'
+import { Icon } from '@iconify/vue'
+import AppLink from '@/components/app-link.vue'
+import { useDevice } from '@/composables/use-device.js'
+import { toggleTheme } from '@/utils/theme-management.js'
 
 const { isMobile } = useDevice()
 const router = useRouter()
-const routes = computed(() => router.getRoutes().filter((route) => route.name))
+const routes = computed(() => router.getRoutes().filter((route) => route.name !== 'Home'))
+
+function toggleMenu() {
+  const nav = document.querySelector('.mobile-nav')
+  if (nav) nav.classList.toggle('open')
+}
+
+function closeMenu() {
+  const nav = document.querySelector('.mobile-nav')
+  if (nav) nav.classList.remove('open')
+}
 </script>
 
 <template>
   <header>
-    <!-- MOBILE VIEW -->
-    <template v-if="isMobile">
-      <nav class="mobile-nav">
-        <button
-          v-for="route in routes"
-          :key="route.name"
-          @click="router.push({ name: route.name })"
-        >
-          {{ route.name }}
-        </button>
-      </nav>
-    </template>
+    <app-link class="menu-btn" :hidden="!isMobile" @click="toggleMenu">
+      <icon icon="mdi:menu" />
+    </app-link>
 
-    <!-- DESKTOP VIEW-->
-    <template v-else>
-      <nav class="desktop-nav">
-        <button
-          v-for="route in routes"
-          :key="route.name"
-          @click="router.push({ name: route.name })"
-        >
-          {{ route.name }}
-        </button>
-      </nav>
-    </template>
+    <div class="brand">
+      <app-link @click="router.push('/')">C:\HarrisonCook&gt;_</app-link>
+    </div>
+
+    <nav :class="isMobile ? 'mobile-nav' : 'desktop-nav'">
+      <app-link
+        v-for="route in routes"
+        :key="route.name"
+        @click="
+          router.push({ name: route.name })
+          closeMenu();
+        "
+      >
+        {{ route.name }}
+      </app-link>
+    </nav>
+
+    <app-link @click="toggleTheme()">
+      <icon icon="mdi:contrast-circle" />
+    </app-link>
   </header>
 </template>
 
 <style scoped>
-.mobile-nav {
+header {
   display: flex;
-  gap: 1rem;
-  padding: 1rem;
+  flex-direction: row;
+  position: fixed;
+  background-color: var(--base);
+  border-bottom: 2px solid var(--crust);
+  width: 100%;
+  padding: 1em 2ch;
+  z-index: 1;
 }
 
-.mobile-nav button {
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-  border: 1px solid #ccc;
-  background: white;
-  cursor: pointer;
+.brand {
+  display: flex;
+  flex: 1;
+}
+
+.mobile-nav {
+  position: absolute;
+  top: 100%;
+  left: -100%;
+  transition: left 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  z-index: -1;
+  background-color: var(--crust);
+  width: 65%;
+  height: 100vh;
+  padding: 1em;
+
+  &.open {
+    left: 0;
+  }
 }
 
 .desktop-nav {
   display: flex;
-  padding: 2rem;
-  justify-content: center;
-}
-
-.desktop-nav button {
-  padding: 1rem 2rem;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  font-size: 1.1rem;
+  flex-direction: row;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <section class="page">
-    About
+    Portfolio
   </section>
 </template>
 

@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <main>
+  <section class="page">
     Home
-  </main>
+  </section>
 </template>
