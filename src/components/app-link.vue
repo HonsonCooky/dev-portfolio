@@ -1,28 +1,26 @@
 <template>
-  <a v-bind="$attrs">
+  <a v-bind="$attrs" class="app-link">
     <slot></slot>
   </a>
 </template>
 
 <style scoped>
-a {
+.app-link {
   display: inline-flex;
   color: inherit;
   text-decoration: none;
   cursor: pointer;
   padding: 0.5em 2ch;
   border-radius: 0.5em;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
 
   &:hover {
-    background-color: var(--surface0);
-    color: var(--lavender);
     transform: translateY(-2px);
   }
 
   &:active {
-    background-color: var(--mantle);
     transform: translateY(0);
   }
-
 }
 </style>

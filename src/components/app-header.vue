@@ -33,6 +33,7 @@ function closeMenu() {
 
     <nav :class="isMobile ? 'mobile-nav' : 'desktop-nav'">
       <app-link
+        class="nav-link"
         v-for="route in routes"
         :key="route.name"
         @click="
@@ -55,8 +56,7 @@ header {
   display: flex;
   flex-direction: row;
   position: fixed;
-  background-color: var(--base);
-  border-bottom: 2px solid var(--crust);
+  background-color: var(--crust);
   width: 100%;
   padding: 1em 2ch;
   z-index: 1;
@@ -65,6 +65,12 @@ header {
 .brand {
   display: flex;
   flex: 1;
+}
+
+.nav-link {
+  &:active {
+    color: var(--blue);
+  }
 }
 
 .mobile-nav {
