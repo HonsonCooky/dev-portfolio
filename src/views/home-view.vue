@@ -1,8 +1,5 @@
-<script setup>
-</script>
+<script setup></script>
 
 <template>
-  <section class="page">
-    Home
-  </section>
+  <section class="page">home</section>
 </template>

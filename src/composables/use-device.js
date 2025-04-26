@@ -2,9 +2,14 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 export function useDevice() {
   const isMobile = ref(false)
+  const switchCallback = ref(null)
 
   const checkDevice = () => {
-    isMobile.value = window.innerWidth < 768
+    const wasMobile = isMobile.value
+    isMobile.value = window.innerWidth <= 768
+    if (wasMobile !== isMobile.value && switchCallback.value) {
+      switchCallback.value()
+    }
   }
 
   onMounted(() => {
@@ -16,9 +21,12 @@ export function useDevice() {
     window.removeEventListener('resize', checkDevice)
   })
 
+  const onDeviceSwitch = (callback) => {
+    switchCallback.value = callback
+  }
+
   return {
     isMobile,
+    onDeviceSwitch,
   }
 }
-
-export const { isMobile } = useDevice()
