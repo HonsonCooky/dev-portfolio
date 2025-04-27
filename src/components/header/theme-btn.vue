@@ -12,5 +12,6 @@ import { toggleTheme } from '@/utils/theme-management.js'
 <style scoped>
 button {
   aspect-ratio: 1/1;
+  font-size: 1.2rem;
 }
 </style>

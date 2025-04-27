@@ -9,6 +9,8 @@
     --base: #fafbff;
     --crust: #ffffff;
     --error: #ff4040;
+
+    --nav-height: clamp(40px, 5dvh, 60px);
 }
 
 [data-theme='dark'] {

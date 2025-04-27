@@ -1,10 +1,3 @@
-<!--
-HEADER - A fixed position banner at the top of the page, offering navigation elements.
-
-- Mobile: Nav Elements in sidebar menu, opened with button.
-- Desktop: Nav Elements inline.
--->
-
 <script setup>
 import NavMenuBtn from '@/components/header/mobile/nav-menu-btn.vue'
 import { ref } from 'vue'
@@ -14,6 +7,7 @@ import ThemeBtn from '@/components/header/theme-btn.vue'
 import Filler from '@/components/filler.vue'
 import ContentShield from '@/components/header/mobile/content-shield.vue'
 import NavMenu from '@/components/header/mobile/nav-menu.vue'
+import NavOptions from '@/components/header/desktop/nav-options.vue'
 
 // MOBILE ELEMENTS
 const { isMobile, onDeviceSwitch } = useDevice()
@@ -35,7 +29,7 @@ onDeviceSwitch(closeNavMenu)
   <template v-if="isMobile">
     <header>
       <nav-menu-btn :mobile-nav-active="mobileNavActive" @toggle-nav-menu="toggleNavMenu" />
-      <brand />
+      <brand @clicked="closeNavMenu" />
       <filler />
       <theme-btn />
     </header>
@@ -43,9 +37,13 @@ onDeviceSwitch(closeNavMenu)
     <nav-menu :hidden="!mobileNavActive" @nav-clicked="closeNavMenu" />
   </template>
 
+  <!-- DESKTOP -->
   <template v-else>
     <header>
       <brand />
+      <filler />
+      <nav-options />
+      <theme-btn />
     </header>
   </template>
 </template>
@@ -56,7 +54,7 @@ header {
   width: 100%;
   top: 0;
   left: 0;
-  height: 5dvh;
+  height: var(--nav-height);
   z-index: 100;
 
   display: flex;

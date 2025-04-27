@@ -13,9 +13,9 @@ const emit = defineEmits(['navClicked'])
 <style scoped>
 nav {
   position: fixed;
-  top: 5dvh;
+  top: var(--nav-height);
   left: 0;
-  height: 95dvh;
+  height: calc(100vh - var(--nav-height));
 
   display: flex;
   flex-direction: column;

@@ -7,12 +7,10 @@ const getSystemTheme = () => {
 
 const setTheme = (theme) => {
   document.documentElement.setAttribute('data-theme', theme)
-  localStorage.setItem('theme', theme)
 }
 
 const getTheme = () => {
-  const savedTheme = localStorage.getItem('theme')
-  return savedTheme || getSystemTheme()
+  return document.documentElement.getAttribute('data-theme') || getSystemTheme()
 }
 
 const toggleTheme = () => {
@@ -23,7 +21,6 @@ const toggleTheme = () => {
 }
 
 const resetToSystemTheme = () => {
-  localStorage.removeItem('theme')
   const systemTheme = getSystemTheme()
   setTheme(systemTheme)
   return systemTheme
@@ -34,9 +31,7 @@ setTheme(getTheme())
 
 // Listen for system theme changes
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-  if (!localStorage.getItem('theme')) {
-    setTheme(e.matches ? THEME_DARK : THEME_LIGHT)
-  }
+  setTheme(e.matches ? THEME_DARK : THEME_LIGHT)
 })
 
 export { getTheme, setTheme, toggleTheme, resetToSystemTheme }
