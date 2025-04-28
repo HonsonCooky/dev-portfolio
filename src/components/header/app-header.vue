@@ -50,7 +50,7 @@ onDeviceSwitch(closeNavMenu)
 
 <style scoped>
 header {
-  position: absolute;
+  position: sticky;
   width: 100%;
   top: 0;
   left: 0;

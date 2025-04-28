@@ -11,8 +11,8 @@
     --error: #ff4040;
 
     --nav-height: clamp(40px, 5dvh, 60px);
-    --font-size: clamp(1rem, 0.694vw + 0.667rem, 1.5rem);
-    --line-height: clamp(1.5rem, 0.417vw + 1.3rem, 1.8rem);
+    --font-size: clamp(1rem, 0.174vw + 0.917rem, 1.125rem);
+    --line-height: clamp(1.35rem, -0.208vw + 1.6rem, 1.5rem);
 }
 
 [data-theme='dark'] {
@@ -69,13 +69,5 @@ button {
 
 code {
     font-family: 'Courier New', monospace;
-}
-
-
-.page {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    font-weight: bold;
 }

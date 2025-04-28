@@ -12,5 +12,6 @@ const routes = router.getRoutes().filter((route) => route.name)
 <style scoped>
 button {
   text-align: start;
+  padding: 0.5em 2ch;
 }
 </style>
