@@ -62,5 +62,6 @@ header {
   align-content: center;
   background-color: var(--crust);
   box-shadow: 0 0 10px var(--subtext);
+  padding: 0 calc((100vw - 1920px) / 2);
 }
 </style>

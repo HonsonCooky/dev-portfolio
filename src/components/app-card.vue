@@ -14,4 +14,10 @@ defineProps(['title', 'footer'])
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.card {
+  border: 1px solid var(--darkblue);
+  border-bottom: 5px solid var(--darkblue);
+  border-top: none;
+}
+</style>
