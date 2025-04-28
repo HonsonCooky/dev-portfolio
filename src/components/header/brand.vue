@@ -24,5 +24,15 @@ button {
   flex-direction: row;
   align-items: center;
   column-gap: 1ch;
+  overflow: hidden;
+
+  svg {
+    height: var(--line-height);
+  }
+
+  span {
+    display: flex;
+    text-overflow: ellipsis;
+  }
 }
 </style>

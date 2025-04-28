@@ -10,6 +10,7 @@
         fill: currentColor;
         font-family: monospace;
         font-weight: bold;
+        font-size: 16px !important;
         }
     </style>
     <!-- Left bracket -->

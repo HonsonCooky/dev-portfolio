@@ -1,6 +1,6 @@
 <script setup>
 import { Icon } from '@iconify/vue'
-import { toggleTheme } from '@/utils/theme-management.js'
+import { toggleTheme } from '@/theme.js'
 </script>
 
 <template>
