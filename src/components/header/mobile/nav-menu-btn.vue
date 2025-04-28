@@ -15,6 +15,5 @@ const emit = defineEmits(['toggleNavMenu'])
 <style scoped>
 button {
   aspect-ratio: 1/1;
-  font-size: var(--line-height);
 }
 </style>

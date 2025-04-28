@@ -71,3 +71,13 @@ code {
     font-family: 'Courier New', monospace;
     font-weight: bold;
 }
+
+svg {
+    font-size: var(--line-height);
+}
+
+img {
+    max-width: 70dvw;
+    max-height: 50dvh;
+    object-fit: contain;
+}

@@ -31,8 +31,9 @@ import Filler from '@/components/filler.vue'
 
 <style scoped>
 footer {
+  height: calc(3 * var(--line-height));
   width: 100%;
-  padding: 0.5rem 1ch;
+  padding: 0 2ch;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -41,11 +42,11 @@ footer {
   box-shadow: 0 0 10px var(--subtext);
 }
 
-span {
-  cursor: default;
+button {
+  aspect-ratio: 1/1;
 }
 
-svg {
-  font-size: var(--line-height);
+span {
+  cursor: default;
 }
 </style>
