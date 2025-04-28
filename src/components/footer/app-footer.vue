@@ -5,7 +5,7 @@ import Filler from '@/components/filler.vue'
 
 <template>
   <footer>
-    <span>HonsonCooky>_</span>
+    <span>HonsonCooky:</span>
     <wbr />
     <div>
       <button title="GitHub" type="button" @click="window.open('https://github.com/HonsonCooky', '_blank')">
