@@ -44,8 +44,9 @@ body {
     position: relative;
     color: var(--text);
     margin: 0 auto;
-    font-family: 'Courier New', monospace;
+    font-family: monospace;
     font-size: var(--font-size);
+    overscroll-behavior-y: none;
     line-height: var(--line-height);
 }
 

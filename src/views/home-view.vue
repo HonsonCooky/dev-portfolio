@@ -11,7 +11,7 @@ const toolbeltShowcase = Toolbelt.filter((i) => i.highlight)
     <div class="hero">
       <img alt="Profile picture" src="/imgs/profile.png" />
       <hgroup>
-        <p>Kia Ora! I'm</p>
+        <p>Hey! I'm</p>
         <h1>Harrison Cook</h1>
         <h2>&lt; Software Engineer /&gt;</h2>
       </hgroup>
@@ -66,6 +66,8 @@ const toolbeltShowcase = Toolbelt.filter((i) => i.highlight)
   align-items: center;
   justify-content: center;
   gap: 1rem 1ch;
+  overflow: hidden;
+  height: calc(var(--font-size) * 6);
 
   .tool {
     background-color: var(--surface);

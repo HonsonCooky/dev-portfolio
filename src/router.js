@@ -14,9 +14,19 @@ const router = createRouter({
       component: () => import('./views/about-view.vue'),
     },
     {
+      path: '/work',
+      name: 'Work_History',
+      component: () => import('./views/work-view.vue'),
+    },
+    {
       path: '/portfolio',
       name: 'Portfolio',
       component: () => import('./views/portfolio-view.vue'),
+    },
+    {
+      path: '/blogs',
+      name: 'Blogs',
+      component: () => import('./views/blogs-view.vue'),
     },
   ],
 })
