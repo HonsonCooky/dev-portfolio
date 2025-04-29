@@ -2,66 +2,60 @@
 import AppCard from '@/components/app-card.vue'
 import Toolbelt from '@/assets/toolbelt.js'
 import { Icon } from '@iconify/vue'
+
+const toolbeltShowcase = Toolbelt.filter((i) => i.highlight)
 </script>
 
 <template>
   <section class="page">
-    <div class="title-row">
-      <div>
-        <app-card class="profile">
-          <img alt="Profile picture" src="/imgs/profile.png" />
-        </app-card>
-      </div>
-      <div class="intro">
+    <div class="hero">
+      <img alt="Profile picture" src="/imgs/profile.png" />
+      <hgroup>
         <p>Kia Ora! I'm</p>
         <h1>Harrison Cook</h1>
         <h2>&lt; Software Engineer /&gt;</h2>
-      </div>
+      </hgroup>
     </div>
+
     <div class="toolbelt">
-      <div v-for="env in Toolbelt" class="container">
-        <h3 class="env-title">{{ env.environment }}</h3>
-        <div class="cards">
-          <app-card v-for="item in env.items">
-            <icon :icon="item.icon" />
-            <span>{{ item.name }}</span>
-          </app-card>
-        </div>
-      </div>
+      <app-card v-for="item in toolbeltShowcase" class="tool">
+        <icon :icon="item.icon" :inline="true" />
+      </app-card>
     </div>
   </section>
 </template>
 
 <style scoped>
 .page {
-  display: flex;
-  flex-direction: column;
-  row-gap: 1rem;
+  gap: 3rem;
 }
 
-.title-row {
+.hero {
   display: flex;
   flex-flow: row wrap;
+  align-items: center;
   justify-content: center;
-  gap: 1em 4ch;
+  gap: 1rem 4ch;
 
-  .intro {
+  img {
+    background-color: var(--surface);
+    box-shadow: inset 0 0 10px var(--darkblue);
+  }
+
+  hgroup {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
-    padding: 1rem 2ch;
-    background-color: var(--surface);
+    gap: 1rem;
 
     h1 {
       font-size: 3rem;
-      line-height: 3rem;
-      font-weight: bold;
-      margin: 1rem;
+      line-height: 1;
+      margin-left: 1ch;
     }
 
     h2 {
       font-size: 1.5rem;
-      font-weight: bold;
     }
   }
 }
@@ -69,34 +63,15 @@ import { Icon } from '@iconify/vue'
 .toolbelt {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
   align-items: center;
-  gap: 1rem 4ch;
+  justify-content: center;
+  gap: 1rem 1ch;
 
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-    border: 1px solid var(--darkblue);
-    padding: 1rem 1ch;
-    background-color: var(--crust);
+  .tool {
+    background-color: var(--surface);
 
-    .env-title {
-      font-size: 1.25rem;
-      font-weight: bold;
-      padding: 0.5rem 0;
-      border-bottom: 5px solid var(--darkblue);
-    }
-
-    .cards {
-      display: flex;
-      flex-flow: row wrap;
-      gap: 1rem 1ch;
-
-      * {
-        background-color: var(--base);
-      }
+    svg {
+      font-size: calc(var(--font-size) * 3);
     }
   }
 }

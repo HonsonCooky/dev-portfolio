@@ -26,10 +26,6 @@ button {
   column-gap: 1ch;
   overflow: hidden;
 
-  svg {
-    height: var(--line-height);
-  }
-
   span {
     display: flex;
     text-overflow: ellipsis;

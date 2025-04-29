@@ -17,10 +17,5 @@ main {
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  max-width: 1920px;
 }
 </style>
