@@ -16,6 +16,6 @@ import AppFooter from '@/components/footer/app-footer.vue'
 main {
   display: flex;
   flex-direction: column;
-  min-height: 100dvh;
+  min-height: calc(100dvh - var(--nav-height) + var(--shadow-blur));
 }
 </style>

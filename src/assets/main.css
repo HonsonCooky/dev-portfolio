@@ -13,6 +13,7 @@
     --font-size: clamp(1rem, 0.391vw + 0.813rem, 1.125rem);
     --line-height: clamp(1.463rem, -0.117vw + 1.556rem, 1.5rem);
     --nav-height: calc(var(--line-height) * 2);
+    --shadow-blur: 10px;
 }
 
 [data-theme='dark'] {
@@ -23,7 +24,7 @@
     --subtext: #b4c6ef;
     --overlay: #2d4165;
     --surface: #1a2333;
-    --base: #0a1221;
+    --base: #0d151f;
     --crust: #050912;
     --error: #ff5555;
 }
@@ -44,7 +45,7 @@ body {
     position: relative;
     color: var(--text);
     margin: 0 auto;
-    font-family: monospace;
+    font-family: "Consolas", monospace;
     font-size: var(--font-size);
     overscroll-behavior-y: none;
     line-height: var(--line-height);
@@ -99,7 +100,7 @@ h1 {
 }
 
 h2, h3 {
-    color: var(--darkblue);
+    color: var(--subtext);
 }
 
 h4, h5, h6 {
@@ -113,4 +114,7 @@ h4, h5, h6 {
     align-items: center;
     justify-content: center;
     padding: 2rem 2ch;
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
 }

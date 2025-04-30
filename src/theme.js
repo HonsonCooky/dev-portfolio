@@ -5,8 +5,23 @@ const getSystemTheme = () => {
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? THEME_DARK : THEME_LIGHT
 }
 
+const updateFaviconColor = () => {
+  const textColor = getComputedStyle(document.documentElement).getPropertyValue('--text').trim()
+  const favicon = document.querySelector('link[rel="icon"]')
+  if (favicon) {
+    fetch(favicon.href)
+      .then((response) => response.text())
+      .then((svg) => {
+        const updatedSvg = svg.replace(/currentColor/g, textColor)
+        favicon.href = `data:image/svg+xml;base64,${btoa(updatedSvg)}`
+      })
+  }
+}
+
 const setTheme = (theme) => {
   document.documentElement.setAttribute('data-theme', theme)
+  console.log(theme)
+  updateFaviconColor()
 }
 
 const getTheme = () => {

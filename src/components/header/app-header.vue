@@ -55,13 +55,13 @@ header {
   top: 0;
   left: 0;
   height: var(--nav-height);
-  z-index: 100;
+  z-index: 1000;
 
   display: flex;
   flex-direction: row;
   align-content: center;
   background-color: var(--crust);
-  box-shadow: 0 0 10px var(--subtext);
-  padding: 0 calc((100vw - 1920px) / 2);
+  box-shadow: 0 0 var(--shadow-blur) var(--subtext);
+  padding: 0 max(0px, calc((100vw - 1920px) / 2));
 }
 </style>

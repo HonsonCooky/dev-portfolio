@@ -4,19 +4,20 @@
         .bracket {
         fill: none;
         stroke: currentColor;
-        stroke-width: 2;
+        stroke-width: 3;
+        stroke-linecap: round;
         }
         .letters {
         fill: currentColor;
-        font-family: monospace;
+        font-family: "Courier New", "Consolas", monospace;
         font-weight: bold;
-        font-size: 16px !important;
+        font-size: 18px !important;
         }
     </style>
     <!-- Left bracket -->
-    <path class="bracket" d="M12,4 L3,4 L3,28 L12,28"/>
+    <path class="bracket" d="M11,4 L3,4 L3,28 L11,28"/>
     <!-- Right bracket -->
-    <path class="bracket" d="M20,4 L29,4 L29,28 L20,28"/>
+    <path class="bracket" d="M21,4 L29,4 L29,28 L21,28"/>
     <!-- HC text -->
     <text class="letters" x="16" y="17.5" text-anchor="middle" dominant-baseline="middle" font-size="18">HC</text>
 </svg>

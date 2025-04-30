@@ -1,219 +1,323 @@
-export default [
-  {
-    name: 'ASP.NET',
-    icon: 'mdi:resource-description-framework',
-    type: 'platform',
+/** ====================================================================================================================
+ * ENUMS - Common Definitions
+ * ================================================================================================================== */
+
+const TOOL_TYPES = {
+  CICD: 'Continuous Integration/Continuous Delivery',
+  CSP: 'Cloud Service Provider',
+  FRAMEWORK: 'Software Framework',
+  IDE: 'Integrated Development Environment',
+  LANGUAGE: 'Programming Language',
+  LIBRARY: 'Software Library',
+  MONITORING: 'Application Monitoring',
+  TOOL: 'Development Tool | Application',
+  VCS: 'Version Control System',
+}
+
+const TOOL_TYPE_DESCRIPTIONS = {
+  [TOOL_TYPES.CICD]: 'Automated processes to build, test, and deploy code.',
+  [TOOL_TYPES.CSP]: 'Rent powerful computers and services instead of buying and managing your own.',
+  [TOOL_TYPES.FRAMEWORK]: 'Wrappers around code to focus efforts on the business logic instead of the boilerplate.',
+  [TOOL_TYPES.IDE]: 'Code Editors | Write code faster and more efficiently with a given set of features.',
+  [TOOL_TYPES.LANGUAGE]: 'A way to build machine code in a human readable format.',
+  [TOOL_TYPES.LIBRARY]: 'A suite of ready-made code snippets for reuse.',
+  [TOOL_TYPES.MONITORING]: 'Provides insight into the performance and health of an application.',
+  [TOOL_TYPES.TOOL]: 'Special program that makes coding tasks easier and faster.',
+  [TOOL_TYPES.VCS]: 'Keeps track of changes and enables development with others in a team.',
+}
+
+const TOOL_USE_CASES = {
+  ENTERPRISE: 'Enterprise',
+  OPEN_SOURCE: 'Open Source',
+  EDUCATION: 'Education',
+  INTEREST: 'Interest',
+}
+
+const TOOL_USE_CASE_DESCRIPTIONS = {
+  [TOOL_USE_CASES.ENTERPRISE]: 'Used at companies to build and maintain company software systems.',
+  [TOOL_USE_CASES.OPEN_SOURCE]: 'Used to aid in the development or maintenance of open source software.',
+  [TOOL_USE_CASES.EDUCATION]: 'Used during educational programs to build academic software systems.',
+  [TOOL_USE_CASES.INTEREST]: 'Used in personal projects to build software systems for personal use or interest.',
+}
+
+/** ====================================================================================================================
+ * TOOLBELT POCKETS - Organized tools by environment of use
+ * ================================================================================================================== */
+
+const dotnetPocket = {
+  ASPNET: {
+    icon: 'simple-icons:dotnet',
+    type: TOOL_TYPES.FRAMEWORK,
     highlight: false,
-    environment: '.NET',
+    uses: [TOOL_USE_CASES.ENTERPRISE],
   },
-  {
-    name: 'Blazor',
+  Blazor: {
     icon: 'simple-icons:blazor',
-    type: 'framework',
+    type: TOOL_TYPES.FRAMEWORK,
     highlight: false,
-    environment: '.NET',
+    uses: [TOOL_USE_CASES.INTEREST],
   },
-  {
-    name: 'CSharp',
+  CSharp: {
     icon: 'devicon-plain:csharp',
-    type: 'language',
+    type: TOOL_TYPES.LANGUAGE,
     highlight: true,
-    environment: '.NET',
+    uses: [TOOL_USE_CASES.ENTERPRISE, TOOL_USE_CASES.INTEREST],
   },
-  {
-    name: 'FSharp',
+  FSharp: {
     icon: 'devicon-plain:fsharp',
-    type: 'language',
+    type: TOOL_TYPES.LANGUAGE,
     highlight: true,
-    environment: '.NET',
+    uses: [TOOL_USE_CASES.INTEREST],
   },
-  {
-    name: 'AWS',
+}
+
+const devopsPocket = {
+  AWS: {
     icon: 'devicon-plain:amazonwebservices-wordmark',
-    type: 'platform',
+    type: TOOL_TYPES.CSP,
     highlight: false,
-    environment: 'Cloud',
+    uses: [TOOL_USE_CASES.ENTERPRISE],
   },
-  {
-    name: 'Azure',
+  Azure: {
     icon: 'devicon-plain:azure',
-    type: 'platform',
+    type: TOOL_TYPES.CSP,
     highlight: false,
-    environment: 'Cloud',
+    uses: [TOOL_USE_CASES.ENTERPRISE],
   },
-  {
-    name: 'GitHub',
+  Git: {
+    icon: 'devicon-plain:git',
+    type: TOOL_TYPES.TOOL,
+    highlight: true,
+    uses: [TOOL_USE_CASES.ENTERPRISE, TOOL_USE_CASES.EDUCATION, TOOL_USE_CASES.INTEREST],
+  },
+  GitHub: {
     icon: 'mdi:github',
-    type: 'tool',
+    type: TOOL_TYPES.VCS,
     highlight: true,
-    environment: 'DevOps',
+    uses: [TOOL_USE_CASES.ENTERPRISE, TOOL_USE_CASES.EDUCATION, TOOL_USE_CASES.INTEREST],
   },
-  {
-    name: 'GitHub Actions',
+  'GitHub Actions': {
     icon: 'devicon-plain:githubactions',
-    type: 'tool',
+    type: TOOL_TYPES.TOOL,
     highlight: false,
-    environment: 'DevOps',
+    uses: [TOOL_USE_CASES.ENTERPRISE, TOOL_USE_CASES.INTEREST],
   },
-  {
-    name: 'GitLab',
+  GitLab: {
     icon: 'devicon-plain:gitlab',
-    type: 'tool',
+    type: TOOL_TYPES.VCS,
     highlight: false,
-    environment: 'DevOps',
+    uses: [TOOL_USE_CASES.EDUCATION],
   },
-  {
-    name: 'NewRelic',
+  NewRelic: {
     icon: 'simple-icons:newrelic',
-    type: 'tool',
+    type: TOOL_TYPES.MONITORING,
     highlight: false,
-    environment: 'DevOps',
+    uses: [TOOL_USE_CASES.ENTERPRISE],
   },
-  {
-    name: 'Terraform',
+  Terraform: {
     icon: 'devicon-plain:terraform',
-    type: 'tool',
+    type: TOOL_TYPES.TOOL,
     highlight: false,
-    environment: 'DevOps',
+    uses: [TOOL_USE_CASES.ENTERPRISE],
   },
-  {
-    name: 'Dart',
-    icon: 'devicon-plain:dart',
-    type: 'language',
+}
+
+const idePocket = {
+  Eclipse: {
+    icon: 'devicon-plain:eclipse',
+    type: TOOL_TYPES.IDE,
     highlight: false,
-    environment: 'Flutter',
+    uses: [TOOL_USE_CASES.EDUCATION],
   },
-  {
-    name: 'Flutter',
-    icon: 'devicon-plain:flutter',
-    type: 'framework',
+  'IntelliJ IDEA': {
+    icon: 'devicon-plain:intellij',
+    type: TOOL_TYPES.IDE,
     highlight: false,
-    environment: 'Flutter',
+    uses: [TOOL_USE_CASES.EDUCATION],
   },
-  {
-    name: 'Java',
+  Rider: {
+    icon: 'devicon-plain:rider',
+    type: TOOL_TYPES.IDE,
+    highlight: false,
+    uses: [TOOL_USE_CASES.ENTERPRISE, TOOL_USE_CASES.INTEREST],
+  },
+  'Visual Studio': {
+    icon: 'devicon-plain:visualstudio',
+    type: TOOL_TYPES.IDE,
+    highlight: false,
+    uses: [TOOL_USE_CASES.ENTERPRISE, TOOL_USE_CASES.INTEREST],
+  },
+  'Visual Studio Code': {
+    icon: 'devicon-plain:vscode',
+    type: TOOL_TYPES.IDE,
+    highlight: false,
+    uses: [TOOL_USE_CASES.ENTERPRISE, TOOL_USE_CASES.EDUCATION, TOOL_USE_CASES.INTEREST],
+  },
+  WebStorm: {
+    icon: 'devicon-plain:webstorm',
+    type: TOOL_TYPES.IDE,
+    highlight: false,
+    uses: [TOOL_USE_CASES.ENTERPRISE, TOOL_USE_CASES.INTEREST],
+  },
+}
+
+const jvmPocket = {
+  Java: {
     icon: 'devicon-plain:java',
-    type: 'language',
+    type: TOOL_TYPES.LANGUAGE,
     highlight: true,
-    environment: 'JVM',
+    uses: [TOOL_USE_CASES.EDUCATION],
   },
-  {
-    name: 'C',
+}
+
+const lowLevelPocket = {
+  C: {
     icon: 'devicon-plain:c',
-    type: 'language',
+    type: TOOL_TYPES.LANGUAGE,
     highlight: false,
-    environment: 'Native',
+    uses: [TOOL_USE_CASES.EDUCATION, TOOL_USE_CASES.INTEREST],
   },
-  {
-    name: 'C++',
+  'C++': {
     icon: 'devicon-plain:cplusplus',
-    type: 'language',
+    type: TOOL_TYPES.LANGUAGE,
     highlight: true,
-    environment: 'Native',
+    uses: [TOOL_USE_CASES.EDUCATION, TOOL_USE_CASES.INTEREST],
   },
-  {
-    name: 'Rust',
+  Rust: {
     icon: 'devicon-plain:rust',
-    type: 'language',
+    type: TOOL_TYPES.LANGUAGE,
     highlight: false,
-    environment: 'Native',
+    uses: [TOOL_USE_CASES.EDUCATION, TOOL_USE_CASES.INTEREST],
   },
-  {
-    name: 'Zig',
+  Zig: {
     icon: 'simple-icons:zig',
-    type: 'language',
+    type: TOOL_TYPES.LANGUAGE,
     highlight: true,
-    environment: 'Native',
+    uses: [TOOL_USE_CASES.INTEREST],
   },
-  {
-    name: 'CSS',
+}
+
+const mobilePocket = {
+  Dart: {
+    icon: 'devicon-plain:dart',
+    type: TOOL_TYPES.LANGUAGE,
+    highlight: false,
+    uses: [TOOL_USE_CASES.INTEREST],
+  },
+  Flutter: {
+    icon: 'devicon-plain:flutter',
+    type: TOOL_TYPES.FRAMEWORK,
+    highlight: false,
+    uses: [TOOL_USE_CASES.INTEREST],
+  },
+  'React Native': {
+    icon: 'mdi:react',
+    type: TOOL_TYPES.FRAMEWORK,
+    highlight: false,
+    uses: [TOOL_USE_CASES.ENTERPRISE, TOOL_USE_CASES.INTEREST],
+  },
+}
+
+const nodejsPocket = {
+  CSS: {
     icon: 'devicon-plain:css3',
-    type: 'language',
+    type: TOOL_TYPES.LANGUAGE,
     highlight: false,
-    environment: 'Node.js',
+    uses: [TOOL_USE_CASES.ENTERPRISE, TOOL_USE_CASES.EDUCATION, TOOL_USE_CASES.INTEREST],
   },
-  {
-    name: 'HTML',
+  HTML: {
     icon: 'devicon-plain:html5',
-    type: 'language',
+    type: TOOL_TYPES.LANGUAGE,
     highlight: false,
-    environment: 'Node.js',
+    uses: [TOOL_USE_CASES.ENTERPRISE, TOOL_USE_CASES.EDUCATION, TOOL_USE_CASES.INTEREST],
   },
-  {
-    name: 'JavaScript',
+  JavaScript: {
     icon: 'devicon-plain:javascript',
-    type: 'language',
+    type: TOOL_TYPES.LANGUAGE,
     highlight: true,
-    environment: 'Node.js',
+    uses: [TOOL_USE_CASES.ENTERPRISE, TOOL_USE_CASES.EDUCATION, TOOL_USE_CASES.INTEREST],
   },
-  {
-    name: 'Next.js',
+  'Next.js': {
     icon: 'devicon-plain:nextjs',
-    type: 'framework',
+    type: TOOL_TYPES.FRAMEWORK,
     highlight: false,
-    environment: 'Node.js',
+    uses: [TOOL_USE_CASES.INTEREST],
   },
-  {
-    name: 'React',
+  React: {
     icon: 'mdi:react',
-    type: 'framework',
+    type: TOOL_TYPES.FRAMEWORK,
     highlight: false,
-    environment: 'Node.js',
+    uses: [TOOL_USE_CASES.EDUCATION, TOOL_USE_CASES.INTEREST],
   },
-  {
-    name: 'React Native',
-    icon: 'mdi:react',
-    type: 'framework',
-    highlight: false,
-    environment: 'Node.js',
-  },
-  {
-    name: 'Tailwind',
+  Tailwind: {
     icon: 'mdi:tailwind',
-    type: 'library',
+    type: TOOL_TYPES.FRAMEWORK,
     highlight: false,
-    environment: 'Node.js',
+    uses: [TOOL_USE_CASES.INTEREST],
   },
-  {
-    name: 'TypeScript',
+  TypeScript: {
     icon: 'devicon-plain:typescript',
-    type: 'language',
+    type: TOOL_TYPES.LANGUAGE,
     highlight: false,
-    environment: 'Node.js',
+    uses: [TOOL_USE_CASES.ENTERPRISE, TOOL_USE_CASES.EDUCATION, TOOL_USE_CASES.INTEREST],
   },
-  {
-    name: 'Vue.js',
+  'Vue.js': {
     icon: 'devicon-plain:vuejs',
-    type: 'framework',
+    type: TOOL_TYPES.FRAMEWORK,
     highlight: true,
-    environment: 'Node.js',
+    uses: [TOOL_USE_CASES.ENTERPRISE, TOOL_USE_CASES.INTEREST],
   },
-  {
-    name: 'Webpack',
-    icon: 'devicon-plain:webpack',
-    type: 'tool',
-    highlight: false,
-    environment: 'Node.js',
+}
+
+const scriptingLanguagesPocket = {
+  Bash: {
+    icon: 'devicon-plain:bash',
+    type: TOOL_TYPES.LANGUAGE,
+    highlight: true,
+    uses: [TOOL_USE_CASES.ENTERPRISE, TOOL_USE_CASES.INTEREST],
   },
-  {
-    name: 'Lua',
+  Lua: {
     icon: 'devicon-plain:lua',
-    type: 'language',
+    type: TOOL_TYPES.LANGUAGE,
     highlight: false,
-    environment: 'Scripting',
+    uses: [TOOL_USE_CASES.INTEREST],
   },
-  {
-    name: 'PowerShell',
+  PowerShell: {
     icon: 'devicon-plain:powershell',
-    type: 'language',
+    type: TOOL_TYPES.LANGUAGE,
     highlight: true,
-    environment: 'Scripting',
+    uses: [TOOL_USE_CASES.INTEREST],
   },
-  {
-    name: 'Ruby',
+  Ruby: {
     icon: 'devicon-plain:ruby',
-    type: 'language',
+    type: TOOL_TYPES.LANGUAGE,
     highlight: false,
-    environment: 'Scripting',
+    uses: [TOOL_USE_CASES.EDUCATION],
   },
+}
+
+const allTools = [
+  ...Object.values(dotnetPocket),
+  ...Object.values(devopsPocket),
+  ...Object.values(idePocket),
+  ...Object.values(jvmPocket),
+  ...Object.values(lowLevelPocket),
+  ...Object.values(mobilePocket),
+  ...Object.values(nodejsPocket),
+  ...Object.values(scriptingLanguagesPocket),
 ]
+
+export {
+  TOOL_TYPES,
+  TOOL_TYPE_DESCRIPTIONS,
+  TOOL_USE_CASES,
+  TOOL_USE_CASE_DESCRIPTIONS,
+  dotnetPocket,
+  devopsPocket,
+  mobilePocket,
+  jvmPocket,
+  lowLevelPocket,
+  nodejsPocket,
+  scriptingLanguagesPocket,
+  allTools,
+}
