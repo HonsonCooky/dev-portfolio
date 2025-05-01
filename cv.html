@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Harrison Cook | CV</title>
+  <script src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
+  <style>
+      * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+      }
+
+      html {
+          font-size: 10pt;
+          font-family: 'Roboto', sans-serif;
+          line-height: 1.5;
+
+          body {
+              display: flex;
+              flex-direction: column;
+              height: 297mm;
+              width: 210mm;
+              box-shadow: 0 0 1rem black;
+              margin: 2rem auto;
+
+              code {
+                  font-family: 'Roboto Mono', monospace;
+                  font-weight: bold;
+                  font-size: .8rem;
+                  border: .1rem solid black;
+                  border-left-width: 1ch;
+                  padding: .1rem .2rem;
+              }
+
+              iconify-icon {
+                  display: inline-block;
+                  width: 1rem;
+                  height: 1rem;
+              }
+
+              h1,
+              h2,
+              h3,
+              h4,
+              h5,
+              h6 {
+                  color: midnightblue;
+              }
+
+              p {
+                  margin: .2rem 0;
+              }
+          }
+      }
+
+      header {
+          padding: 1rem;
+          position: relative;
+
+          hgroup {
+              * {
+                  line-height: 1;
+              }
+
+              h1 {
+                  font-size: 3rem;
+              }
+          }
+
+          ul {
+              border-left: 1ch solid black;
+              border-top: 2px solid black;
+              column-count: 2;
+              list-style: none;
+              margin: 1rem 0;
+              padding: 1rem;
+              width: 90%;
+
+              li {
+                  align-items: center;
+                  column-gap: 1ch;
+                  display: flex;
+                  flex-flow: row nowrap;
+              }
+          }
+
+          img {
+              background-color: white;
+              border-radius: 100% 0 0 100%;
+              border: 2px solid black;
+              border-right: 1ch solid black;
+              height: calc(100% - 2rem);
+              position: absolute;
+              right: 1rem;
+              top: 1rem;
+          }
+      }
+
+      main {
+          display: flex;
+          padding: 0 1rem 1rem;
+          flex: 1;
+          column-gap: 2rem;
+
+          > * {
+              display: flex;
+              flex-flow: column nowrap;
+              justify-content: space-between;
+          }
+
+          .left-column {
+              flex: 3;
+          }
+
+          .right-column {
+              flex: 2;
+          }
+
+          section {
+              margin-bottom: 1rem;
+
+              h1 {
+                  border-bottom: 2px solid black;
+              }
+          }
+      }
+
+      @media print {
+          @page {
+              size: A4;
+              margin: 0;
+          }
+
+          body {
+              margin: 0;
+              box-shadow: none;
+          }
+      }
+  </style>
+</head>
+<body>
+<header>
+  <hgroup>
+    <h1>Harrison Cook</h1>
+    <h2>&lt;Software Engineer/&gt;</h2>
+  </hgroup>
+  <ul>
+    <li>
+      <iconify-icon icon="mdi:location"></iconify-icon>
+      <span>Wellington, NZ</span>
+    </li>
+    <li>
+      <iconify-icon icon="mdi:linkedin"></iconify-icon>
+      <span>linkedin/in/honsoncooky</span>
+    </li>
+    <li>
+      <iconify-icon icon="mdi:email"></iconify-icon>
+      <span>contact@honsoncooky.dev</span>
+    </li>
+    <li>
+      <iconify-icon icon="mdi:github"></iconify-icon>
+      <span>github/honsoncooky</span>
+    </li>
+    <li>
+      <iconify-icon icon="mdi:reddit"></iconify-icon>
+      <span>reddit/user/honsoncooky</span>
+    </li>
+    <li>
+      <iconify-icon icon="mdi:firefox"></iconify-icon>
+      <span>about.honsoncooky.dev</span>
+    </li>
+  </ul>
+  <img alt="profile" src="public/imgs/profile.png" />
+</header>
+
+<main>
+  <div class="left-column">
+    <section id="summary">
+      <h1>Summary</h1>
+      <p>
+        Software Engineer with <code id="years-experience">X</code> years of experience, merging technical
+        expertise with a unique background in musical theatre and performing arts. My stage experience has cultivated
+        exceptional communication, leadership, and collaborative abilities that complement my analytical problem-solving
+        skills in practical engineering. Driven to build meaningful solutions that address genuine challenges, focusing
+        on robust systems design and sustainable architecture. Committed to continuous growth and innovation in software
+        development, leveraging both my technical skills and artistic mindset to deliver high-impact results.
+        <script id="find-years-experience">
+          const startDate = new Date('2021-08-01')
+          const today = new Date()
+          const years = (today - startDate) / (1000 * 60 * 60 * 24 * 365)
+          const roundedYears = years.toFixed(2)
+          document.getElementById('years-experience').innerText = roundedYears
+        </script>
+      </p>
+    </section>
+    <section id="experience">
+      <h1>Experience</h1>
+      <div></div>
+    </section>
+    <section id="education">
+      <h1>Education</h1>
+    </section>
+  </div>
+  <div class="right-column">
+    <section id="projects">
+      <h1>Projects</h1>
+    </section>
+    <section id="achievements">
+      <h1>Achievements</h1>
+    </section>
+    <section id="toolbelt">
+      <h1>Toolbelt</h1>
+    </section>
+    <section id="passion">
+      <h1>Passion</h1>
+    </section>
+    <section id="references">
+      <h1>References</h1>
+    </section>
+  </div>
+</main>
+
+</body>
+</html>
