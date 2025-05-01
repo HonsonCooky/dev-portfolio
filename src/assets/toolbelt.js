@@ -121,10 +121,20 @@ const idePocket = {
     type: TOOL_TYPES.IDE,
     uses: [TOOL_USE_CASES.EDUCATION],
   },
+  Neovim: {
+    icon: 'devicon-plain:neovim',
+    type: TOOL_TYPES.IDE,
+    uses: [TOOL_USE_CASES.INTEREST],
+  },
   Rider: {
     icon: 'devicon-plain:rider',
     type: TOOL_TYPES.IDE,
     uses: [TOOL_USE_CASES.ENTERPRISE, TOOL_USE_CASES.INTEREST],
+  },
+  Vim: {
+    icon: 'devicon-plain:vim',
+    type: TOOL_TYPES.IDE,
+    uses: [TOOL_USE_CASES.EDUCATION, TOOL_USE_CASES.INTEREST],
   },
   'Visual Studio': {
     icon: 'devicon-plain:visualstudio',
