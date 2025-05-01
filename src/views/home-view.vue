@@ -1,10 +1,10 @@
 <script setup>
 import AppCard from '@/components/app-card.vue'
 import { Icon } from '@iconify/vue'
-import { allTools } from '@/assets/toolbelt.js'
+import { allToolsArr } from '@/assets/toolbelt.js'
 import { shuffle } from 'lodash/fp.js'
 
-const toolbeltShowcase = shuffle([...allTools])
+const toolbeltShowcase = shuffle([...allToolsArr])
 </script>
 
 <template>
