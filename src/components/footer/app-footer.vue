@@ -1,6 +1,10 @@
 <script setup>
 import { Icon } from '@iconify/vue'
 import Filler from '@/components/filler.vue'
+
+function downloadCV() {
+  window.open('/docs/HarrisonCookCV.pdf', '_blank')
+}
 </script>
 
 <template>
@@ -25,7 +29,7 @@ import Filler from '@/components/filler.vue'
         <Icon :inline="true" icon="mdi:reddit" />
       </button>
       <filler />
-      <button type="button" @click="window.location.href = '/assets/cv.pdf'">
+      <button type="button" @click="downloadCV()">
         <Icon :inline="true" icon="mdi:download" />
       </button>
     </div>

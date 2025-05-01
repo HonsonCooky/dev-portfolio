@@ -30,5 +30,9 @@ button {
     display: flex;
     text-overflow: ellipsis;
   }
+
+  svg {
+    height: var(--line-height);
+  }
 }
 </style>

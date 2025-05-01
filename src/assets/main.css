@@ -10,10 +10,14 @@
     --crust: #ffffff;
     --error: #ff4040;
 
-    --font-size: clamp(1rem, 0.391vw + 0.813rem, 1.125rem);
-    --line-height: clamp(1.463rem, -0.117vw + 1.556rem, 1.5rem);
+    --font-size: 18px;
+    --line-height: 1.5rem;
     --nav-height: calc(var(--line-height) * 2);
-    --shadow-blur: 10px;
+    --shadow-blur: .5rem;
+
+    @media screen and (min-width: 768px) {
+        --font-size: clamp(0.75rem, 0.462vw + 0.63rem, 1rem);
+    }
 }
 
 [data-theme='dark'] {
@@ -47,7 +51,7 @@ body {
     margin: 0 auto;
     font-family: "Consolas", monospace;
     font-size: var(--font-size);
-    overscroll-behavior-y: none;
+    overscroll-behavior: none;
     line-height: var(--line-height);
 }
 
@@ -91,7 +95,7 @@ svg {
 
 img {
     max-width: 70dvw;
-    max-height: 40dvh;
+    max-height: min(40dvh, 500px);
     object-fit: contain;
 }
 
