@@ -3,7 +3,7 @@ import { Icon } from '@iconify/vue'
 import Filler from '@/components/filler.vue'
 
 function downloadCV() {
-  window.open('/docs/HarrisonCookCV.pdf', '_blank')
+  window.open('/docs/HarrisonCookCV(current).pdf', '_blank')
 }
 </script>
 
