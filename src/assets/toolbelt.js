@@ -297,6 +297,7 @@ export {
   TOOL_USE_CASE_DESCRIPTIONS,
   dotnetPocket,
   devopsPocket,
+  idePocket,
   mobilePocket,
   jvmPocket,
   lowLevelPocket,

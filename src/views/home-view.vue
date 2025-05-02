@@ -58,10 +58,12 @@ const toolbeltShowcase = shuffle([...allToolsArr])
       font-size: 3rem;
       line-height: 1;
       margin-left: 1ch;
+      font-family: Consolas, monospace;
     }
 
     h2 {
       font-size: 1.5rem;
+      font-family: Consolas, monospace;
     }
   }
 }

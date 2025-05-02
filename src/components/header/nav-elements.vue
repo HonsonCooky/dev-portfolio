@@ -6,7 +6,7 @@ const routes = router.getRoutes().filter((route) => route.name)
 </script>
 
 <template>
-  <button v-for="route in routes" :key="route.path" @click="router.push(route.path)">\{{ route.name }}</button>
+  <button v-for="route in routes" :key="route.path" @click="router.push(route.path)">~\{{ route.name }}</button>
 </template>
 
 <style scoped>
