@@ -44,7 +44,7 @@ footer {
   align-items: center;
   background-color: var(--crust);
   box-shadow: 0 0 var(--shadow-blur) var(--subtext);
-  padding: 0.5rem max(1ch, calc((100vw - 1920px) / 2)) 3rem;
+  padding: 0.5rem max(1ch, calc((100vw - 1280px) / 2)) 3rem;
 }
 
 div {

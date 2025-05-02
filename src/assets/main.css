@@ -13,7 +13,7 @@
     --font-size: 18px;
     --line-height: 1.5rem;
     --nav-height: calc(var(--line-height) * 2);
-    --shadow-blur: .5rem;
+    --shadow-blur: 0.5rem;
 
     @media screen and (min-width: 768px) {
         --font-size: clamp(0.75rem, 0.462vw + 0.63rem, 1rem);
@@ -49,7 +49,7 @@ body {
     position: relative;
     color: var(--text);
     margin: 0 auto;
-    font-family: "Consolas", monospace;
+    font-family: system-ui;
     font-size: var(--font-size);
     overscroll-behavior: none;
     line-height: var(--line-height);
@@ -68,7 +68,7 @@ button {
     border: 1px solid transparent;
     cursor: pointer;
     outline: none;
-    padding: .2em 1ch;
+    padding: 0.2em 1ch;
 
     &:hover {
         border-left: 1px solid var(--darkblue);
@@ -85,8 +85,9 @@ button {
 code {
     background-color: var(--overlay);
     border: 1px solid var(--darkblue);
-    padding: .2em 1ch;
+    padding: 0.2em 1ch;
     line-height: 1;
+    font-family: monospace;
 }
 
 svg {
@@ -103,11 +104,14 @@ h1 {
     color: var(--blue);
 }
 
-h2, h3 {
+h2,
+h3 {
     color: var(--subtext);
 }
 
-h4, h5, h6 {
+h4,
+h5,
+h6 {
     color: var(--lightblue);
 }
 
@@ -119,6 +123,6 @@ h4, h5, h6 {
     justify-content: center;
     padding: 2rem 2ch;
     width: 100%;
-    max-width: 1920px;
+    max-width: 1280px;
     margin: 0 auto;
 }
