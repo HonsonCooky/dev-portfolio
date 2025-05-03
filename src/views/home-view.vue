@@ -1,21 +1,21 @@
 <script setup>
 import AppCard from '@/components/app-card.vue'
 import { Icon } from '@iconify/vue'
-import { allToolsArr } from '@/assets/toolbelt.js'
 import { shuffle } from 'lodash/fp.js'
+import { toolbelt } from '@/assets/toolbelt.js'
 
-const toolbeltShowcase = shuffle([...allToolsArr])
+const toolbeltShowcase = shuffle(Object.values(toolbelt))
 </script>
 
 <template>
   <section class="page">
     <div class="hero">
       <img alt="Profile picture" src="/imgs/profile.png" />
-      <hgroup>
-        <p>Hey! I'm</p>
+      <div class="hgroup">
+        <span>Hey! I'm</span>
         <h1>Harrison Cook</h1>
         <h2>&lt; Software Engineer /&gt;</h2>
-      </hgroup>
+      </div>
     </div>
 
     <div class="toolbelt">
@@ -48,7 +48,7 @@ const toolbeltShowcase = shuffle([...allToolsArr])
     box-shadow: inset 0 0 var(--shadow-blur) var(--darkblue);
   }
 
-  hgroup {
+  .hgroup {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;

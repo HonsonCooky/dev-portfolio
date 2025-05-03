@@ -5,7 +5,7 @@ import { jobHistory } from '@/assets/jobs.js'
 
 <template>
   <section class="page">
-    <div>
+    <div class="info-section">
       <h1>Experience</h1>
 
       <div v-for="job in jobHistory" class="job">
@@ -32,40 +32,6 @@ import { jobHistory } from '@/assets/jobs.js'
 </template>
 
 <style scoped>
-h1 {
-  font-size: 2.5em;
-  margin: 1rem;
-}
-
-h2 {
-  font-weight: lighter;
-  font-size: 2em;
-  line-height: 3rem;
-}
-
-h3 {
-  font-size: 1.5em;
-  line-height: 2rem;
-}
-
-section > div {
-  width: 100%;
-
-  &:not(:last-of-type) {
-    margin-bottom: 3rem;
-  }
-}
-
-ul {
-  padding-left: 1.5em;
-  margin: 0.5em 0;
-
-  li {
-    list-style-type: circle;
-    margin: 0.2em 0;
-  }
-}
-
 .job {
   padding: 1rem 0;
 

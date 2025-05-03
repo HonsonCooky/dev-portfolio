@@ -268,18 +268,7 @@ const scriptingLanguagesPocket = {
   },
 }
 
-const allToolsArr = [
-  ...Object.values(dotnetPocket),
-  ...Object.values(devopsPocket),
-  ...Object.values(idePocket),
-  ...Object.values(jvmPocket),
-  ...Object.values(lowLevelPocket),
-  ...Object.values(mobilePocket),
-  ...Object.values(nodejsPocket),
-  ...Object.values(scriptingLanguagesPocket),
-]
-
-const allToolsObj = {
+const toolbelt = {
   ...dotnetPocket,
   ...devopsPocket,
   ...idePocket,
@@ -303,6 +292,5 @@ export {
   lowLevelPocket,
   nodejsPocket,
   scriptingLanguagesPocket,
-  allToolsArr,
-  allToolsObj,
+  toolbelt,
 }

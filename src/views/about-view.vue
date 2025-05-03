@@ -1,28 +1,40 @@
 <script setup>
 import { Icon } from '@iconify/vue'
+
+function yearsExperience() {
+  const start = new Date('2021/08/01') // Account for 3 months at Raygun
+  const diff = (new Date() - start) / (1000 * 60 * 60 * 24 * 365)
+  return diff.toFixed(2)
+}
+
+function openPDF(path) {
+  window.open(path, '_blank')
+}
 </script>
 
 <template>
   <section class="page">
-    <div id="about-me-dialog">
+    <div id="about-me-dialog" class="info-section">
       <h1>Overview</h1>
       <p>
-        Growing up in a world filled with music and performance, my early years were shaped by the rhythm of the stage.
+        Growing up in a world filled with music and performing, my early years were shaped by rhythm and stage presence.
         While the arts nurtured my creativity, it was the intricate logic of digital technologies that ultimately
         captured my curiosity.
       </p>
       <p>
         With a strong foundation in calculus and a passion for creative expression through photography and theatre, I
         discovered programming - an elegant fusion of precision and artistry. It's a discipline that, much like music,
-        follows structure yet allows for boundless innovation. Today, I've traded compositions for code, crafting
-        solutions that harmonize efficiency, structure, and creativity. Whether it's optimizing algorithms or
-        engineering robust systems, I thrive on transforming complex theories into practical applications.
+        follows structure yet allows for boundless innovation. Today, I've traded compositions for code, developing
+        solutions that balance efficiency, structure, and long-term viability. Whether refining algorithms for sustained
+        performance or engineering systems built to endure, I thrive on transforming complex theories into practical,
+        resilient applications.
       </p>
       <p>
-        As a Software Engineer with three years of industry experience, I specialize in TypeScript and C#, complemented
-        by a broad array of integration technologies. My fascination lies in understanding software at its most
-        fundamental levels, where hardware and code intersect. I am eager to deepen my expertise in engineering highly
-        specialized, efficient solutions that require a comprehensive understanding of the hardware they operate upon.
+        As a Software Engineer with {{ yearsExperience() }} years of industry experience, I currently specialize in
+        TypeScript and C# development, complemented by a broad array of integration technologies. My fascination lies in
+        understanding software at its most fundamental levels, where hardware and code intersect. I am eager to deepen
+        my expertise in engineering highly specialized, efficient solutions that require a comprehensive understanding
+        of the hardware they operate upon.
       </p>
       <p>
         Beyond technical expertise, my background in musical theatre has honed my ability to communicate, collaborate,
@@ -32,7 +44,26 @@ import { Icon } from '@iconify/vue'
       </p>
     </div>
 
-    <div id="education">
+    <div id="photography-showcase">
+      <figure>
+        <img alt="photography" src="/imgs/example-photo.jpg" />
+        <figcaption>
+          Harrison's Photography
+          <wbr />
+          - Omaka Air Show 2017
+        </figcaption>
+      </figure>
+      <figure>
+        <img alt="stage" src="/imgs/example-stage.png" />
+        <figcaption>
+          Harrison On Stage
+          <wbr />
+          - Hairspray, Link Larkin 2016
+        </figcaption>
+      </figure>
+    </div>
+
+    <div id="education" class="info-section">
       <h1>Education</h1>
       <hgroup>
         <h2>Bachelor of Engineering</h2>
@@ -51,50 +82,56 @@ import { Icon } from '@iconify/vue'
         </div>
       </div>
     </div>
+
+    <div id="transcripts" class="info-section">
+      <h1>Academic Transcripts</h1>
+      <div>
+        <button @click="openPDF('/docs/HarrisonCookAcademicRecordMBC.pdf')">
+          <icon :inline="true" icon="mdi:file-pdf-box"></icon>
+          <span>Marlborough Boys' College</span>
+        </button>
+        <button @click="openPDF('/docs/HarrisonCookAcademicRecordVIC.pdf')">
+          <icon :inline="true" icon="mdi:file-pdf-box"></icon>
+          <span>Victoria University</span>
+        </button>
+      </div>
+    </div>
   </section>
 </template>
 
 <style scoped>
-h1 {
-  font-size: 2.5em;
-  margin: 1rem;
-}
-
-h2 {
-  font-weight: lighter;
-  font-size: 2em;
-  line-height: 3rem;
-}
-
-h3 {
-  font-size: 1.5em;
-  line-height: 2rem;
-}
-
-section > div {
-  width: 100%;
-
-  &:not(:last-of-type) {
-    margin-bottom: 3rem;
-  }
-}
-
-ul {
-  padding-left: 1.5em;
-  margin: 0.5em 0;
-
-  li {
-    list-style-type: circle;
-    margin: 0.2em 0;
-  }
-}
-
 #about-me-dialog {
   display: flex;
   flex-direction: column;
+}
 
-  p {
-    margin: 1rem 0;
+#photography-showcase {
+  display: flex;
+  flex-flow: row wrap;
+
+  figure {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: 1rem auto;
+    align-items: center;
+    box-shadow: 0 0 var(--shadow-blur) var(--subtext);
+    background-color: var(--surface);
+
+    img {
+      max-height: 20rem;
+      width: 100%;
+    }
+
+    figcaption {
+      border-top: 1px solid var(--darkblue);
+      width: 100%;
+      padding: 1ch;
+      font-family: monospace;
+      font-size: 0.8rem;
+      white-space: nowrap;
+    }
   }
 }
 
@@ -112,7 +149,7 @@ ul {
   > div {
     display: flex;
     flex-flow: row wrap;
-    max-width: 600px;
+    max-width: 800px;
     justify-content: space-between;
     column-gap: 1ch;
     row-gap: 0.5rem;
@@ -122,6 +159,29 @@ ul {
       flex-direction: row;
       align-items: center;
       column-gap: 1ch;
+    }
+  }
+}
+
+#transcripts {
+  display: flex;
+  flex-flow: column;
+  row-gap: 1rem;
+
+  > div {
+    display: flex;
+    flex-flow: row wrap;
+    background-color: var(--surface);
+    gap: 0.5rem 1ch;
+
+    > button {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      column-gap: 1ch;
+      flex: 1 0;
+      white-space: nowrap;
+      text-align: left;
     }
   }
 }

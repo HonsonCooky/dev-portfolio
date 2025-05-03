@@ -66,6 +66,7 @@ body {
 button {
     background-color: transparent;
     border: 1px solid transparent;
+    border-bottom: 5px solid transparent;
     cursor: pointer;
     outline: none;
     padding: 0.2em 1ch;
@@ -115,6 +116,10 @@ h6 {
     color: var(--lightblue);
 }
 
+p {
+    margin: 0.6rem 0;
+}
+
 .page {
     flex: 1;
     display: flex;
@@ -125,4 +130,47 @@ h6 {
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
+    row-gap: 3rem;
+
+    > * {
+        width: 100%;
+    }
+}
+
+.info-section {
+
+    h1 {
+        font-size: 2.5em;
+        line-height: 1;
+        margin-top: 1rem;
+    }
+
+    h2 {
+        font-weight: lighter;
+        font-size: 2em;
+        line-height: 1.2;
+    }
+
+    h3 {
+        font-size: 1.5em;
+        line-height: 2rem;
+    }
+
+    section > div {
+        width: 100%;
+
+        &:not(:last-of-type) {
+            margin-bottom: 3rem;
+        }
+    }
+
+    ul {
+        padding-left: 1.5em;
+        margin: 0.5em 0;
+
+        li {
+            list-style-type: circle;
+            margin: 0.2em 0;
+        }
+    }
 }

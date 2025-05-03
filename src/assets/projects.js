@@ -28,14 +28,7 @@ const personalSoftwareProjects = {}
 const personalDevelopmentProjects = {}
 const personalHardwareProjects = {}
 
-export const allProjectsArr = [
-  Object.values(universityProjects),
-  Object.values(personalSoftwareProjects),
-  Object.values(personalDevelopmentProjects),
-  Object.values(personalHardwareProjects),
-]
-
-export const allProjectsObj = {
+const projects = {
   ...universityProjects,
   ...personalSoftwareProjects,
   ...personalDevelopmentProjects,
@@ -49,4 +42,5 @@ export {
   personalSoftwareProjects,
   personalDevelopmentProjects,
   personalHardwareProjects,
+  projects,
 }
