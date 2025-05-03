@@ -2,9 +2,9 @@
 import AppCard from '@/components/app-card.vue'
 import { Icon } from '@iconify/vue'
 import { shuffle } from 'lodash/fp.js'
-import { toolbelt } from '@/assets/toolbelt.js'
+import { pockets } from '@/assets/toolbelt.js'
 
-const toolbeltShowcase = shuffle(Object.values(toolbelt))
+const toolbeltShowcase = shuffle(Object.values(pockets).map((p) => Object.values(p.items)).flat())
 </script>
 
 <template>

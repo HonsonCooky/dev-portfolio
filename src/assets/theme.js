@@ -20,7 +20,6 @@ const updateFaviconColor = () => {
 
 const setTheme = (theme) => {
   document.documentElement.setAttribute('data-theme', theme)
-  console.log(theme)
   updateFaviconColor()
 }
 

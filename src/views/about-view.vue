@@ -1,5 +1,6 @@
 <script setup>
 import { Icon } from '@iconify/vue'
+import AppCard from '@/components/app-card.vue'
 
 function yearsExperience() {
   const start = new Date('2021/08/01') // Account for 3 months at Raygun
@@ -44,23 +45,15 @@ function openPDF(path) {
       </p>
     </div>
 
-    <div id="photography-showcase">
-      <figure>
+    <div id="showcase">
+      <app-card>
         <img alt="photography" src="/imgs/example-photo.jpg" />
-        <figcaption>
-          Harrison's Photography
-          <wbr />
-          - Omaka Air Show 2017
-        </figcaption>
-      </figure>
-      <figure>
+        <code>Harrison's Photography <wbr /> - Omaka Air Show <wbr />| 2017</code>
+      </app-card>
+      <app-card>
         <img alt="stage" src="/imgs/example-stage.png" />
-        <figcaption>
-          Harrison On Stage
-          <wbr />
-          - Hairspray, Link Larkin 2016
-        </figcaption>
-      </figure>
+        <code>Harrison On Stage <wbr /> - Hairspray, Link Larkin <wbr /> | 2016</code>
+      </app-card>
     </div>
 
     <div id="education" class="info-section">
@@ -105,33 +98,20 @@ function openPDF(path) {
   flex-direction: column;
 }
 
-#photography-showcase {
+#showcase {
   display: flex;
   flex-flow: row wrap;
+  gap: 1rem 1ch;
+  align-items: center;
+  justify-content: center;
 
-  figure {
-    float: left;
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-    margin: 1rem auto;
-    align-items: center;
-    box-shadow: 0 0 var(--shadow-blur) var(--subtext);
-    background-color: var(--surface);
+  img {
+    max-height: 20rem;
+    width: 100%;
+  }
 
-    img {
-      max-height: 20rem;
-      width: 100%;
-    }
-
-    figcaption {
-      border-top: 1px solid var(--darkblue);
-      width: 100%;
-      padding: 1ch;
-      font-family: monospace;
-      font-size: 0.8rem;
-      white-space: nowrap;
-    }
+  code {
+    white-space: nowrap;
   }
 }
 
