@@ -48,11 +48,23 @@ function openPDF(path) {
     <div id="showcase">
       <app-card>
         <img alt="photography" src="/imgs/example-photo.jpg" />
-        <code>Harrison's Photography <wbr /> - Omaka Air Show <wbr />| 2017</code>
+        <code
+          >Harrison's Photography
+          <wbr />
+          - Omaka Air Show
+          <wbr />
+          | 2017</code
+        >
       </app-card>
       <app-card>
         <img alt="stage" src="/imgs/example-stage.png" />
-        <code>Harrison On Stage <wbr /> - Hairspray, Link Larkin <wbr /> | 2016</code>
+        <code
+          >Harrison On Stage
+          <wbr />
+          - Hairspray, Link Larkin
+          <wbr />
+          | 2016</code
+        >
       </app-card>
     </div>
 
@@ -100,14 +112,16 @@ function openPDF(path) {
 
 #showcase {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
+  overflow-x: auto;
   gap: 1rem 1ch;
-  align-items: center;
-  justify-content: center;
+
+  * {
+    justify-content: space-between;
+  }
 
   img {
-    max-height: 20rem;
-    width: 100%;
+    max-width: 30dvh;
   }
 
   code {
