@@ -73,43 +73,42 @@ const personalSoftwareProjects = {
 }
 
 const personalDevelopmentProjects = {
-  'Mouseless-Development': {
+  'mouseless-development': {
     description: 'Enhancing efficiency with keyboard-driven tools, eliminating reliance on a mouse.',
     links: [],
     technologies: [pockets.scriptingLanguagesPocket.items.Bash, pockets.scriptingLanguagesPocket.items.PowerShell],
   },
-  'OS Linux': {
+  'os-linux': {
     description: 'Exploring Linux through system customization, shell scripting, and open-source workflows.',
     links: [],
-    technologies: [],
+    technologies: [pockets.operatingSystemsPocket.items.Linux, pockets.scriptingLanguagesPocket.items.Bash],
   },
 }
 
 const personalHardwareProjects = {
-  'Planck EZ Keyboard': {
+  'planck-ez-keyboard': {
     description: 'Customizing the Planck EZ keyboard with QMK firmware and refined key mappings for better ergonomics.',
     links: [],
     technologies: [],
   },
-  'Glove80 Keyboard': {
+  'glove80-keyboard': {
     description: 'Optimizing the ergonomic Glove80 keyboard by refining layout and typing techniques.',
     links: [],
     technologies: [],
   },
-  'PC building': {
+  'pc-building': {
     description:
       'Building and optimizing personal computers with a focus on performance, component selection, and system architecture.',
-    technologies: [],
-    notes: '',
     links: [],
+    technologies: [pockets.operatingSystemsPocket.items.Linux, pockets.operatingSystemsPocket.items.Windows],
   },
 }
 
-const projects = {
+const projectList = {
   ...universityProjects,
   ...personalSoftwareProjects,
   ...personalDevelopmentProjects,
   ...personalHardwareProjects,
 }
 
-export { PROJECT_TYPES, PROJECT_TYPE_DESCRIPTIONS, projects }
+export { PROJECT_TYPES, PROJECT_TYPE_DESCRIPTIONS, projectList }
