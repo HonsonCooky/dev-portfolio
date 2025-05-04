@@ -13,7 +13,7 @@ function projectNameClean(key) {
 
 function toggleProject(key) {
   const project = document.querySelector(`.project.${key}`)
-  project.classList.toggle('open');
+  project.classList.toggle('open')
 }
 </script>
 
@@ -26,11 +26,11 @@ function toggleProject(key) {
       <app-card class="project-desc">
         <div class="inner-content">
           <span>{{ v.description }}</span>
+          <div class="tools">
+            <icon v-for="icon in new Set(v.technologies.map((t) => t.icon))" :icon="icon"></icon>
+          </div>
           <div class="links">
             <a v-for="link in v.links" :href="link">{{ link }}</a>
-          </div>
-          <div class="tools">
-            <icon v-for="tech in v.technologies" :icon="tech.icon"></icon>
           </div>
         </div>
       </app-card>
@@ -43,15 +43,23 @@ summary {
   cursor: pointer;
 }
 
-.project{
+.project {
   display: flex;
   flex-direction: column;
 
   button {
     text-align: start;
+    font-weight: bold;
+    font-size: 1.2rem;
 
     &:hover {
       background-color: var(--surface);
+    }
+  }
+
+  &.open {
+    button {
+      background-color: var(--blue);
     }
   }
 
