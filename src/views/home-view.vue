@@ -4,7 +4,11 @@ import { Icon } from '@iconify/vue'
 import { shuffle } from 'lodash/fp.js'
 import { pockets } from '@/assets/toolbelt.js'
 
-const toolbeltShowcase = shuffle(Object.values(pockets).map((p) => Object.values(p.items)).flat())
+const toolbeltShowcase = shuffle(
+  Object.values(pockets)
+    .map((p) => Object.values(p.items))
+    .flat(),
+)
 </script>
 
 <template>

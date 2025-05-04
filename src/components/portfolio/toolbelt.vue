@@ -1,6 +1,7 @@
 <script setup>
 import { pockets } from '@/assets/toolbelt.js'
 import { Icon } from '@iconify/vue'
+import AppCard from '@/components/app-card.vue'
 
 const pocketNames = Object.values(pockets).map((p) => p.name)
 
@@ -45,7 +46,7 @@ function selectPocket(pn) {
       </button>
     </div>
     <div id="pockets">
-      <div v-for="p in Object.values(pockets)" :class="`pocket ${toolNameToKey(p.name)}`">
+      <app-card v-for="p in Object.values(pockets)" :class="`pocket ${toolNameToKey(p.name)}`">
         <div v-for="[k, v] in Object.entries(p.items)" :class="`pocket-item ${toolNameToKey(k)}`">
           <div>
             <icon :icon="v.icon"></icon>
@@ -54,7 +55,7 @@ function selectPocket(pn) {
           <span>{{ v.type }}</span>
           <span>[{{ v.uses.join(', ') }}]</span>
         </div>
-      </div>
+      </app-card>
     </div>
     <div id="pocket-keys"></div>
   </div>
@@ -84,7 +85,7 @@ function selectPocket(pn) {
     .pocket {
       display: none;
       flex-direction: column;
-      min-height: 20rem;
+      min-height: 60dvh;
 
       .pocket-item {
         display: flex;
@@ -93,6 +94,7 @@ function selectPocket(pn) {
         gap: 0.2rem 2ch;
         padding: 0.5rem 1ch;
         cursor: pointer;
+        width: 100%;
 
         > * {
           display: flex;

@@ -100,6 +100,11 @@ const devopsPocket = {
 const idePocket = {
   name: 'IDE',
   items: {
+    Arduino: {
+      icon: 'devicon-plain:arduino',
+      type: TOOL_TYPES.IDE,
+      uses: [TOOL_USE_CASES.EDUCATION],
+    },
     Eclipse: {
       icon: 'devicon-plain:eclipse',
       type: TOOL_TYPES.IDE,
@@ -247,6 +252,22 @@ const nodejsPocket = {
   },
 }
 
+const operatingSystemsPocket = {
+  name: 'Operating Systems',
+  items: {
+    Windows: {
+      icon: 'devicon:windows11',
+      type: TOOL_TYPES.TOOL,
+      uses: [TOOL_USE_CASES.ENTERPRISE, TOOL_USE_CASES.EDUCATION, TOOL_USE_CASES.INTEREST],
+    },
+    Linux: {
+      icon: 'devicon-plain:linux',
+      type: TOOL_TYPES.TOOL,
+      uses: [TOOL_USE_CASES.INTEREST],
+    },
+  },
+}
+
 const scriptingLanguagesPocket = {
   name: 'Scripting',
   items: {
@@ -281,6 +302,7 @@ const pockets = {
   jvmPocket,
   lowLevelPocket,
   nodejsPocket,
+  operatingSystemsPocket,
   scriptingLanguagesPocket,
 }
 
