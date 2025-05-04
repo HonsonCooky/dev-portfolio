@@ -43,28 +43,10 @@ function openPDF(path) {
         environment of technical excellence and innovation. Ready to build something remarkable? Let’s orchestrate
         solutions together.
       </p>
-    </div>
 
-    <div id="showcase">
-      <app-card>
+      <app-card id="showcase">
         <img alt="photography" src="/imgs/example-photo.png" />
-        <code
-          >Harrison's Photography
-          <wbr />
-          - Omaka Air Show
-          <wbr />
-          | 2017</code
-        >
-      </app-card>
-      <app-card>
-        <img alt="stage" src="/imgs/example-stage.png" />
-        <code
-          >Harrison On Stage
-          <wbr />
-          - Hairspray, Link Larkin
-          <wbr />
-          | 2016</code
-        >
+        <code>Harrison's Photography - Air Show | 2017</code>
       </app-card>
     </div>
 
@@ -111,21 +93,10 @@ function openPDF(path) {
 }
 
 #showcase {
-  display: flex;
-  flex-flow: row nowrap;
-  overflow-x: auto;
-  gap: 1rem 1ch;
-
-  * {
-    justify-content: space-between;
-  }
+  width: min-content;
 
   img {
-    max-width: 30dvh;
-  }
-
-  code {
-    white-space: nowrap;
+    max-height: 30vh;
   }
 }
 

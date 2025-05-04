@@ -10,28 +10,30 @@ function projectNameClean(key) {
     .map((w) => (w.length > 3 ? upperFirst(w) : w.toUpperCase()))
     .join(' ')
 }
+
+function toggleProject(key) {
+  const project = document.querySelector(`.project.${key}`)
+  project.classList.toggle('open');
+}
 </script>
 
 <template>
   <div id="projects" class="info-section">
     <h1>Projects</h1>
     <div v-for="[k, v] in Object.entries(projectList)" :class="`project ${k}`">
-      <details>
-        <summary>
-          <b>{{ projectNameClean(k) }}</b>
-        </summary>
-        <app-card>
-          <div class="inner-content">
-            <span>{{ v.description }}</span>
-            <div class="links">
-              <a v-for="link in v.links" :href="link">{{ link }}</a>
-            </div>
-            <div class="tools">
-              <icon v-for="tech in v.technologies" :icon="tech.icon"></icon>
-            </div>
+      <button @click="toggleProject(k)">{{ projectNameClean(k) }}</button>
+
+      <app-card class="project-desc">
+        <div class="inner-content">
+          <span>{{ v.description }}</span>
+          <div class="links">
+            <a v-for="link in v.links" :href="link">{{ link }}</a>
           </div>
-        </app-card>
-      </details>
+          <div class="tools">
+            <icon v-for="tech in v.technologies" :icon="tech.icon"></icon>
+          </div>
+        </div>
+      </app-card>
     </div>
   </div>
 </template>
@@ -41,6 +43,26 @@ summary {
   cursor: pointer;
 }
 
+.project{
+  display: flex;
+  flex-direction: column;
+
+  button {
+    text-align: start;
+  }
+
+  a {
+    word-break: break-word;
+  }
+
+  .project-desc {
+    display: none;
+  }
+
+  &.open .project-desc {
+    display: flex;
+  }
+}
 .inner-content {
   display: flex;
   flex-direction: column;

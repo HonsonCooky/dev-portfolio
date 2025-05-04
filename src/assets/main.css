@@ -97,7 +97,7 @@ svg {
 
 img {
   max-width: 70dvw;
-  max-height: min(40dvh, 500px);
+  max-height: min(40vh, 500px);
   object-fit: contain;
 }
 
