@@ -47,7 +47,7 @@ function openPDF(path) {
 
     <div id="showcase">
       <app-card>
-        <img alt="photography" src="/imgs/example-photo.jpg" />
+        <img alt="photography" src="/imgs/example-photo.png" />
         <code
           >Harrison's Photography
           <wbr />
