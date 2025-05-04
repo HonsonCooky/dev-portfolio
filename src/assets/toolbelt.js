@@ -14,30 +14,11 @@ const TOOL_TYPES = {
   VCS: 'Version Control System',
 }
 
-const TOOL_TYPE_DESCRIPTIONS = {
-  [TOOL_TYPES.CICD]: 'Automated processes to build, test, and deploy code.',
-  [TOOL_TYPES.CSP]: 'Rent powerful computers and services instead of buying and managing your own.',
-  [TOOL_TYPES.FRAMEWORK]: 'Wrappers around code to focus efforts on the business logic instead of the boilerplate.',
-  [TOOL_TYPES.IDE]: 'Code Editors | Write code faster and more efficiently with a given set of features.',
-  [TOOL_TYPES.LANGUAGE]: 'A way to build machine code in a human readable format.',
-  [TOOL_TYPES.LIBRARY]: 'A suite of ready-made code snippets for reuse.',
-  [TOOL_TYPES.MONITORING]: 'Provides insight into the performance and health of an application.',
-  [TOOL_TYPES.TOOL]: 'Special program that makes coding tasks easier and faster.',
-  [TOOL_TYPES.VCS]: 'Keeps track of changes and enables development with others in a team.',
-}
-
 const TOOL_USE_CASES = {
   ENTERPRISE: 'Enterprise',
   OPEN_SOURCE: 'Open Source',
   EDUCATION: 'Education',
   INTEREST: 'Interest',
-}
-
-const TOOL_USE_CASE_DESCRIPTIONS = {
-  [TOOL_USE_CASES.ENTERPRISE]: 'Used at companies to build and maintain company software systems.',
-  [TOOL_USE_CASES.OPEN_SOURCE]: 'Used to aid in the development or maintenance of open source software.',
-  [TOOL_USE_CASES.EDUCATION]: 'Used during educational programs to build academic software systems.',
-  [TOOL_USE_CASES.INTEREST]: 'Used in personal projects to build software systems for personal use or interest.',
 }
 
 /** ====================================================================================================================
@@ -67,7 +48,7 @@ const dotnetPocket = {
       type: TOOL_TYPES.LANGUAGE,
       uses: [TOOL_USE_CASES.INTEREST],
     },
-  }
+  },
 }
 
 const devopsPocket = {
@@ -113,7 +94,7 @@ const devopsPocket = {
       type: TOOL_TYPES.TOOL,
       uses: [TOOL_USE_CASES.ENTERPRISE],
     },
-  }
+  },
 }
 
 const idePocket = {
@@ -159,7 +140,7 @@ const idePocket = {
       type: TOOL_TYPES.IDE,
       uses: [TOOL_USE_CASES.ENTERPRISE, TOOL_USE_CASES.INTEREST],
     },
-  }
+  },
 }
 
 const jvmPocket = {
@@ -170,11 +151,11 @@ const jvmPocket = {
       type: TOOL_TYPES.LANGUAGE,
       uses: [TOOL_USE_CASES.EDUCATION],
     },
-  }
+  },
 }
 
 const lowLevelPocket = {
-  name: 'Low_Level',
+  name: 'Low Level',
   items: {
     C: {
       icon: 'devicon-plain:c',
@@ -196,7 +177,7 @@ const lowLevelPocket = {
       type: TOOL_TYPES.LANGUAGE,
       uses: [TOOL_USE_CASES.INTEREST],
     },
-  }
+  },
 }
 
 const mobilePocket = {
@@ -217,7 +198,7 @@ const mobilePocket = {
       type: TOOL_TYPES.FRAMEWORK,
       uses: [TOOL_USE_CASES.ENTERPRISE, TOOL_USE_CASES.INTEREST],
     },
-  }
+  },
 }
 
 const nodejsPocket = {
@@ -263,7 +244,7 @@ const nodejsPocket = {
       type: TOOL_TYPES.FRAMEWORK,
       uses: [TOOL_USE_CASES.ENTERPRISE, TOOL_USE_CASES.INTEREST],
     },
-  }
+  },
 }
 
 const scriptingLanguagesPocket = {
@@ -289,7 +270,7 @@ const scriptingLanguagesPocket = {
       type: TOOL_TYPES.LANGUAGE,
       uses: [TOOL_USE_CASES.EDUCATION],
     },
-  }
+  },
 }
 
 const pockets = {
@@ -303,10 +284,4 @@ const pockets = {
   scriptingLanguagesPocket,
 }
 
-export {
-  TOOL_TYPES,
-  TOOL_TYPE_DESCRIPTIONS,
-  TOOL_USE_CASES,
-  TOOL_USE_CASE_DESCRIPTIONS,
-  pockets,
-}
+export { TOOL_TYPES, TOOL_USE_CASES, pockets }
