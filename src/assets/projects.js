@@ -56,7 +56,7 @@ const personalSoftwareProjects = {
   },
   'dev-portfolio': {
     description:
-      'My developer portfolio—a testing ground for frontend development. While not my expertise, I value building user-facing applications.',
+      'My developer portfolio - a testing ground for frontend development',
     technologies: [
       pockets.nodejsPocket.items.HTML,
       pockets.nodejsPocket.items.CSS,
@@ -87,7 +87,7 @@ const personalDevelopmentProjects = {
 
 const personalHardwareProjects = {
   'planck-ez-keyboard': {
-    description: 'Customizing the Planck EZ keyboard with QMK firmware and refined key mappings for better ergonomics.',
+    description: 'Customizing a 40% Planck EZ keyboard and refined key mappings for better ergonomics.',
     links: [],
     technologies: [],
   },
@@ -104,11 +104,11 @@ const personalHardwareProjects = {
   },
 }
 
-const projectList = {
+const projects = {
   ...universityProjects,
   ...personalSoftwareProjects,
   ...personalDevelopmentProjects,
   ...personalHardwareProjects,
 }
 
-export { PROJECT_TYPES, PROJECT_TYPE_DESCRIPTIONS, projectList }
+export { PROJECT_TYPES, PROJECT_TYPE_DESCRIPTIONS, projects }

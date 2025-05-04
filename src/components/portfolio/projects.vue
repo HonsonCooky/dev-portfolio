@@ -1,5 +1,5 @@
 <script setup>
-import { projectList } from '@/assets/projectList.js'
+import { projects } from '@/assets/projects.js'
 import { upperFirst } from 'lodash'
 import AppCard from '@/components/app-card.vue'
 import { Icon } from '@iconify/vue'
@@ -20,7 +20,7 @@ function toggleProject(key) {
 <template>
   <div id="projects" class="info-section">
     <h1>Projects</h1>
-    <div v-for="[k, v] in Object.entries(projectList)" :class="`project ${k}`">
+    <div v-for="[k, v] in Object.entries(projects)" :class="`project ${k}`">
       <button @click="toggleProject(k)">{{ projectNameClean(k) }}</button>
 
       <app-card class="project-desc">
@@ -49,6 +49,10 @@ summary {
 
   button {
     text-align: start;
+
+    &:hover {
+      background-color: var(--surface);
+    }
   }
 
   a {
