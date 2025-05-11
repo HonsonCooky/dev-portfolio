@@ -2,8 +2,8 @@
 import { Icon } from '@iconify/vue'
 import Filler from '@/components/filler.vue'
 
-function downloadCV() {
-  window.open('/docs/HarrisonCookCV(current).pdf', '_blank')
+function openLink(url) {
+  window.open(url, '_blank')
 }
 </script>
 
@@ -12,24 +12,20 @@ function downloadCV() {
     <span>HonsonCooky:</span>
     <wbr />
     <div>
-      <button title="GitHub" type="button" @click="window.open('https://github.com/HonsonCooky', '_blank')">
+      <button title="GitHub" type="button" @click="openLink('https://github.com/HonsonCooky')">
         <Icon :inline="true" icon="mdi:github" />
       </button>
-      <button title="LinkedIn" type="button" @click="window.open('https://www.linkedin.com/in/HonsonCooky', '_blank')">
+      <button title="LinkedIn" type="button" @click="openLink('https://www.linkedin.com/in/HonsonCooky')">
         <Icon :inline="true" icon="mdi:linkedin" />
       </button>
-      <button
-        title="Stack Overflow"
-        type="button"
-        @click="window.open('https://stackoverflow.com/users/HonsonCooky', '_blank')"
-      >
+      <button title="Stack Overflow" type="button" @click="openLink('https://stackoverflow.com/users/HonsonCooky')">
         <Icon :inline="true" icon="mdi:stack-overflow" />
       </button>
-      <button title="Reddit" type="button" @click="window.open('https://www.reddit.com/user/HonsonCooky', '_blank')">
+      <button title="Reddit" type="button" @click="openLink('https://www.reddit.com/user/HonsonCooky')">
         <Icon :inline="true" icon="mdi:reddit" />
       </button>
       <filler />
-      <button type="button" @click="downloadCV()">
+      <button type="button" @click="openLink('/docs/HarrisonCookCV(current).pdf')">
         <Icon :inline="true" icon="mdi:download" />
       </button>
     </div>
