@@ -9,7 +9,7 @@ function openLink(url) {
 
 <template>
   <footer>
-    <span>HonsonCooky:</span>
+    <span><b>contact</b>@<b>honsoncooky.dev</b></span>
     <wbr />
     <div>
       <button title="GitHub" type="button" @click="openLink('https://github.com/HonsonCooky')">
@@ -37,10 +37,11 @@ footer {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
-  align-items: center;
+  align-items: baseline;
   background-color: var(--crust);
   box-shadow: 0 0 var(--shadow-blur) var(--subtext);
   padding: 0.5rem max(1ch, calc((100vw - 1280px) / 2)) 3rem;
+  row-gap: 1rem;
 }
 
 div {
@@ -53,10 +54,14 @@ div {
 
 button {
   aspect-ratio: 1/1;
+
+  svg {
+    font-size: 1.2em;
+  }
 }
 
 span {
-  cursor: default;
   margin-right: 1ch;
+  display: flex;
 }
 </style>
