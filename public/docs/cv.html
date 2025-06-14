@@ -1,302 +1,302 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Harrison Cook | CV</title>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Harrison Cook | CV</title>
 
-  <script src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
 
-  <style>
+    <style>
       * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
 
       html {
-          background-color: grey;
-          font-size: 10pt;
-          font-family: system-ui;
-          line-height: 1.5;
+        background-color: grey;
+        font-size: 10pt;
+        font-family: system-ui;
+        line-height: 1.5;
       }
 
       body {
-          display: flex;
-          flex-direction: column;
-          background-color: white;
-          height: 297mm;
-          width: 210mm;
-          margin: 2rem auto;
-          padding: 10mm;
-          box-shadow: 0 0 10px black;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        height: 297mm;
+        width: 210mm;
+        margin: 2rem auto;
+        padding: 10mm;
+        box-shadow: 0 0 10px black;
       }
 
       iconify-icon {
-          display: inline-block;
-          font-size: 1.2em;
-          margin: 0 0.2em;
+        display: inline-block;
+        font-size: 1.2em;
+        margin: 0 0.2em;
       }
 
       ul {
-          padding-left: 1.5em;
-          margin: 0.5em 0;
+        padding-left: 1.5em;
+        margin: 0.5em 0;
 
-          li {
-              list-style-type: circle;
-              margin: 0.2em 0;
-          }
+        li {
+          list-style-type: circle;
+          margin: 0.2em 0;
+        }
       }
 
       .column {
-          justify-content: space-between;
+        justify-content: space-between;
       }
 
       section {
-          h1 {
-              border-bottom: 1px solid black;
-          }
+        h1 {
+          border-bottom: 1px solid black;
+        }
 
-          h2 {
-              font-weight: lighter;
-          }
+        h2 {
+          font-weight: lighter;
+        }
       }
 
       #toolbelt {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0.5em 0;
+
+        .tool-pelt {
           display: flex;
           flex-direction: row;
-          flex-wrap: wrap;
-          padding: 0.5em 0;
-
-          .tool-pelt {
-              display: flex;
-              flex-direction: row;
-              align-items: center;
-              column-gap: 1ch;
-              box-shadow: 0 0 2px black;
-              padding: 0 1ch;
-              margin: 0.2em 0.5ch;
-          }
+          align-items: center;
+          column-gap: 1ch;
+          box-shadow: 0 0 2px black;
+          padding: 0 1ch;
+          margin: 0.2em 0.5ch;
+        }
       }
 
       @media print {
-          @page {
-              size: A4;
-          }
+        @page {
+          size: A4;
+        }
 
-          body {
-              margin: 0;
-              box-shadow: none;
-          }
+        body {
+          margin: 0;
+          box-shadow: none;
+        }
       }
-  </style>
-</head>
+    </style>
+  </head>
 
-<body>
-<header style="display: flex; column-gap: 4ch; align-items: baseline; margin-bottom: 2rem">
-  <hgroup>
-    <h1 style="font-weight: normal; font-size: 2.5rem">Harrison <b>Cook</b></h1>
-    <h2 style="font-size: 2rem; font-weight: 100">Software Engineer</h2>
-  </hgroup>
-  <div style="flex: 1; margin-left: 2ch; display: grid; grid-template-columns: 1fr 1fr">
+  <body>
+    <header style="display: flex; column-gap: 4ch; align-items: baseline; margin-bottom: 2rem">
+      <hgroup>
+        <h1 style="font-weight: normal; font-size: 2.5rem">Harrison <b>Cook</b></h1>
+        <h2 style="font-size: 2rem; font-weight: 100">Software Engineer</h2>
+      </hgroup>
+      <div style="flex: 1; margin-left: 2ch; display: grid; grid-template-columns: 1fr 1fr">
         <span style="display: flex; align-items: center">
           <iconify-icon icon="mdi:location"></iconify-icon>
           <span>Wellington, NZ</span>
         </span>
-    <span style="display: flex; align-items: center">
+        <span style="display: flex; align-items: center">
           <iconify-icon icon="mdi:github"></iconify-icon>
           <span>github/honsoncooky</span>
         </span>
-    <span style="display: flex; align-items: center">
+        <span style="display: flex; align-items: center">
           <iconify-icon icon="mdi:linkedin"></iconify-icon>
           <span>linkedin/in/honsoncooky</span>
         </span>
-    <span style="display: flex; align-items: center">
+        <span style="display: flex; align-items: center">
           <iconify-icon icon="mdi:reddit"></iconify-icon>
           <span>reddit/user/honsoncooky</span>
         </span>
-    <span style="display: flex; align-items: center">
+        <span style="display: flex; align-items: center">
           <iconify-icon icon="mdi:email"></iconify-icon>
           <span>contact@honsoncooky.dev</span>
         </span>
-    <span style="display: flex; align-items: center">
+        <span style="display: flex; align-items: center">
           <iconify-icon icon="mdi:web"></iconify-icon>
           <span>about.honsoncooky.dev</span>
         </span>
-  </div>
-</header>
+      </div>
+    </header>
 
-<main style="flex: 1; display: flex; flex-direction: row; column-gap: 4ch">
-  <div class="left column" style="display: flex; flex: 2; flex-direction: column">
-    <section>
-      <h1>Summary</h1>
-      <p>
-        Software Engineer by trade, education, and genuine passion. I have a strong fascination with how
-        software interacts at the lower levels and operates from the ground up. This deep curiosity is paired with an
-        eager versatility to learn and tackle challenging problems across any technology stack. My significant prior
-        involvement in musical theatre has uniquely honed my exceptional communication, collaboration, and presentation
-        abilities; Making me a charismatic team member dedicated to delivering high-quality software within an
-        environment driven by technical excellence and competence.
-      </p>
-    </section>
+    <main style="flex: 1; display: flex; flex-direction: row; column-gap: 4ch">
+      <div class="left column" style="display: flex; flex: 2; flex-direction: column">
+        <section>
+          <h1>Summary</h1>
+          <p>
+            Software Engineer by trade, education, and genuine passion. I have a strong fascination with how software
+            interacts at the lower levels and operates from the ground up. This deep curiosity is paired with an eager
+            versatility to learn and tackle challenging problems across any technology stack. My significant prior
+            involvement in musical theatre has uniquely honed my exceptional communication, collaboration, and
+            presentation abilities; Making me a charismatic team member dedicated to delivering high-quality software
+            within an environment driven by technical excellence and competence.
+          </p>
+        </section>
 
-    <section>
-      <h1>Experience</h1>
+        <section>
+          <h1>Experience</h1>
 
-      <div style="border-bottom: 1px solid lightgrey;">
-        <h2 style="margin: .2rem 0 .4rem;">Software Engineer</h2>
-        <div style="display: flex; align-items: center; justify-content: space-between">
-          <h3>Xero</h3>
-          <div style="display: flex; align-items: center">
-            <iconify-icon icon="mdi:calendar"></iconify-icon>
-            <span>Aug 2024 - Now</span>
+          <div style="border-bottom: 1px solid lightgrey">
+            <h2 style="margin: 0.2rem 0 0.4rem">Software Engineer</h2>
+            <div style="display: flex; align-items: center; justify-content: space-between">
+              <h3>Xero</h3>
+              <div style="display: flex; align-items: center">
+                <iconify-icon icon="mdi:calendar"></iconify-icon>
+                <span>Aug 2024 - Now</span>
+              </div>
+              <div style="display: flex; align-items: center">
+                <iconify-icon icon="mdi:location"></iconify-icon>
+                <span>Wellington, NZ</span>
+              </div>
+            </div>
+            <ul>
+              <li>
+                Proactively identified opportunities for process and code quality improvements, actively participating
+                in discussions to propose solutions.
+              </li>
+              <li>
+                Contributed to enhancing the quality and stability of existing legacy systems through targeted bug fixes
+                and code enhancements.
+              </li>
+              <li>
+                Assisted in analyzing and resolving issues within legacy applications, gaining familiarity with
+                production challenges.
+              </li>
+            </ul>
           </div>
-          <div style="display: flex; align-items: center">
-            <iconify-icon icon="mdi:location"></iconify-icon>
-            <span>Wellington, NZ</span>
+
+          <div>
+            <h2 style="margin: 0.2rem 0 0.4rem">Software Engineer</h2>
+            <div style="display: flex; align-items: center; justify-content: space-between">
+              <h3>Z Energy</h3>
+              <div style="display: flex; align-items: center">
+                <iconify-icon icon="mdi:calendar"></iconify-icon>
+                <span>Nov 2021 - Aug 2024</span>
+              </div>
+              <div style="display: flex; align-items: center">
+                <iconify-icon icon="mdi:location"></iconify-icon>
+                <span>Wellington, NZ</span>
+              </div>
+            </div>
+            <ul>
+              <li>
+                Fast-tracked from Graduate to Engineer within 6 months (bypassing Junior status) due to exceptional
+                technical growth and trusted contributions, outpacing my peers.
+              </li>
+              <li>
+                Designed, developed, and deployed full-stack, data-centric microservice solutions using TypeScript or C#
+                in Azure.
+              </li>
+              <li>
+                Operated within a robust development environment leveraging Infrastructure as Code (IaC) for cloud
+                resources and adhering to rigorous practices for documented, monitored production deployments.
+              </li>
+            </ul>
           </div>
-        </div>
-        <ul>
-          <li>
-            Proactively identified opportunities for process and code quality improvements, actively participating in
-            discussions to propose solutions.
-          </li>
-          <li>
-            Contributed to enhancing the quality and stability of existing legacy systems through targeted bug fixes and
-            code enhancements.
-          </li>
-          <li>
-            Assisted in analyzing and resolving issues within legacy applications, gaining familiarity with production
-            challenges.
-          </li>
-        </ul>
+        </section>
+
+        <section>
+          <h1>Education</h1>
+          <h2>Bachelor of Engineering</h2>
+          <h2>with First Class Honors in Software Engineering</h2>
+          <p>+ Specialization in Networked Applications.</p>
+          <div style="display: flex; justify-content: space-between; align-items: center">
+            <h3>Victoria University</h3>
+            <div style="display: flex; align-items: center">
+              <iconify-icon icon="mdi:calendar"></iconify-icon>
+              <span>Feb 2018 - Nov 2021</span>
+            </div>
+            <div>
+              <iconify-icon icon="mdi:location"></iconify-icon>
+              <span>Wellington, NZ</span>
+            </div>
+          </div>
+        </section>
       </div>
 
-      <div>
-        <h2 style="margin: .2rem 0 .4rem;">Software Engineer</h2>
-        <div style="display: flex; align-items: center; justify-content: space-between">
-          <h3>Z Energy</h3>
-          <div style="display: flex; align-items: center">
-            <iconify-icon icon="mdi:calendar"></iconify-icon>
-            <span>Nov 2021 - Aug 2024</span>
+      <div class="right column" style="display: flex; flex: 1; flex-direction: column">
+        <section>
+          <h1>Toolbelt</h1>
+          <div id="toolbelt">
+            <script type="module">
+              import { allToolsObj, TOOL_TYPES, TOOL_USE_CASES } from '/src/assets/toolbelt.js'
+
+              const toolNamesIcons = Object.keys(allToolsObj)
+                .filter((k) => {
+                  const isLanguage = allToolsObj[k].type === TOOL_TYPES.LANGUAGE
+                  const isIDE = allToolsObj[k].type === TOOL_TYPES.IDE
+                  const isEnterprise = allToolsObj[k].uses.includes(TOOL_USE_CASES.ENTERPRISE)
+                  const isInterest = allToolsObj[k].uses.includes(TOOL_USE_CASES.INTEREST)
+                  return !isIDE && (isLanguage || isEnterprise || isInterest)
+                })
+                .map((k) => {
+                  return {
+                    name: k,
+                    icon: allToolsObj[k].icon,
+                  }
+                })
+
+              const toolbelt = document.getElementById('toolbelt')
+              const toolPelts = toolNamesIcons.map((tool) => {
+                const toolPelt = document.createElement('div')
+                toolPelt.classList.add('tool-pelt')
+
+                const toolIcon = document.createElement('iconify-icon')
+                toolIcon.classList.add('tool-icon')
+                toolIcon.icon = tool.icon
+
+                const toolName = document.createElement('span')
+                toolName.classList.add('tool-name')
+                toolName.innerText = tool.name
+
+                toolPelt.appendChild(toolIcon)
+                toolPelt.appendChild(toolName)
+
+                return toolPelt
+              })
+
+              toolPelts.forEach((toolPelt) => {
+                toolbelt.appendChild(toolPelt)
+              })
+            </script>
+            <div class="tool-pelt" style="display: none">
+              <!--Remove Linting Error for 'tool-pelt' CSS class-->
+            </div>
           </div>
-          <div style="display: flex; align-items: center">
-            <iconify-icon icon="mdi:location"></iconify-icon>
-            <span>Wellington, NZ</span>
-          </div>
-        </div>
-        <ul>
-          <li>
-            Fast-tracked from Graduate to Engineer within 6 months (bypassing Junior status) due to exceptional
-            technical growth and trusted contributions, outpacing my peers.
-          </li>
-          <li>
-            Designed, developed, and deployed full-stack, data-centric microservice solutions using TypeScript or C#
-            in Azure.
-          </li>
-          <li>
-            Operated within a robust development environment leveraging Infrastructure as Code (IaC) for cloud
-            resources and adhering to rigorous practices for documented, monitored production deployments.
-          </li>
-        </ul>
+        </section>
+
+        <section>
+          <h1>Projects</h1>
+          <ul>
+            <li>Advent Of Code</li>
+            <li>Bus Sharp</li>
+            <li>M5 BLE Stack</li>
+            <li>Planck 40% Keyboard</li>
+            <li>Glove80 Keyboard</li>
+            <li>Snake Game in Raylib & Zig</li>
+            <li>Neovim & Vim</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>References</h1>
+          <p>Available on request.</p>
+        </section>
+
+        <section>
+          <h1>Final Note</h1>
+          <p>
+            Think of this CV as a quick hello! You'll discover a lot more about me via a conversation. I'm genuinely
+            happy to connect and chat about my experience or potential opportunities - please feel free to get in touch!
+          </p>
+        </section>
       </div>
-    </section>
-
-    <section>
-      <h1>Education</h1>
-      <h2>Bachelor of Engineering</h2>
-      <h2>with First Class Honors in Software Engineering</h2>
-      <p>+ Specialization in Networked Applications.</p>
-      <div style="display: flex; justify-content: space-between; align-items: center">
-        <h3>Victoria University</h3>
-        <div style="display: flex; align-items: center">
-          <iconify-icon icon="mdi:calendar"></iconify-icon>
-          <span>Feb 2018 - Nov 2021</span>
-        </div>
-        <div>
-          <iconify-icon icon="mdi:location"></iconify-icon>
-          <span>Wellington, NZ</span>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <div class="right column" style="display: flex; flex: 1; flex-direction: column">
-    <section>
-      <h1>Toolbelt</h1>
-      <div id="toolbelt">
-        <script type="module">
-          import { allToolsObj, TOOL_TYPES, TOOL_USE_CASES } from '/src/assets/toolbelt.js'
-
-          const toolNamesIcons = Object.keys(allToolsObj)
-            .filter((k) => {
-              const isLanguage = allToolsObj[k].type === TOOL_TYPES.LANGUAGE
-              const isIDE = allToolsObj[k].type === TOOL_TYPES.IDE
-              const isEnterprise = allToolsObj[k].uses.includes(TOOL_USE_CASES.ENTERPRISE)
-              const isInterest = allToolsObj[k].uses.includes(TOOL_USE_CASES.INTEREST)
-              return !isIDE && (isLanguage || isEnterprise || isInterest)
-            })
-            .map((k) => {
-              return {
-                name: k,
-                icon: allToolsObj[k].icon
-              }
-            })
-
-          const toolbelt = document.getElementById('toolbelt')
-          const toolPelts = toolNamesIcons.map((tool) => {
-            const toolPelt = document.createElement('div')
-            toolPelt.classList.add('tool-pelt')
-
-            const toolIcon = document.createElement('iconify-icon')
-            toolIcon.classList.add('tool-icon')
-            toolIcon.icon = tool.icon
-
-            const toolName = document.createElement('span')
-            toolName.classList.add('tool-name')
-            toolName.innerText = tool.name
-
-            toolPelt.appendChild(toolIcon)
-            toolPelt.appendChild(toolName)
-
-            return toolPelt
-          })
-
-          toolPelts.forEach((toolPelt) => {
-            toolbelt.appendChild(toolPelt)
-          })
-        </script>
-        <div class="tool-pelt" style="display: none">
-          <!--Remove Linting Error for 'tool-pelt' CSS class-->
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h1>Projects</h1>
-      <ul>
-        <li>Advent Of Code</li>
-        <li>Bus Sharp</li>
-        <li>M5 BLE Stack</li>
-        <li>Planck 40% Keyboard</li>
-        <li>Glove80 Keyboard</li>
-        <li>Snake Game in Raylib & Zig</li>
-        <li>Neovim & Vim</li>
-      </ul>
-    </section>
-
-    <section>
-      <h1>References</h1>
-      <p>Available on request.</p>
-    </section>
-
-    <section>
-      <h1>Final Note</h1>
-      <p>
-        Think of this CV as a quick hello! You'll discover a lot more about me via a conversation. I'm genuinely
-        happy to connect and chat about my experience or potential opportunities - please feel free to get in touch!
-      </p>
-    </section>
-  </div>
-</main>
-</body>
+    </main>
+  </body>
 </html>

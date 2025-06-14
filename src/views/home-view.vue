@@ -38,6 +38,7 @@ const toolbeltShowcase = shuffle(
 <style scoped>
 .page {
   gap: 3rem;
+  min-height: calc(100vh - var(--nav-height) + var(--shadow-blur));
 }
 
 .hero {

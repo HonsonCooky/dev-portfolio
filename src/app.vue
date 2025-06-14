@@ -1,13 +1,21 @@
 <script setup>
-import { RouterView } from 'vue-router'
-import AppHeader from '@/components/header/app-header.vue'
-import AppFooter from '@/components/footer/app-footer.vue'
+import appHeader from './components/app-header.vue'
+import appFooter from './components/app-footer.vue'
+import homeView from './views/home-view.vue'
+import aboutView from './views/about-view.vue'
+import experiencesView from './views/experiences-view.vue'
+import portfolioView from './views/portfolio-view.vue'
+import blogsView from './views/blogs-view.vue'
 </script>
 
 <template>
   <app-header />
   <main>
-    <router-view />
+    <home-view />
+    <about-view />
+    <experiences-view />
+    <portfolio-view />
+    <blogs-view />
   </main>
   <app-footer />
 </template>
@@ -16,6 +24,6 @@ import AppFooter from '@/components/footer/app-footer.vue'
 main {
   display: flex;
   flex-direction: column;
-  min-height: calc(100dvh - var(--nav-height) + var(--shadow-blur));
+  min-height: calc(100vh - var(--nav-height) + var(--shadow-blur));
 }
 </style>

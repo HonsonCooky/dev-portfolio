@@ -1,6 +1,6 @@
 <script setup>
-import Toolbelt from '@/components/portfolio/toolbelt.vue'
-import Projects from '@/components/portfolio/projects.vue'
+import toolbelt from '@/components/toolbelt.vue'
+import projects from '@/components/projects.vue'
 </script>
 
 <template>

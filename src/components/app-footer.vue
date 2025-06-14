@@ -1,6 +1,5 @@
 <script setup>
 import { Icon } from '@iconify/vue'
-import Filler from '@/components/filler.vue'
 
 function openLink(url) {
   window.open(url, '_blank')
@@ -24,7 +23,6 @@ function openLink(url) {
       <button title="Reddit" type="button" @click="openLink('https://www.reddit.com/user/HonsonCooky')">
         <Icon :inline="true" icon="mdi:reddit" />
       </button>
-      <filler />
       <button type="button" @click="openLink('/docs/HarrisonCookCV(current).pdf')">
         <Icon :inline="true" icon="mdi:download" />
       </button>

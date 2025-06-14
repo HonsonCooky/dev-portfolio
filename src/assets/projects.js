@@ -55,8 +55,7 @@ const personalSoftwareProjects = {
     technologies: [pockets.idePocket.items.Vim],
   },
   'dev-portfolio': {
-    description:
-      'My developer portfolio - a testing ground for frontend development',
+    description: 'My developer portfolio - a testing ground for frontend development',
     technologies: [
       pockets.nodejsPocket.items.HTML,
       pockets.nodejsPocket.items.CSS,
