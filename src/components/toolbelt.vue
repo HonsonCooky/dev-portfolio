@@ -84,7 +84,7 @@ function selectPocket(pn) {
     .pocket {
       display: none;
       flex-direction: column;
-      min-height: 60dvh;
+      min-height: 60vh;
 
       .pocket-item {
         display: flex;
