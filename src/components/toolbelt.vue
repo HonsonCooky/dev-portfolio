@@ -57,7 +57,6 @@ function selectPocket(pn) {
         </div>
       </app-card>
     </div>
-    <div id="pocket-keys"></div>
   </div>
 </template>
 
@@ -68,7 +67,7 @@ function selectPocket(pn) {
     flex-flow: row wrap;
     border: 1px solid var(--darkblue);
     position: sticky;
-    background-color: var(--base);
+    background-color: var(--surface);
     top: var(--nav-height);
 
     button {

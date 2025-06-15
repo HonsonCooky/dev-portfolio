@@ -17,9 +17,6 @@ function openLink(url) {
       <button title="LinkedIn" type="button" @click="openLink('https://www.linkedin.com/in/HonsonCooky')">
         <Icon :inline="true" icon="mdi:linkedin" />
       </button>
-      <button title="Stack Overflow" type="button" @click="openLink('https://stackoverflow.com/users/HonsonCooky')">
-        <Icon :inline="true" icon="mdi:stack-overflow" />
-      </button>
       <button title="Reddit" type="button" @click="openLink('https://www.reddit.com/user/HonsonCooky')">
         <Icon :inline="true" icon="mdi:reddit" />
       </button>

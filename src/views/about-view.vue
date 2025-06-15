@@ -95,6 +95,7 @@ function openPDF(path) {
 
 #showcase {
   width: min-content;
+  margin: 0 auto;
 
   img {
     max-height: 30vh;

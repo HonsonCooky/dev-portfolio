@@ -1,37 +1,55 @@
 <script setup>
-import { projects } from '@/assets/projects.js'
-import { upperFirst } from 'lodash'
-import AppCard from '@/components/app-card.vue'
+import appCard from './app-card.vue'
 import { Icon } from '@iconify/vue'
+import { projects } from '@/assets/projects'
+import { upperFirst } from 'lodash'
 
-function projectNameClean(key) {
+const projectNames = Object.keys(projects)
+
+function toolNameToKey(key) {
   return key
     .split('-')
     .map((w) => (w.length > 3 ? upperFirst(w) : w.toUpperCase()))
     .join(' ')
 }
 
-function toggleProject(key) {
-  const project = document.querySelector(`.project.${key}`)
-  project.classList.toggle('open')
+function selectProject(key) {
+  const bar = document.getElementById('project-selection-bar')
+  Array.from(bar.children).forEach((el) => {
+    if (el.classList.contains(key) && !el.classList.contains('selected')) {
+      el.classList.add('selected')
+    } else {
+      el.classList.remove('selected')
+    }
+  })
+
+  const projects = document.getElementById('projects')
+  Array.from(projects.children).forEach((project) => {
+    if (project.classList.contains(key) && !project.classList.contains('selected')) {
+      project.classList.add('selected')
+    } else {
+      project.classList.remove('selected')
+    }
+  })
 }
 </script>
 
 <template>
-  <div id="projects" class="info-section">
+  <div id="portfolio" class="info-section">
     <h1>Projects</h1>
-    <div v-for="[k, v] in Object.entries(projects)" :class="`project ${k}`">
-      <button @click="toggleProject(k)">{{ projectNameClean(k) }}</button>
-
-      <app-card class="project-desc">
-        <div class="inner-content">
-          <span>{{ v.description }}</span>
-          <div class="tools">
-            <icon v-for="icon in new Set(v.technologies.map((t) => t.icon))" :icon="icon"></icon>
-          </div>
-          <div class="links">
-            <a v-for="link in v.links" :href="link">{{ link }}</a>
-          </div>
+    <div id="project-selection-bar">
+      <button v-for="pName in projectNames" :class="`${pName}`" type="button" @click="selectProject(pName)">
+        {{ toolNameToKey(pName) }}
+      </button>
+    </div>
+    <div id="projects">
+      <app-card v-for="[k, v] in Object.entries(projects)" :class="`project ${k}`">
+        <span>{{ v.description }}</span>
+        <div class="tools">
+          <icon v-for="icon in new Set(v.technologies.map((t) => t.icon))" :icon="icon"></icon>
+        </div>
+        <div class="links">
+          <a v-for="link in v.links" :href="link">{{ link }}</a>
         </div>
       </app-card>
     </div>
@@ -39,67 +57,79 @@ function toggleProject(key) {
 </template>
 
 <style scoped>
-summary {
-  cursor: pointer;
-}
+#portfolio {
+  #project-selection-bar {
+    display: flex;
+    flex-flow: row wrap;
+    border: 1px solid var(--darkblue);
+    position: sticky;
+    background-color: var(--surface);
+    top: var(--nav-height);
 
-.project {
-  display: flex;
-  flex-direction: column;
-
-  button {
-    text-align: start;
-    font-weight: bold;
-    font-size: 1.2rem;
-
-    &:hover {
-      background-color: var(--surface);
-    }
-  }
-
-  &.open {
     button {
+      flex: 1;
+      white-space: nowrap;
+    }
+
+    .selected {
       background-color: var(--blue);
     }
   }
 
-  a {
-    word-break: break-word;
-  }
+  #projects {
+    .project {
+      display: none;
+      flex-direction: column;
+      align-content: flex-start;
+      min-height: 20dvh;
+      width: 100%;
 
-  .project-desc {
-    display: none;
-  }
+      &.selected {
+        display: flex;
+      }
 
-  &.open .project-desc {
-    display: flex;
-  }
-}
-.inner-content {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  row-gap: 1rem;
-}
+      .links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
 
-.links {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+        a {
+          color: var(--blue);
+        }
+      }
 
-  a {
-    color: var(--blue);
-  }
-}
+      .tools {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 0.2rem 2ch;
 
-.tools {
-  display: flex;
-  flex-flow: row wrap;
-  gap: 0.2rem 2ch;
+        svg {
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+    }
 
-  svg {
-    width: 2rem;
-    height: 2rem;
+    .links {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      a {
+        color: var(--blue);
+      }
+    }
+
+    .tools {
+      display: flex;
+      flex-flow: row wrap;
+      gap: 0.2rem 2ch;
+
+      svg {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
   }
 }
 </style>

@@ -16,26 +16,22 @@ function hashNavigation(hash) {
 
 <style lang="css" scoped>
 header {
-  display: flex;
-  flex-flow: row wrap;
   position: sticky;
   width: 100%;
   top: 0;
   left: 0;
-  height: var(--nav-height);
   z-index: 1000;
 
   display: flex;
-  flex-direction: row;
-  align-content: center;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
   background-color: var(--crust);
   box-shadow: 0 0 var(--shadow-blur) var(--subtext);
-  padding: 0 max(0px, calc((100vw - 1280px) / 2));
+  padding: 0.1em max(0px, calc((100vw - 1280px) / 2));
 }
 
 button {
-  display: flex;
-  flex: 1;
   padding: 0.2em 2ch;
 }
 </style>
