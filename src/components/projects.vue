@@ -44,12 +44,14 @@ function selectProject(key) {
     </div>
     <div id="projects">
       <app-card v-for="[k, v] in Object.entries(projects)" :class="`project ${k}`">
-        <span>{{ v.description }}</span>
-        <div class="tools">
-          <icon v-for="icon in new Set(v.technologies.map((t) => t.icon))" :icon="icon"></icon>
-        </div>
-        <div class="links">
-          <a v-for="link in v.links" :href="link">{{ link }}</a>
+        <div class="content">
+          <div class="tools">
+            <icon v-for="icon in new Set(v.technologies.map((t) => t.icon))" :icon="icon"></icon>
+          </div>
+          <span>{{ v.description }}</span>
+          <div class="links">
+            <a v-for="link in v.links" :href="link">{{ link }}</a>
+          </div>
         </div>
       </app-card>
     </div>
@@ -79,55 +81,40 @@ function selectProject(key) {
   #projects {
     .project {
       display: none;
-      flex-direction: column;
-      align-content: flex-start;
-      min-height: 20dvh;
+      min-height: 20vh;
       width: 100%;
 
       &.selected {
         display: flex;
       }
 
-      .links {
+      .content {
         display: flex;
         flex-direction: column;
+        justify-content: center;
         width: 100%;
+        gap: 1em 1ch;
 
-        a {
-          color: var(--blue);
+        .links {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+
+          a {
+            color: var(--blue);
+          }
         }
-      }
 
-      .tools {
-        display: flex;
-        flex-flow: row wrap;
-        gap: 0.2rem 2ch;
+        .tools {
+          display: flex;
+          flex-flow: row wrap;
+          gap: 0.2rem 2ch;
 
-        svg {
-          width: 2rem;
-          height: 2rem;
+          svg {
+            width: 2rem;
+            height: 2rem;
+          }
         }
-      }
-    }
-
-    .links {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-
-      a {
-        color: var(--blue);
-      }
-    }
-
-    .tools {
-      display: flex;
-      flex-flow: row wrap;
-      gap: 0.2rem 2ch;
-
-      svg {
-        width: 2rem;
-        height: 2rem;
       }
     }
   }
