@@ -24,6 +24,7 @@ import blogsView from './views/blogs-view.vue'
 main {
   display: flex;
   flex-direction: column;
+  row-gap: 20vh;
   min-height: calc(100vh - var(--nav-height) + var(--shadow-blur));
 }
 </style>

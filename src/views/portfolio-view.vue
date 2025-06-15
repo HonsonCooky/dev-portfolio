@@ -4,9 +4,10 @@ import projects from '@/components/projects.vue'
 </script>
 
 <template>
-  <section class="page">
+  <section class="page" id="portfolio">
+    <h1>Portfolio</h1>
+
     <div id="intro" class="info-section">
-      <h1>Portfolio</h1>
       <p>
         I love diving into tech beyond the lines of code - experimenting with programming languages, operating systems,
         PC building and keyboard/desk setups. This page is dedicated to highlighting the projects and journeys I've been

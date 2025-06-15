@@ -4,10 +4,10 @@ import { jobHistory } from '@/assets/jobs.js'
 </script>
 
 <template>
-  <section class="page">
-    <div class="info-section">
-      <h1>Experience</h1>
+  <section class="page" id="experiences">
+    <h1>Experience</h1>
 
+    <div class="info-section">
       <div v-for="job in jobHistory" class="job">
         <h2>{{ job.position }}</h2>
         <div class="job-details">

@@ -14,7 +14,8 @@ function openPDF(path) {
 </script>
 
 <template>
-  <section class="page">
+  <section class="page" id="about">
+    <h1>About</h1>
     <div id="about-me-dialog" class="info-section">
       <h1>Overview</h1>
       <p>

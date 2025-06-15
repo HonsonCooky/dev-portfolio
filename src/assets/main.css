@@ -63,6 +63,26 @@ body {
   background-color: var(--base);
 }
 
+button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-bottom: 5px solid transparent;
+  cursor: pointer;
+  outline: none;
+  padding: 0.2em 1ch;
+
+  &:hover {
+    border-left: 1px solid var(--darkblue);
+    border-right: 1px solid var(--darkblue);
+    border-bottom: 5px solid var(--darkblue);
+  }
+
+  &:active {
+    border-top: 5px solid var(--darkblue);
+    border-bottom: none;
+  }
+}
+
 code {
   background-color: var(--overlay);
   border: 1px solid var(--darkblue);
@@ -111,9 +131,17 @@ p {
   max-width: 1280px;
   margin: 0 auto;
   row-gap: 3rem;
+  min-height: calc(100vh - var(--nav-height) + var(--shadow-blur));
 
   > * {
     width: 100%;
+  }
+
+  > h1 {
+    font-size: 3em;
+    line-height: 1;
+    margin-top: 1rem;
+    font-family: monospace;
   }
 }
 
@@ -126,6 +154,7 @@ p {
     font-size: 2.5em;
     line-height: 1;
     margin-top: 1rem;
+    color: var(--darkblue);
   }
 
   h2 {

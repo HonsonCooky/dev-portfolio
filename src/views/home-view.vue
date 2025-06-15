@@ -12,7 +12,7 @@ const toolbeltShowcase = shuffle(
 </script>
 
 <template>
-  <section class="page">
+  <section class="page" id="home">
     <div class="hero">
       <img alt="Profile picture" src="/imgs/profile.png" />
       <div class="hgroup">
@@ -38,7 +38,6 @@ const toolbeltShowcase = shuffle(
 <style scoped>
 .page {
   gap: 3rem;
-  min-height: calc(100vh - var(--nav-height) + var(--shadow-blur));
 }
 
 .hero {
