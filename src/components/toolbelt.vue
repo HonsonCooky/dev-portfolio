@@ -65,10 +65,10 @@ function selectPocket(pn) {
   #pocket-selection-bar {
     display: flex;
     flex-flow: row wrap;
-    border: 1px solid var(--darkblue);
     position: sticky;
     background-color: var(--surface);
     top: var(--nav-height);
+    column-gap: 2ch;
 
     button {
       flex: 1;
@@ -84,7 +84,7 @@ function selectPocket(pn) {
     .pocket {
       display: none;
       flex-direction: column;
-      min-height: 60vh;
+      min-height: 500px;
 
       .pocket-item {
         display: flex;

@@ -8,7 +8,7 @@ function hashNavigation(hash) {
   <header>
     <button type="button" title="Home" @click="hashNavigation('')">Home</button>
     <button type="button" title="About" @click="hashNavigation('about')">About</button>
-    <button type="button" title="Experiences" @click="hashNavigation('experiences')">Experiences</button>
+    <button type="button" title="Experiences" @click="hashNavigation('experiences')">Experience</button>
     <button type="button" title="Portfolio" @click="hashNavigation('portfolio')">Portfolio</button>
     <button type="button" title="Blogs" @click="hashNavigation('blogs')">Blogs</button>
   </header>

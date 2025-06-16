@@ -54,8 +54,8 @@ const personalSoftwareProjects = {
     links: ['https://github.com/honsoncooky/cookie-vim'],
     technologies: [pockets.idePocket.items.Vim],
   },
-  'dev-portfolio': {
-    description: 'My developer portfolio - a testing ground for frontend development',
+  portfolio: {
+    description: 'My developer portfolio - a testing ground for frontend development.',
     technologies: [
       pockets.nodejsPocket.items.HTML,
       pockets.nodejsPocket.items.CSS,

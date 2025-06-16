@@ -133,7 +133,6 @@ p {
   max-width: 1280px;
   margin: 0 auto;
   row-gap: 3rem;
-  min-height: calc(100vh - var(--nav-height) + var(--shadow-blur));
 
   > * {
     width: 100%;
@@ -160,13 +159,14 @@ p {
   }
 
   h2 {
-    font-weight: lighter;
-    font-size: 2em;
+    font-weight: normal;
+    font-size: 1.85em;
     line-height: 1.2;
   }
 
   h3 {
-    font-size: 1.5em;
+    font-size: 1.75em;
+    font-weight: lighter;
     line-height: 2rem;
   }
 

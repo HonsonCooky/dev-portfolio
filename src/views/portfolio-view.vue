@@ -10,8 +10,8 @@ import projects from '@/components/projects.vue'
     <div id="intro" class="info-section">
       <p>
         I love diving into tech beyond the lines of code - experimenting with programming languages, operating systems,
-        PC building and keyboard/desk setups. This page is dedicated to highlighting the projects and journeys I've been
-        on, as well as outlining all the technologies I've spent time with on my journeys.
+        PC building and keyboard/desk setups. This section highlights the projects and journeys I've been on, as well as
+        outlining all the technologies I've spent time with on the way.
       </p>
     </div>
 

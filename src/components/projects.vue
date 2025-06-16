@@ -6,10 +6,10 @@ import { upperFirst } from 'lodash'
 
 const projectNames = Object.keys(projects)
 
-function toolNameToKey(key) {
+function projectKeyToName(key) {
   return key
     .split('-')
-    .map((w) => (w.length > 3 ? upperFirst(w) : w.toUpperCase()))
+    .map((w) => (w.length > 2 ? upperFirst(w) : w.toUpperCase()))
     .join(' ')
 }
 
@@ -39,19 +39,17 @@ function selectProject(key) {
     <h1>Projects</h1>
     <div id="project-selection-bar">
       <button v-for="pName in projectNames" :class="`${pName}`" type="button" @click="selectProject(pName)">
-        {{ toolNameToKey(pName) }}
+        {{ projectKeyToName(pName) }}
       </button>
     </div>
     <div id="projects">
       <app-card v-for="[k, v] in Object.entries(projects)" :class="`project ${k}`">
-        <div class="content">
-          <div class="tools">
-            <icon v-for="icon in new Set(v.technologies.map((t) => t.icon))" :icon="icon"></icon>
-          </div>
-          <span>{{ v.description }}</span>
-          <div class="links">
-            <a v-for="link in v.links" :href="link">{{ link }}</a>
-          </div>
+        <div class="tools">
+          <icon v-for="icon in new Set(v.technologies.map((t) => t.icon))" :icon="icon"></icon>
+        </div>
+        <span>{{ v.description }}</span>
+        <div class="links">
+          <a v-for="link in v.links" :href="link">{{ link }}</a>
         </div>
       </app-card>
     </div>
@@ -63,10 +61,10 @@ function selectProject(key) {
   #project-selection-bar {
     display: flex;
     flex-flow: row wrap;
-    border: 1px solid var(--darkblue);
     position: sticky;
     background-color: var(--surface);
     top: var(--nav-height);
+    column-gap: 2ch;
 
     button {
       flex: 1;
@@ -81,39 +79,38 @@ function selectProject(key) {
   #projects {
     .project {
       display: none;
-      min-height: 20vh;
+      min-height: 260px;
       width: 100%;
 
       &.selected {
         display: flex;
       }
 
-      .content {
+      > * {
+        padding: 0.5em 1ch;
+        min-height: 3em;
+      }
+
+      .tools {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 0.2rem 2ch;
+        background-color: var(--surface);
+
+        svg {
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+
+      .links {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         width: 100%;
-        gap: 1em 1ch;
+        background-color: var(--surface);
 
-        .links {
-          display: flex;
-          flex-direction: column;
-          width: 100%;
-
-          a {
-            color: var(--blue);
-          }
-        }
-
-        .tools {
-          display: flex;
-          flex-flow: row wrap;
-          gap: 0.2rem 2ch;
-
-          svg {
-            width: 2rem;
-            height: 2rem;
-          }
+        a {
+          color: var(--blue);
         }
       }
     }

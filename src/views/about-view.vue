@@ -53,36 +53,63 @@ function openPDF(path) {
 
     <div id="education" class="info-section">
       <h1>Education</h1>
-      <hgroup>
-        <h2>Bachelor of Engineering</h2>
-        <h2>with First Class Honors in Software Engineering</h2>
-      </hgroup>
-      <p>+ Specialization in Networked Applications.</p>
-      <div>
-        <h3>Victoria University</h3>
-        <div>
-          <icon icon="mdi:calendar"></icon>
-          <span>Feb 2018 - Nov 2021</span>
-        </div>
-        <div>
-          <icon icon="mdi:location"></icon>
-          <span>Wellington, NZ</span>
-        </div>
-      </div>
-    </div>
 
-    <div id="transcripts" class="info-section">
-      <h1>Academic Transcripts</h1>
-      <div>
-        <button @click="openPDF('/docs/HarrisonCookAcademicRecordMBC.pdf')">
-          <icon :inline="true" icon="mdi:file-pdf-box"></icon>
-          <span>Marlborough Boys' College</span>
-        </button>
+      <app-card>
+        <hgroup>
+          <h2>Bachelor of Engineering</h2>
+          <h2>with First Class Honors in Software Engineering</h2>
+        </hgroup>
+        <ul>
+          <li>
+            <i>Specialization in Networked Applications.</i>
+          </li>
+        </ul>
+        <div class="information">
+          <h3>Victoria University</h3>
+          <div>
+            <div>
+              <icon icon="mdi:calendar"></icon>
+              <span>Feb 2018 - Nov 2021</span>
+            </div>
+            <div>
+              <icon icon="mdi:location"></icon>
+              <span>Wellington, NZ</span>
+            </div>
+          </div>
+        </div>
         <button @click="openPDF('/docs/HarrisonCookAcademicRecordVIC.pdf')">
           <icon :inline="true" icon="mdi:file-pdf-box"></icon>
-          <span>Victoria University</span>
+          <span>Transcript</span>
         </button>
-      </div>
+      </app-card>
+
+      <app-card>
+        <hgroup>
+          <h2>National Certificate of Educational Achievement</h2>
+        </hgroup>
+        <ul>
+          <li><i>Level 1 with Excellence Endorsement</i></li>
+          <li><i>Level 2 with Excellence Endorsement</i></li>
+          <li><i>Level 3 with Excellence Endorsement</i></li>
+        </ul>
+        <div class="information">
+          <h3>Marlborough Boys' College</h3>
+          <div>
+            <div>
+              <icon icon="mdi:calendar"></icon>
+              <span>Feb 2013 - Nov 2017</span>
+            </div>
+            <div>
+              <icon icon="mdi:location"></icon>
+              <span>Marlborough, NZ</span>
+            </div>
+          </div>
+        </div>
+        <button @click="openPDF('/docs/HarrisonCookAcademicRecordMBC.pdf')">
+          <icon :inline="true" icon="mdi:file-pdf-box"></icon>
+          <span>Transcript</span>
+        </button>
+      </app-card>
     </div>
   </section>
 </template>
@@ -113,42 +140,50 @@ function openPDF(path) {
     column-gap: 1ch;
   }
 
-  > div {
+  .card {
     display: flex;
-    flex-flow: row wrap;
-    max-width: 800px;
-    justify-content: space-between;
-    column-gap: 1ch;
-    row-gap: 0.5rem;
+    flex-direction: column;
+    row-gap: 1em;
 
-    div {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      column-gap: 1ch;
+    > ul {
+      background-color: var(--surface);
+      padding: 0.5em 2ch;
+      list-style-position: inside;
+      margin: 0;
     }
-  }
-}
-
-#transcripts {
-  display: flex;
-  flex-flow: column;
-  row-gap: 1rem;
-
-  > div {
-    display: flex;
-    flex-flow: row wrap;
-    background-color: var(--surface);
-    gap: 0.5rem 1ch;
 
     > button {
+      background-color: var(--surface);
+      align-self: flex-start;
+    }
+
+    .information {
       display: flex;
-      flex-direction: row;
+      flex-flow: row wrap;
       align-items: center;
-      column-gap: 1ch;
-      flex: 1 0;
-      white-space: nowrap;
-      text-align: left;
+      column-gap: 2ch;
+      row-gap: 0.2em;
+      max-width: 800px;
+
+      > h3 {
+        flex: 3;
+        min-width: 200px;
+      }
+
+      > div {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.5em;
+        min-width: 200px;
+
+        > div {
+          flex: 1;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          column-gap: 1ch;
+        }
+      }
     }
   }
 }
