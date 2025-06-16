@@ -155,6 +155,10 @@ function openPDF(path) {
     > button {
       background-color: var(--surface);
       align-self: flex-start;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      column-gap: 1ch;
     }
 
     .information {

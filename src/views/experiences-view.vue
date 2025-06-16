@@ -31,6 +31,8 @@ import { jobHistory } from '@/assets/jobs.js'
         </ul>
       </app-card>
     </div>
+
+    <div class="info-section">References Available On Request.</div>
   </section>
 </template>
 
