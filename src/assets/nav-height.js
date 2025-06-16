@@ -3,7 +3,6 @@ function updateNavHeader() {
   if (nav) {
     let navHeight = nav.offsetHeight // Get the height of the header
     document.documentElement.style.setProperty('--nav-height', `${navHeight}px`)
-    console.log(`Updated --nav-height to: ${navHeight}px`)
   }
 }
 
