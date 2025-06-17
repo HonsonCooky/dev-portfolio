@@ -40,12 +40,12 @@ import { jobHistory } from '@/assets/obj-job-history.js'
 .job {
   .job-details {
     display: flex;
-    flex-flow: row wrap;
-    max-width: 800px;
-    justify-content: space-between;
     column-gap: 1ch;
     row-gap: 0.5rem;
+    flex-flow: row wrap;
+    justify-content: space-between;
     padding: 0.5em 0;
+    max-width: 800px;
 
     h3 {
       min-width: 200px;
@@ -58,9 +58,9 @@ import { jobHistory } from '@/assets/obj-job-history.js'
 
       > div {
         display: flex;
+        column-gap: 1ch;
         flex-direction: row;
         align-items: center;
-        column-gap: 1ch;
       }
     }
   }

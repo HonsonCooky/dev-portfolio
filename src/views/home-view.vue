@@ -44,13 +44,13 @@ const toolbeltShowcase = shuffle(
 .hero {
   display: flex;
   flex-flow: row wrap;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   gap: 1rem 4ch;
 
   img {
-    background-color: var(--surface);
     box-shadow: inset 0 0 var(--shadow-blur) var(--darkblue);
+    background-color: var(--surface);
   }
 
   .hgroup {
@@ -60,9 +60,9 @@ const toolbeltShowcase = shuffle(
     gap: 1rem;
 
     h1 {
+      margin-left: 1ch;
       font-size: 3rem;
       line-height: 1;
-      margin-left: 1ch;
       font-family: Consolas, monospace;
     }
 
@@ -84,9 +84,9 @@ const toolbeltShowcase = shuffle(
 
 .toolbelt {
   display: flex;
+  z-index: 100;
   width: 100%;
   overflow: hidden;
-  z-index: 100;
 
   .scroll-wrapper {
     display: flex;
@@ -96,9 +96,9 @@ const toolbeltShowcase = shuffle(
   }
 
   .tool {
-    background-color: var(--surface);
     box-shadow: inset 0 0 var(--shadow-blur) var(--darkblue);
     border-color: var(--surface);
+    background-color: var(--surface);
 
     svg {
       font-size: 2.5rem;

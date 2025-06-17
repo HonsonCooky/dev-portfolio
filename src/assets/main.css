@@ -37,23 +37,23 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: inherit;
+  color: inherit;
   font-size: inherit;
   line-height: inherit;
-  color: inherit;
+  font-family: inherit;
   -webkit-tap-highlight-color: transparent;
 }
 
 html,
 body {
   position: relative;
-  color: var(--text);
   margin: 0 auto;
-  font-family: system-ui;
-  font-size: var(--font-size);
   overscroll-behavior: none;
-  line-height: var(--line-height);
   scroll-behavior: smooth;
+  color: var(--text);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  font-family: system-ui;
 }
 
 html {
@@ -65,17 +65,17 @@ body {
 }
 
 button {
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-bottom: 5px solid transparent;
   cursor: pointer;
   outline: none;
+  border: 1px solid transparent;
+  border-bottom: 5px solid transparent;
+  background-color: transparent;
   padding: 0.2em 1ch;
 
   &:hover {
-    border-left: 1px solid var(--darkblue);
     border-right: 1px solid var(--darkblue);
     border-bottom: 5px solid var(--darkblue);
+    border-left: 1px solid var(--darkblue);
   }
 
   &:active {
@@ -85,8 +85,8 @@ button {
 }
 
 code {
-  background-color: var(--overlay);
   border: 1px solid var(--darkblue);
+  background-color: var(--overlay);
   padding: 0.2em 1ch;
   line-height: 1;
   font-family: monospace;
@@ -122,27 +122,27 @@ p {
 }
 
 .page {
-  scroll-margin-top: var(--nav-height);
-  flex: 1;
   display: flex;
+  row-gap: 3rem;
+  flex: 1;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  margin: 0 auto;
   padding: 2rem 2ch;
   width: 100%;
   max-width: 1280px;
-  margin: 0 auto;
-  row-gap: 3rem;
   min-height: 50vh;
+  scroll-margin-top: var(--nav-height);
 
   > * {
     width: 100%;
   }
 
   > h1 {
+    margin-top: 1rem;
     font-size: 3em;
     line-height: 1;
-    margin-top: 1rem;
     font-family: monospace;
     text-decoration: dotted underline var(--lightblue);
   }
@@ -150,14 +150,14 @@ p {
 
 .info-section {
   display: flex;
-  flex-direction: column;
   row-gap: 1rem;
+  flex-direction: column;
 
   h1 {
-    font-size: 2.5em;
-    line-height: 1;
     margin-top: 1rem;
     color: var(--darkblue);
+    font-size: 2.5em;
+    line-height: 1;
   }
 
   h2 {
@@ -167,8 +167,8 @@ p {
   }
 
   h3 {
-    font-size: 1.75em;
     font-weight: lighter;
+    font-size: 1.75em;
     line-height: 2rem;
   }
 
@@ -181,12 +181,12 @@ p {
   }
 
   ul {
-    padding-left: 1.5em;
     margin: 0.5em 0;
+    padding-left: 1.5em;
 
     li {
-      list-style-type: circle;
       margin: 0.2em 0;
+      list-style-type: circle;
     }
   }
 }

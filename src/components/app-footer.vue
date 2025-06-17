@@ -29,22 +29,22 @@ function openLink(url) {
 
 <style scoped>
 footer {
-  width: 100%;
   display: flex;
+  row-gap: 1rem;
   flex-flow: row wrap;
   align-items: baseline;
-  background-color: var(--crust);
   box-shadow: 0 0 var(--shadow-blur) var(--subtext);
+  background-color: var(--crust);
   padding: 0.5rem max(1ch, calc((100vw - 1280px) / 2)) 3rem;
-  row-gap: 1rem;
+  width: 100%;
 }
 
 div {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
   flex: 1;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 button {
@@ -56,7 +56,7 @@ button {
 }
 
 span {
-  margin-right: 1ch;
   display: flex;
+  margin-right: 1ch;
 }
 </style>

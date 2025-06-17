@@ -121,8 +121,8 @@ function openPDF(path) {
 }
 
 #showcase {
-  width: min-content;
   margin: 0 auto;
+  width: min-content;
 
   img {
     max-height: 30vh;
@@ -131,42 +131,42 @@ function openPDF(path) {
 
 #education {
   display: flex;
-  flex-direction: column;
   row-gap: 1rem;
+  flex-direction: column;
 
   hgroup {
     display: flex;
-    flex-flow: row wrap;
     column-gap: 1ch;
+    flex-flow: row wrap;
   }
 
   .card {
     display: flex;
-    flex-direction: column;
     row-gap: 1em;
+    flex-direction: column;
 
     > ul {
+      margin: 0;
       background-color: var(--surface);
       padding: 0.5em 2ch;
       list-style-position: inside;
-      margin: 0;
     }
 
     > button {
-      background-color: var(--surface);
-      align-self: flex-start;
       display: flex;
+      column-gap: 1ch;
       flex-direction: row;
       align-items: center;
-      column-gap: 1ch;
+      align-self: flex-start;
+      background-color: var(--surface);
     }
 
     .information {
       display: flex;
-      flex-flow: row wrap;
-      align-items: center;
       column-gap: 2ch;
       row-gap: 0.2em;
+      flex-flow: row wrap;
+      align-items: center;
       max-width: 800px;
 
       > h3 {
@@ -176,16 +176,16 @@ function openPDF(path) {
 
       > div {
         display: flex;
-        flex-direction: column;
         row-gap: 0.5em;
+        flex-direction: column;
         min-width: 200px;
 
         > div {
-          flex: 1;
           display: flex;
+          column-gap: 1ch;
+          flex: 1;
           flex-direction: row;
           align-items: center;
-          column-gap: 1ch;
         }
       }
     }

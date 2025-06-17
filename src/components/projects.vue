@@ -60,11 +60,11 @@ function selectProject(key) {
 #portfolio {
   #project-selection-bar {
     display: flex;
-    flex-flow: row wrap;
     position: sticky;
-    background-color: var(--surface);
     top: var(--nav-height);
     column-gap: 2ch;
+    flex-flow: row wrap;
+    background-color: var(--surface);
 
     button {
       flex: 1;
@@ -79,8 +79,8 @@ function selectProject(key) {
   #projects {
     .project {
       display: none;
-      min-height: 260px;
       width: 100%;
+      min-height: 260px;
 
       &.selected {
         display: flex;
@@ -106,8 +106,8 @@ function selectProject(key) {
       .links {
         display: flex;
         flex-direction: column;
-        width: 100%;
         background-color: var(--surface);
+        width: 100%;
 
         a {
           color: var(--blue);

@@ -64,11 +64,11 @@ function selectPocket(pn) {
 #toolbelt {
   #pocket-selection-bar {
     display: flex;
-    flex-flow: row wrap;
     position: sticky;
-    background-color: var(--surface);
     top: var(--nav-height);
     column-gap: 2ch;
+    flex-flow: row wrap;
+    background-color: var(--surface);
 
     button {
       flex: 1;
@@ -91,16 +91,16 @@ function selectPocket(pn) {
         flex-flow: row wrap;
         align-items: center;
         gap: 0.2rem 2ch;
-        padding: 0.5rem 1ch;
         cursor: pointer;
+        padding: 0.5rem 1ch;
         width: 100%;
 
         > * {
           display: flex;
+          flex: 1;
           flex-flow: row nowrap;
           gap: 0.2rem 2ch;
           min-width: 280px;
-          flex: 1;
 
           &:first-child {
             flex: 0;

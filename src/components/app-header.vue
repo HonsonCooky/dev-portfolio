@@ -51,20 +51,19 @@ window.addEventListener('load', highlightSection)
 
 <style lang="css" scoped>
 header {
+  display: flex;
   position: sticky;
-  width: 100%;
   top: 0;
   left: 0;
-  z-index: 1000;
-
-  display: flex;
   flex-flow: row wrap;
-  align-items: center;
   justify-content: center;
-  background-color: var(--crust);
+  align-items: center;
+  z-index: 1000;
   box-shadow: 0 0 var(--shadow-blur) var(--subtext);
+  background-color: var(--crust);
   padding: 0 max(0px, calc((100vw - 1280px) / 2));
   padding-top: 1em;
+  width: 100%;
 }
 
 button {
