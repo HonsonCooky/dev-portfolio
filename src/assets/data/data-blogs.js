@@ -1,6 +1,6 @@
 export const blogList = [
-  //   {
-  //     name: 'Test Blog',
-  //     content: 'test-blog.html',
-  //   },
+  {
+    name: 'Software Engineer',
+    content: 'what-a-software-engineer-is.html',
+  },
 ]
