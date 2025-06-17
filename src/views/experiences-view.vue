@@ -1,7 +1,7 @@
 <script setup>
 import appCard from '@/components/app-card.vue'
 import { Icon } from '@iconify/vue'
-import { jobHistory } from '@/assets/obj-job-history.js'
+import { jobHistory } from '@/assets/data/data-work-history.js'
 </script>
 
 <template>

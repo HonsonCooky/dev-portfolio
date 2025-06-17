@@ -1,5 +1,5 @@
 <script setup>
-import { pockets } from '@/assets/obj-toolbelt.js'
+import { pockets } from '@/assets/data/data-toolbelt.js'
 import { Icon } from '@iconify/vue'
 import AppCard from '@/components/app-card.vue'
 

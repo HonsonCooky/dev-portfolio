@@ -45,7 +45,10 @@ window.addEventListener('load', highlightSection)
     </button>
     <button type="button" title="Portfolio" id="portfolio-btn" @click="hashNavigation('portfolio')">Portfolio</button>
     <button type="button" title="Blogs" id="blogs-btn" @click="hashNavigation('blogs')">Blogs</button>
-    <button><icon icon="mdi:theme-light-dark" @click="toggleTheme" /></button>
+    <div class="divider"></div>
+    <button type="button" title="Theme" id="theme-btn" @click="toggleTheme">
+      <icon icon="mdi:theme-light-dark" />
+    </button>
   </header>
 </template>
 
@@ -64,6 +67,13 @@ header {
   padding: 0 max(0px, calc((100vw - 1280px) / 2));
   padding-top: 1em;
   width: 100%;
+}
+
+.divider {
+  flex: 1;
+  background-color: var(--text);
+  width: 1ch;
+  height: 1.2em;
 }
 
 button {

@@ -123,7 +123,7 @@ p {
 
 .page {
   display: flex;
-  row-gap: 3rem;
+  row-gap: 2rem;
   flex: 1;
   flex-direction: column;
   justify-content: center;

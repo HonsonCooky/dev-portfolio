@@ -1,3 +1,7 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// THEME
+// ---------------------------------------------------------------------------------------------------------------------
+
 const THEME_DARK = 'dark'
 const THEME_LIGHT = 'light'
 
@@ -30,6 +34,7 @@ const getTheme = () => {
 const toggleTheme = () => {
   const currentTheme = getTheme()
   const newTheme = currentTheme === THEME_LIGHT ? THEME_DARK : THEME_LIGHT
+  console.log(newTheme, currentTheme)
   setTheme(newTheme)
   return newTheme
 }
@@ -49,3 +54,18 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
 })
 
 export { getTheme, setTheme, toggleTheme, resetToSystemTheme }
+
+// ---------------------------------------------------------------------------------------------------------------------
+// NAV HEADER
+// ---------------------------------------------------------------------------------------------------------------------
+
+function updateNavHeader() {
+  let nav = document.querySelector('header')
+  if (nav) {
+    let navHeight = nav.offsetHeight // Get the height of the header
+    document.documentElement.style.setProperty('--nav-height', `${navHeight}px`)
+  }
+}
+
+window.addEventListener('load', updateNavHeader)
+window.addEventListener('resize', updateNavHeader)
