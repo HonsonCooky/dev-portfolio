@@ -23,7 +23,7 @@ import blogsView from './views/blogs-view.vue'
 <style scoped>
 main {
   display: flex;
-  row-gap: 20vh;
+  row-gap: 10vh;
   flex-direction: column;
 }
 </style>
