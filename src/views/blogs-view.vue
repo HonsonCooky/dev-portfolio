@@ -55,7 +55,4 @@ async function loadBlog(name, content) {
     background-color: var(--blue);
   }
 }
-
-#blog-content {
-}
 </style>

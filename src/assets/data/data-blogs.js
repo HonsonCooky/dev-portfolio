@@ -1,6 +1,1 @@
-export const blogList = [
-  {
-    name: 'Software Engineer',
-    content: 'what-a-software-engineer-is.html',
-  },
-]
+export const blogList = []
