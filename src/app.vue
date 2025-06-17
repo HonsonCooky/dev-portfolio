@@ -1,29 +1,15 @@
-<script setup>
-import appHeader from './components/app-header.vue'
-import appFooter from './components/app-footer.vue'
+<script setup lang="js">
 import homeView from './views/home-view.vue'
 import aboutView from './views/about-view.vue'
-import experiencesView from './views/experiences-view.vue'
+import workView from './views/work-view.vue'
 import portfolioView from './views/portfolio-view.vue'
 import blogsView from './views/blogs-view.vue'
 </script>
 
 <template>
-  <app-header />
-  <main>
-    <home-view />
-    <about-view />
-    <experiences-view />
-    <portfolio-view />
-    <blogs-view />
-  </main>
-  <app-footer />
+  <homeView />
+  <aboutView />
+  <workView />
+  <portfolioView />
+  <blogsView />
 </template>
-
-<style scoped>
-main {
-  display: flex;
-  row-gap: 10vh;
-  flex-direction: column;
-}
-</style>

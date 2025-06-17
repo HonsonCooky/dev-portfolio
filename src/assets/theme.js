@@ -34,7 +34,6 @@ const getTheme = () => {
 const toggleTheme = () => {
   const currentTheme = getTheme()
   const newTheme = currentTheme === THEME_LIGHT ? THEME_DARK : THEME_LIGHT
-  console.log(newTheme, currentTheme)
   setTheme(newTheme)
   return newTheme
 }
