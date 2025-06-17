@@ -1,4 +1,7 @@
 <script setup lang="js">
+import { Icon } from '@iconify/vue'
+import { toggleTheme } from '@/assets/theme'
+
 function hashNavigation(hash) {
   window.location.hash = hash
 }
@@ -42,6 +45,7 @@ window.addEventListener('load', highlightSection)
     </button>
     <button type="button" title="Portfolio" id="portfolio-btn" @click="hashNavigation('portfolio')">Portfolio</button>
     <button type="button" title="Blogs" id="blogs-btn" @click="hashNavigation('blogs')">Blogs</button>
+    <button><icon icon="mdi:theme-light-dark" @click="toggleTheme" /></button>
   </header>
 </template>
 
@@ -68,6 +72,11 @@ button {
 
   &.selected {
     background-color: var(--surface);
+  }
+
+  svg {
+    margin: 0;
+    font-size: 1em;
   }
 }
 </style>
