@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+import blogCatalog from '@/components/blog-catalog.vue'
+</script>
 
 <template>
   <section class="page" id="blogs">
@@ -7,6 +9,8 @@
       <p>You're Early!</p>
       <p>I've got some content in the pipeline. Watch this space...</p>
     </div>
+
+    <blog-catalog />
   </section>
 </template>
 

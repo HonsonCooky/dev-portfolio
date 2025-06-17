@@ -2,7 +2,7 @@
 import AppCard from '@/components/app-card.vue'
 import { Icon } from '@iconify/vue'
 import { shuffle } from 'lodash/fp.js'
-import { pockets } from '@/assets/toolbelt.js'
+import { pockets } from '@/assets/obj-toolbelt.js'
 
 const toolbeltShowcase = shuffle(
   Object.values(pockets)
@@ -14,7 +14,7 @@ const toolbeltShowcase = shuffle(
 <template>
   <section class="page" id="home">
     <div class="hero">
-      <img alt="Profile picture" src="/imgs/profile.png" />
+      <img alt="Profile picture" src="@/assets/profile.png" />
       <div class="hgroup">
         <span>Hey! I'm</span>
         <h1>Harrison Cook</h1>

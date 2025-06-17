@@ -1,7 +1,7 @@
 <script setup>
 import appCard from './app-card.vue'
 import { Icon } from '@iconify/vue'
-import { projects } from '@/assets/projects'
+import { projects } from '@/assets/obj-projects'
 import { upperFirst } from 'lodash'
 
 const projectNames = Object.keys(projects)
