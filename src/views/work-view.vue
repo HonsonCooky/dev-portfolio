@@ -1,3 +1,5 @@
 <template>
-  <section>Work</section>
+  <div id="work">
+    <h1>Work History</h1>
+  </div>
 </template>

@@ -1,15 +1,27 @@
 <script setup lang="js">
-import homeView from './views/home-view.vue'
-import aboutView from './views/about-view.vue'
-import workView from './views/work-view.vue'
-import portfolioView from './views/portfolio-view.vue'
-import blogsView from './views/blogs-view.vue'
+import AppHeader from './components/app/app-header.vue'
+import AppFooter from './components/app/app-footer.vue'
+import AboutView from './views/about-view.vue'
+import WorkView from './views/work-view.vue'
+import PortfolioView from './views/portfolio-view.vue'
+import BlogsView from './views/blogs-view.vue'
 </script>
 
 <template>
-  <homeView />
-  <aboutView />
-  <workView />
-  <portfolioView />
-  <blogsView />
+  <AppHeader />
+  <hr />
+  <AboutView />
+  <br />
+  <br />
+  <WorkView />
+  <br />
+  <br />
+  <PortfolioView />
+  <br />
+  <br />
+  <BlogsView />
+  <br />
+  <br />
+  <hr />
+  <AppFooter />
 </template>

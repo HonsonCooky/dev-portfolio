@@ -1,15 +1,9 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin: 40px auto;
   padding: 0 10px;
   max-width: 120ch;
-  color: #444;
-  font-size: 16pt;
+  font-size: 18px;
   line-height: 1.6;
-  font-family: sans-serif;
 }
 
 h1,
@@ -18,6 +12,22 @@ h3 {
   line-height: 1.2;
 }
 
-section {
-  min-height: 50vh;
+figure {
+  display: inline-block;
+  border: 1px solid;
+
+  figcaption {
+    padding: 0 1ch;
+  }
+}
+
+img {
+  max-width: 50vw;
+  max-height: 30vh;
+}
+
+details > summary {
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 1.2em;
 }
