@@ -32,7 +32,7 @@ function yearsExperience() {
     <p>
       Beyond technical expertise, my background in musical theatre has honed my ability to communicate, collaborate, and
       present effectively. I bring a unique blend of creativity and precision to every project, fostering an environment
-      of technical excellence and innovation. Ready to build something remarkable? Let’s orchestrate solutions together.
+      of technical excellence and innovation. Ready to build something remarkable? Let's orchestrate solutions together.
     </p>
   </details>
 </template>

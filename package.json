@@ -10,7 +10,6 @@
     "format": "prettier --write src/"
   },
   "devDependencies": {
-    "@iconify/vue": "^4.3.0",
     "@vitejs/plugin-vue": "^5.2.3",
     "lodash": "^4.17.21",
     "prettier": "3.5.3",

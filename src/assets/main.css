@@ -28,6 +28,5 @@ img {
 
 details > summary {
   cursor: pointer;
-  font-weight: bolder;
   font-size: 1.2em;
 }
