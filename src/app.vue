@@ -12,15 +12,11 @@ import blogsView from './views/blogs-view.vue'
   <hr />
   <aboutView />
   <br />
-  <br />
   <workView />
-  <br />
   <br />
   <portfolioView />
   <br />
-  <br />
   <blogsView />
-  <br />
   <br />
   <hr />
   <appFooter />

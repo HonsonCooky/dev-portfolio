@@ -1,5 +1,5 @@
 <template>
-  <details id="about-education" open>
+  <details id="about-education">
     <summary>Education</summary>
 
     <ul>

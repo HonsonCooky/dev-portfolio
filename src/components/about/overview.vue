@@ -7,7 +7,7 @@ function yearsExperience() {
 </script>
 
 <template>
-  <details id="about-overview" open>
+  <details id="about-overview">
     <summary>Overview</summary>
     <p>
       Growing up in a world filled with music and performing, my early years were shaped by rhythm and stage presence.

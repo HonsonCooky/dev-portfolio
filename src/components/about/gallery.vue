@@ -1,5 +1,5 @@
 <template>
-  <details id="about-gallery" open>
+  <details id="about-gallery">
     <summary>Gallery</summary>
     <figure>
       <img src="@/assets/imgs/profile.png" alt="Profile Picture" />
