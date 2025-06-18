@@ -1,35 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link href="/public/imgs/favicon.svg" rel="icon" type="image/svg+xml" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Harrison Cook</title>
-    <style>
-      body {
-        margin: 40px auto;
-        padding: 0 10px;
-        max-width: 120ch;
-        font-size: 18px;
-        line-height: 1.6;
-      }
-
-      h1,
-      h2,
-      h3 {
-        line-height: 1.2;
-      }
-
-      img {
-        max-width: 50vw;
-        max-height: 30vh;
-      }
-
-      details > summary {
-        cursor: pointer;
-        font-size: 1.2em;
-      }
-    </style>
+    <link rel="stylesheet" href="./assets/styles/minimal-style.css" />
+    <script src="./assets/scripts/index.js" defer></script>
   </head>
   <body>
     <header>
@@ -52,43 +29,42 @@
     <div>
       <section id="about">
         <h2>About Me</h2>
-        <figure>
-          <img src="public/imgs/profile.png" alt="Profile Picture" />
-          <figcaption>Profile Picture</figcaption>
-        </figure>
+        <details>
+          <summary>Gallery</summary>
+          <figure>
+            <img src="./assets/imgs/profile.png" alt="Profile Picture" />
+            <figcaption>Profile Picture</figcaption>
+          </figure>
+          <figure>
+            <img src="./assets/imgs/example-photo.png" alt="Example Photography" />
+            <figcaption>Harrison's Photography</figcaption>
+          </figure>
+        </details>
         <p>
-          Growing up in a world filled with music and performing, my early years
-          were shaped by rhythm and stage presence. While the arts nurtured my
-          creativity, it was the intricate logic of digital technologies that
+          Growing up in a world filled with music and performing, my early years were shaped by rhythm and stage
+          presence. While the arts nurtured my creativity, it was the intricate logic of digital technologies that
           ultimately captured my curiosity.
         </p>
         <p>
-          With a strong foundation in calculus and a passion for creative
-          expression through photography and theatre, I discovered programming -
-          an elegant fusion of precision and artistry. It's a discipline that,
-          much like music, follows structure yet allows for boundless
-          innovation. Today, I've traded compositions for code, developing
-          solutions that balance efficiency, structure, and long-term viability.
-          Whether refining algorithms for sustained performance or engineering
-          systems built to endure, I thrive on transforming complex theories
-          into practical, resilient applications.
+          With a strong foundation in calculus and a passion for creative expression through photography and theatre, I
+          discovered programming - an elegant fusion of precision and artistry. It's a discipline that, much like music,
+          follows structure yet allows for boundless innovation. Today, I've traded compositions for code, developing
+          solutions that balance efficiency, structure, and long-term viability. Whether refining algorithms for
+          sustained performance or engineering systems built to endure, I thrive on transforming complex theories into
+          practical, resilient applications.
         </p>
         <p>
-          As a Software Engineer with {{ yearsExperience() }} years of industry
-          experience, I currently specialize in TypeScript and C# development,
-          complemented by a broad array of integration technologies. My
-          fascination lies in understanding software at its most fundamental
-          levels, where hardware and code intersect. I am eager to deepen my
-          expertise in engineering highly specialized, efficient solutions that
-          require a comprehensive understanding of the hardware they operate
-          upon.
+          As a Software Engineer with <span id="years-working">3</span> years of industry experience, I currently
+          specialize in TypeScript and C# development, complemented by a broad array of integration technologies. My
+          fascination lies in understanding software at its most fundamental levels, where hardware and code intersect.
+          I am eager to deepen my expertise in engineering highly specialized, efficient solutions that require a
+          comprehensive understanding of the hardware they operate upon.
         </p>
         <p>
-          Beyond technical expertise, my background in musical theatre has honed
-          my ability to communicate, collaborate, and present effectively. I
-          bring a unique blend of creativity and precision to every project,
-          fostering an environment of technical excellence and innovation. Ready
-          to build something remarkable? Let’s orchestrate solutions together.
+          Beyond technical expertise, my background in musical theatre has honed my ability to communicate, collaborate,
+          and present effectively. I bring a unique blend of creativity and precision to every project, fostering an
+          environment of technical excellence and innovation. Ready to build something remarkable? Let's orchestrate
+          solutions together.
         </p>
       </section>
 
@@ -99,28 +75,19 @@
           <p><strong>[University/Institution Name]</strong> - [Location]</p>
           <p>[Start Date] – [End Date]</p>
           <ul>
-            <li>
-              <strong>Achievements:</strong> [e.g., Dean's List, Thesis Title,
-              Major Projects]
-            </li>
+            <li><strong>Achievements:</strong> [e.g., Dean's List, Thesis Title, Major Projects]</li>
             <li>[Another achievement]</li>
           </ul>
           <p>
-            <a href="link-to-your-transcript.pdf" target="_blank"
-              >View Transcript (PDF)</a
-            >
+            <a href="link-to-your-transcript.pdf" target="_blank">View Transcript (PDF)</a>
           </p>
         </div>
         <div class="item">
           <h3>[Another Degree/Certification Name (if applicable)]</h3>
-          <p>
-            <strong>[Another University/Institution Name]</strong> - [Location]
-          </p>
+          <p><strong>[Another University/Institution Name]</strong> - [Location]</p>
           <p>[Start Date] – [End Date]</p>
           <ul>
-            <li>
-              <strong>Achievements:</strong> [e.g., Relevant coursework, Awards]
-            </li>
+            <li><strong>Achievements:</strong> [e.g., Relevant coursework, Awards]</li>
           </ul>
         </div>
       </section>
@@ -134,8 +101,7 @@
           <p>[Start Date] – [End Date]</p>
           <ul>
             <li>
-              <strong>Achievements:</strong> [e.g., Developed X feature, Managed
-              Y project, Increased Z efficiency]
+              <strong>Achievements:</strong> [e.g., Developed X feature, Managed Y project, Increased Z efficiency]
             </li>
             <li>[Another key achievement]</li>
             <li>[Yet another achievement]</li>
@@ -146,10 +112,7 @@
           <p><strong>[Company Name]</strong> - [Location]</p>
           <p>[Start Date] – [End Date]</p>
           <ul>
-            <li>
-              <strong>Achievements:</strong> [Describe responsibilities and
-              impact]
-            </li>
+            <li><strong>Achievements:</strong> [Describe responsibilities and impact]</li>
           </ul>
         </div>
       </section>
@@ -189,42 +152,24 @@
         <div class="project-grid">
           <div class="project-card">
             <h4>[Project Title 1] - [Software/Hardware]</h4>
-            <p>
-              [Brief description of the project, its purpose, and your role.]
-            </p>
+            <p>[Brief description of the project, its purpose, and your role.]</p>
             <ul>
-              <li>
-                <strong>Technologies/Tools:</strong> [e.g., Python, Django,
-                PostgreSQL]
-              </li>
-              <li>
-                <strong>Key Achievements:</strong> [e.g., Implemented user
-                authentication, Deployed on AWS]
-              </li>
+              <li><strong>Technologies/Tools:</strong> [e.g., Python, Django, PostgreSQL]</li>
+              <li><strong>Key Achievements:</strong> [e.g., Implemented user authentication, Deployed on AWS]</li>
             </ul>
             <p>
-              <a href="link-to-project-github-or-live-demo.com" target="_blank"
-                >View Project</a
-              >
+              <a href="link-to-project-github-or-live-demo.com" target="_blank">View Project</a>
             </p>
           </div>
           <div class="project-card">
             <h4>[Project Title 2] - [Software/Hardware]</h4>
             <p>[Brief description of the project.]</p>
             <ul>
-              <li>
-                <strong>Technologies/Tools:</strong> [e.g., C++, Raspberry Pi,
-                sensors]
-              </li>
-              <li>
-                <strong>Key Achievements:</strong> [e.g., Built a prototype,
-                Collected data]
-              </li>
+              <li><strong>Technologies/Tools:</strong> [e.g., C++, Raspberry Pi, sensors]</li>
+              <li><strong>Key Achievements:</strong> [e.g., Built a prototype, Collected data]</li>
             </ul>
             <p>
-              <a href="link-to-project-github-or-live-demo.com" target="_blank"
-                >View Project</a
-              >
+              <a href="link-to-project-github-or-live-demo.com" target="_blank">View Project</a>
             </p>
           </div>
           <!-- Add more project cards as needed -->
@@ -237,18 +182,12 @@
       <div>
         <address>contact@honsoncooky.dev</address>
         <p>
-          <a href="https://linkedin.com/in/yourprofile" target="_blank"
-            >LinkedIn</a
-          >
+          <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
           |
           <a href="https://github.com/yourprofile" target="_blank">GitHub</a> |
-          <a href="https://twitter.com/yourprofile" target="_blank"
-            >Twitter (Optional)</a
-          >
+          <a href="https://twitter.com/yourprofile" target="_blank">Twitter (Optional)</a>
         </p>
-        <p>
-          &copy; <span id="current-year"></span> Your Name. All rights reserved.
-        </p>
+        <p>&copy; <span id="current-year"></span> Your Name. All rights reserved.</p>
         <p><a href="blog.html">Visit my Blog</a></p>
       </div>
     </footer>
