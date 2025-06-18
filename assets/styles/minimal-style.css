@@ -1,23 +1,41 @@
+:root {
+  --blue: #5286bc;
+  --purple: #9c71b7;
+  --text: #60605f;
+  --base: #ffffff;
+
+  @media (prefers-color-scheme: dark) {
+    --blue: #92b2ca;
+    --purple: #c0a7c7;
+    --text: #d7dad8;
+    --base: #27292c;
+  }
+}
+
 body {
-  margin: 40px auto;
-  padding: 0 10px;
+  margin: 2em auto;
+  background-color: var(--base);
+  padding: 0 18px;
   max-width: 120ch;
+  color: var(--text);
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 1.4;
 }
 
 h1,
 h2,
 h3 {
-  line-height: 1.2;
+  line-height: 2;
 }
 
-img {
-  max-width: 50vw;
-  max-height: 30vh;
+a {
+  color: var(--blue);
+
+  &:visited {
+    color: var(--purple);
+  }
 }
 
 details > summary {
   cursor: pointer;
-  font-size: 1.2em;
 }
