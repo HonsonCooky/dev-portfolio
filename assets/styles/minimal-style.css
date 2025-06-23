@@ -1,14 +1,14 @@
 :root {
-  --blue: #5286bc;
-  --purple: #9c71b7;
-  --text: #60605f;
+  --blue: #4271ae;
+  --purple: #8959a8;
+  --text: #4d4d4c;
   --base: #ffffff;
 
   @media (prefers-color-scheme: dark) {
-    --blue: #92b2ca;
-    --purple: #c0a7c7;
-    --text: #d7dad8;
-    --base: #27292c;
+    --blue: #81a2be;
+    --purple: #b294bb;
+    --text: #c5c8c6;
+    --base: #1d1f21;
   }
 }
 
