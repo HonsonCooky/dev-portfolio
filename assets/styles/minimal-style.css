@@ -38,3 +38,7 @@ a {
 details > summary {
   cursor: pointer;
 }
+
+img {
+  max-width: 100%;
+}
