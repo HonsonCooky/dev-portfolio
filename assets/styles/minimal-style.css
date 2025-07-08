@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
 :root {
   --blue: #4271ae;
   --purple: #8959a8;
@@ -21,6 +23,7 @@ body {
   color: var(--text);
   font-size: 18px;
   line-height: 1.4;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 section {
@@ -41,4 +44,12 @@ details > summary {
 
 img {
   max-width: 100%;
+}
+
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: sans-serif;
 }
