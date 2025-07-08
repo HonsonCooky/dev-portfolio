@@ -30,8 +30,18 @@ section {
   scroll-margin-top: 1em;
 }
 
+h3,
+h4,
+h5,
+h6,
+li,
+p {
+  font-family: sans-serif;
+}
+
 a {
   color: var(--blue);
+  font-family: 'JetBrains Mono', monospace;
 
   &:visited {
     color: var(--purple);
@@ -44,12 +54,4 @@ details > summary {
 
 img {
   max-width: 100%;
-}
-
-h3,
-h4,
-h5,
-h6,
-p {
-  font-family: sans-serif;
 }
