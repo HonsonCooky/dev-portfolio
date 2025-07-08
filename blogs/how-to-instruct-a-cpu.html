@@ -12,7 +12,7 @@
     <header>
       <hgroup>
         <h1>How To Instruct A CPU</h1>
-        <p><b>Getting Into C Programming: AI OUTPUT ON CONCEPTS</b></p>
+        <p><b>Getting Into Low-Level Concepts.</b></p>
         <div>
           <a href="/">Harrison Cook</a>
           :
@@ -24,265 +24,268 @@
     <hr />
     <br />
 
-    <h1>The "Stack" of Control and Abstraction: BIOS, OS, and Programs</h1>
+    <details>
+      <summary>AI Summary: BIOS vs OS vs Program/Process</summary>
+      <h1>The "Stack" of Control and Abstraction: BIOS, OS, and Programs</h1>
 
-    <p>
-      You're correct that everything ultimately boils down to assembly instructions (or the machine code they represent)
-      that the CPU executes. The "stacking" of BIOS, Operating Systems, and Programs refers to levels of
-      <strong>abstraction, control, and privilege</strong>, rather than direct, independent assembly communication to
-      the CPU.
-    </p>
+      <p>
+        You're correct that everything ultimately boils down to assembly instructions (or the machine code they
+        represent) that the CPU executes. The "stacking" of BIOS, Operating Systems, and Programs refers to levels of
+        <strong>abstraction, control, and privilege</strong>, rather than direct, independent assembly communication to
+        the CPU.
+      </p>
 
-    <p>
-      Imagine it like a chain of command, where each layer takes over from the previous one, setting up the environment
-      for the next, and providing a more user-friendly interface.
-    </p>
+      <p>
+        Imagine it like a chain of command, where each layer takes over from the previous one, setting up the
+        environment for the next, and providing a more user-friendly interface.
+      </p>
 
-    <h2>1. BIOS (Basic Input/Output System) - The First Responder</h2>
+      <h2>1. BIOS (Basic Input/Output System) - The First Responder</h2>
 
-    <ul>
-      <li>
-        <strong>Role:</strong> The BIOS (or its modern successor, UEFI) is the very first piece of software that runs
-        when you power on your computer. It's stored on a special, non-volatile memory chip on your motherboard
-        (firmware).
-      </li>
-      <li>
-        <strong>Assembly Communication:</strong> The BIOS itself is written in a low-level language, a significant
-        portion of which is assembly code. When the CPU powers on, its instruction pointer (a special register that
-        tells the CPU which instruction to execute next) is hardwired to a specific memory address where the BIOS code
-        resides.
-      </li>
-      <li>
-        <strong>What it does in Assembly:</strong>
-        <ul>
-          <li>
-            <strong>Power-On Self-Test (POST):</strong> It runs a series of assembly instructions to check if essential
-            hardware components (CPU, RAM, keyboard, video card, etc.) are present and working correctly. This involves
-            directly manipulating hardware registers and checking their status.
-          </li>
-          <li>
-            <strong>Hardware Initialization:</strong> This is a crucial step. It involves using assembly instructions
-            to:
-            <ul>
-              <li>
-                <strong>Configure Chipsets:</strong> Modern motherboards have chipsets (Northbridge/Southbridge or
-                Platform Controller Hub) that manage communication between the CPU and various peripherals (USB, SATA,
-                PCIe, network, audio). The BIOS sends specific commands (bit patterns) to registers within these
-                chipsets to set their operating modes, clock speeds, and enable/disable features.
-              </li>
-              <li>
-                <strong>Memory Controller Setup:</strong> It initializes the memory controller (often integrated into
-                the CPU or chipset) to recognize the installed RAM, determine its size and speed, and configure timings
-                so the CPU can correctly read from and write to memory. This involves writing specific values to memory
-                controller configuration registers.
-              </li>
-              <li>
-                <strong>Peripheral Enumeration & Configuration:</strong> It detects and configures basic peripherals
-                like USB controllers, SATA controllers for hard drives/SSDs, and the integrated graphics. This often
-                involves scanning buses (like PCI/PCIe) to find connected devices and then writing to their control
-                registers to bring them to a known, operational state.
-              </li>
-              <li>
-                <strong>Interrupt Controller Setup:</strong> It configures the programmable interrupt controller (PIC or
-                APIC) to manage hardware interrupts (signals from devices needing CPU attention, like a keyboard press
-                or disk read completion).
-              </li>
-              <li>
-                <strong>Setting up Basic I/O:</strong> It might initialize basic input/output ports (like
-                serial/parallel ports, if present) to a default state.
-              </li>
-              <li>
-                <strong>Preparing for Graphics:</strong> For integrated graphics, it might perform initial setup,
-                enabling basic display output to the screen, allowing you to see POST messages.
-              </li>
-            </ul>
-          </li>
-          <li>
-            <strong>Boot Device Selection:</strong> It uses assembly to read settings (often stored in CMOS/NVRAM) to
-            determine which storage device to boot from.
-          </li>
-          <li>
-            <strong>Bootloader Loading:</strong> Crucially, the BIOS then loads a small program called the
-            <strong>bootloader</strong> (typically from the Master Boot Record (MBR) or GUID Partition Table (GPT) of a
-            hard drive) into memory. This involves assembly instructions to read sectors from the disk and copy them to
-            RAM.
-          </li>
-          <li>
-            <strong>Handing Over Control (BIOS to Bootloader):</strong> Once the bootloader's code is loaded into a
-            specific memory address, the BIOS executes a <code>JUMP</code> (or similar control flow) assembly
-            instruction. This instruction literally changes the value in the CPU's instruction pointer register to the
-            starting address of the bootloader's code. From this moment, the CPU begins fetching and executing
-            instructions <em>from the bootloader's code</em> instead of the BIOS's code. The BIOS effectively steps
-            aside, its job done, but its initialized hardware environment remains for the bootloader and subsequent OS
-            to utilize.
-          </li>
-        </ul>
-      </li>
-    </ul>
+      <ul>
+        <li>
+          <strong>Role:</strong> The BIOS (or its modern successor, UEFI) is the very first piece of software that runs
+          when you power on your computer. It's stored on a special, non-volatile memory chip on your motherboard
+          (firmware).
+        </li>
+        <li>
+          <strong>Assembly Communication:</strong> The BIOS itself is written in a low-level language, a significant
+          portion of which is assembly code. When the CPU powers on, its instruction pointer (a special register that
+          tells the CPU which instruction to execute next) is hardwired to a specific memory address where the BIOS code
+          resides.
+        </li>
+        <li>
+          <strong>What it does in Assembly:</strong>
+          <ul>
+            <li>
+              <strong>Power-On Self-Test (POST):</strong> It runs a series of assembly instructions to check if
+              essential hardware components (CPU, RAM, keyboard, video card, etc.) are present and working correctly.
+              This involves directly manipulating hardware registers and checking their status.
+            </li>
+            <li>
+              <strong>Hardware Initialization:</strong> This is a crucial step. It involves using assembly instructions
+              to:
+              <ul>
+                <li>
+                  <strong>Configure Chipsets:</strong> Modern motherboards have chipsets (Northbridge/Southbridge or
+                  Platform Controller Hub) that manage communication between the CPU and various peripherals (USB, SATA,
+                  PCIe, network, audio). The BIOS sends specific commands (bit patterns) to registers within these
+                  chipsets to set their operating modes, clock speeds, and enable/disable features.
+                </li>
+                <li>
+                  <strong>Memory Controller Setup:</strong> It initializes the memory controller (often integrated into
+                  the CPU or chipset) to recognize the installed RAM, determine its size and speed, and configure
+                  timings so the CPU can correctly read from and write to memory. This involves writing specific values
+                  to memory controller configuration registers.
+                </li>
+                <li>
+                  <strong>Peripheral Enumeration & Configuration:</strong> It detects and configures basic peripherals
+                  like USB controllers, SATA controllers for hard drives/SSDs, and the integrated graphics. This often
+                  involves scanning buses (like PCI/PCIe) to find connected devices and then writing to their control
+                  registers to bring them to a known, operational state.
+                </li>
+                <li>
+                  <strong>Interrupt Controller Setup:</strong> It configures the programmable interrupt controller (PIC
+                  or APIC) to manage hardware interrupts (signals from devices needing CPU attention, like a keyboard
+                  press or disk read completion).
+                </li>
+                <li>
+                  <strong>Setting up Basic I/O:</strong> It might initialize basic input/output ports (like
+                  serial/parallel ports, if present) to a default state.
+                </li>
+                <li>
+                  <strong>Preparing for Graphics:</strong> For integrated graphics, it might perform initial setup,
+                  enabling basic display output to the screen, allowing you to see POST messages.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>Boot Device Selection:</strong> It uses assembly to read settings (often stored in CMOS/NVRAM) to
+              determine which storage device to boot from.
+            </li>
+            <li>
+              <strong>Bootloader Loading:</strong> Crucially, the BIOS then loads a small program called the
+              <strong>bootloader</strong> (typically from the Master Boot Record (MBR) or GUID Partition Table (GPT) of
+              a hard drive) into memory. This involves assembly instructions to read sectors from the disk and copy them
+              to RAM.
+            </li>
+            <li>
+              <strong>Handing Over Control (BIOS to Bootloader):</strong> Once the bootloader's code is loaded into a
+              specific memory address, the BIOS executes a <code>JUMP</code> (or similar control flow) assembly
+              instruction. This instruction literally changes the value in the CPU's instruction pointer register to the
+              starting address of the bootloader's code. From this moment, the CPU begins fetching and executing
+              instructions <em>from the bootloader's code</em> instead of the BIOS's code. The BIOS effectively steps
+              aside, its job done, but its initialized hardware environment remains for the bootloader and subsequent OS
+              to utilize.
+            </li>
+          </ul>
+        </li>
+      </ul>
 
-    <p>
-      <strong
-        >So, the BIOS is the initial, raw, direct assembly interface to the very basic hardware, preparing the
-        stage.</strong
-      >
-    </p>
+      <p>
+        <strong
+          >So, the BIOS is the initial, raw, direct assembly interface to the very basic hardware, preparing the
+          stage.</strong
+        >
+      </p>
 
-    <h2>2. Operating System (OS) - The Manager</h2>
+      <h2>2. Operating System (OS) - The Manager</h2>
 
-    <ul>
-      <li>
-        <strong>Role:</strong> The OS (Linux, Windows, macOS, etc.) is a much larger and more complex piece of software.
-        Its primary job is to manage all the computer's resources (CPU, memory, storage, peripherals) and provide a
-        consistent, abstract environment for applications to run.
-      </li>
-      <li>
-        <strong>Assembly Communication:</strong> The OS <strong>kernel</strong> (the core of the OS) starts its life
-        primarily in assembly code (or C code compiled to assembly). The bootloader (loaded by the BIOS) is responsible
-        for loading the kernel into memory and then <strong>handing over control</strong> to it.
-      </li>
-      <li>
-        <strong>What it does in Assembly (and C/C++):</strong>
-        <ul>
-          <li>
-            <strong>Kernel Initialization:</strong> The initial part of the kernel (often written in assembly or highly
-            optimized C) takes over from the bootloader. It sets up more advanced CPU features (like protected mode,
-            paging/virtual memory, interrupts, and system calls). This is a critical transition from the simpler
-            environment left by the BIOS.
-            <ul>
-              <li>
-                <strong>Handing Over Control (Bootloader to Kernel):</strong> Similar to the BIOS passing control, the
-                bootloader, after loading the entire OS kernel into memory, executes a final
-                <code>JUMP</code> instruction to the kernel's entry point. The CPU's instruction pointer is again
-                updated, and the kernel code begins execution. At this point, the bootloader's temporary role is
-                complete, and the robust OS kernel takes charge.
-              </li>
-            </ul>
-          </li>
-          <li>
-            <strong>Device Drivers:</strong> The OS includes device drivers, which are specialized pieces of code (often
-            written in C, but compiled to machine code) that know how to communicate with specific hardware devices
-            (graphics cards, network cards, etc.). These drivers use assembly instructions to directly interact with
-            hardware registers when necessary, often performing more advanced
-            <strong>hardware initialization</strong> or configuration than the BIOS did (e.g., setting up
-            high-resolution display modes, initializing complex network card features).
-          </li>
-          <li>
-            <strong>Process Management:</strong> The OS uses assembly instructions for context switching (saving the
-            state of one program, loading another) and scheduling different programs to run on the CPU. It employs
-            special privileged assembly instructions that user-level programs are not allowed to execute, ensuring
-            system stability.
-          </li>
-          <li>
-            <strong>Memory Management:</strong> The OS sets up virtual memory, using the CPU's memory management unit
-            (MMU) through assembly instructions to translate virtual addresses (what programs see) into physical
-            addresses (where data actually is in RAM).
-          </li>
-          <li>
-            <strong>System Calls:</strong> This is where the "stacking" becomes more apparent for programs. Instead of
-            programs directly talking to hardware, they make <strong>system calls</strong>. A system call is essentially
-            a request from a user-level program to the kernel to perform a privileged operation (like reading a file,
-            writing to the screen, or allocating memory).
-            <ul>
-              <li>
-                <strong>Assembly View of System Calls:</strong> When a program makes a system call (e.g.,
-                <code>open("file.txt")</code>), it's translated into a specific assembly instruction (like
-                <code>int 0x80</code> on Linux x86 or <code>syscall</code> on newer architectures). This instruction
-                causes the CPU to switch from "user mode" (where applications run) to "kernel mode" (a privileged mode).
-                The OS kernel then takes over, processes the request, and executes the necessary low-level assembly
-                instructions to interact with the hardware. Once done, it <strong>hands over control</strong> back to
-                the program.
-              </li>
-              <li>
-                <strong>Handing Over Control (Kernel to User Program, via System Call):</strong> After the kernel has
-                completed the requested system call, it executes special assembly instructions (like
-                <code>iret</code> for interrupt return) that effectively restore the CPU's state (registers, instruction
-                pointer, privilege level) to what it was before the system call. The CPU then resumes executing the
-                application's code at the instruction immediately following the system call. This is a controlled
-                transfer of execution, back and forth, between user-mode and kernel-mode.
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
+      <ul>
+        <li>
+          <strong>Role:</strong> The OS (Linux, Windows, macOS, etc.) is a much larger and more complex piece of
+          software. Its primary job is to manage all the computer's resources (CPU, memory, storage, peripherals) and
+          provide a consistent, abstract environment for applications to run.
+        </li>
+        <li>
+          <strong>Assembly Communication:</strong> The OS <strong>kernel</strong> (the core of the OS) starts its life
+          primarily in assembly code (or C code compiled to assembly). The bootloader (loaded by the BIOS) is
+          responsible for loading the kernel into memory and then <strong>handing over control</strong> to it.
+        </li>
+        <li>
+          <strong>What it does in Assembly (and C/C++):</strong>
+          <ul>
+            <li>
+              <strong>Kernel Initialization:</strong> The initial part of the kernel (often written in assembly or
+              highly optimized C) takes over from the bootloader. It sets up more advanced CPU features (like protected
+              mode, paging/virtual memory, interrupts, and system calls). This is a critical transition from the simpler
+              environment left by the BIOS.
+              <ul>
+                <li>
+                  <strong>Handing Over Control (Bootloader to Kernel):</strong> Similar to the BIOS passing control, the
+                  bootloader, after loading the entire OS kernel into memory, executes a final
+                  <code>JUMP</code> instruction to the kernel's entry point. The CPU's instruction pointer is again
+                  updated, and the kernel code begins execution. At this point, the bootloader's temporary role is
+                  complete, and the robust OS kernel takes charge.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>Device Drivers:</strong> The OS includes device drivers, which are specialized pieces of code
+              (often written in C, but compiled to machine code) that know how to communicate with specific hardware
+              devices (graphics cards, network cards, etc.). These drivers use assembly instructions to directly
+              interact with hardware registers when necessary, often performing more advanced
+              <strong>hardware initialization</strong> or configuration than the BIOS did (e.g., setting up
+              high-resolution display modes, initializing complex network card features).
+            </li>
+            <li>
+              <strong>Process Management:</strong> The OS uses assembly instructions for context switching (saving the
+              state of one program, loading another) and scheduling different programs to run on the CPU. It employs
+              special privileged assembly instructions that user-level programs are not allowed to execute, ensuring
+              system stability.
+            </li>
+            <li>
+              <strong>Memory Management:</strong> The OS sets up virtual memory, using the CPU's memory management unit
+              (MMU) through assembly instructions to translate virtual addresses (what programs see) into physical
+              addresses (where data actually is in RAM).
+            </li>
+            <li>
+              <strong>System Calls:</strong> This is where the "stacking" becomes more apparent for programs. Instead of
+              programs directly talking to hardware, they make <strong>system calls</strong>. A system call is
+              essentially a request from a user-level program to the kernel to perform a privileged operation (like
+              reading a file, writing to the screen, or allocating memory).
+              <ul>
+                <li>
+                  <strong>Assembly View of System Calls:</strong> When a program makes a system call (e.g.,
+                  <code>open("file.txt")</code>), it's translated into a specific assembly instruction (like
+                  <code>int 0x80</code> on Linux x86 or <code>syscall</code> on newer architectures). This instruction
+                  causes the CPU to switch from "user mode" (where applications run) to "kernel mode" (a privileged
+                  mode). The OS kernel then takes over, processes the request, and executes the necessary low-level
+                  assembly instructions to interact with the hardware. Once done, it
+                  <strong>hands over control</strong> back to the program.
+                </li>
+                <li>
+                  <strong>Handing Over Control (Kernel to User Program, via System Call):</strong> After the kernel has
+                  completed the requested system call, it executes special assembly instructions (like
+                  <code>iret</code> for interrupt return) that effectively restore the CPU's state (registers,
+                  instruction pointer, privilege level) to what it was before the system call. The CPU then resumes
+                  executing the application's code at the instruction immediately following the system call. This is a
+                  controlled transfer of execution, back and forth, between user-mode and kernel-mode.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
 
-    <p>
-      <strong
-        >The OS acts as an intermediary, abstracting away the direct hardware interaction for applications and providing
-        a controlled environment.</strong
-      >
-    </p>
+      <p>
+        <strong
+          >The OS acts as an intermediary, abstracting away the direct hardware interaction for applications and
+          providing a controlled environment.</strong
+        >
+      </p>
 
-    <h2>3. Programs (Applications) - The Users of the System</h2>
+      <h2>3. Programs (Applications) - The Users of the System</h2>
 
-    <ul>
-      <li>
-        <strong>Role:</strong> Your applications (web browsers, games, word processors, custom code) are designed to
-        perform specific tasks for the user.
-      </li>
-      <li>
-        <strong>Assembly Communication:</strong> When you write code in a high-level language (Python, Java, C++, etc.),
-        it's compiled or interpreted down to machine code (assembly instructions) that your CPU understands.
-      </li>
-      <li>
-        <strong>How they "stack":</strong>
-        <ul>
-          <li>
-            <strong>User Mode Execution:</strong> Programs typically run in "user mode," which has limited access to
-            hardware. They cannot directly execute assembly instructions that would manipulate hardware registers or
-            critical system settings. This is a security and stability measure: if a buggy program could directly access
-            hardware, it could crash the entire system.
-          </li>
-          <li>
-            <strong>Relying on OS Services:</strong> Instead of direct hardware access, applications interact with the
-            OS through <strong>system calls</strong>. For example, when your program needs to display text on the
-            screen, it doesn't write assembly instructions to control the graphics card directly. Instead, it makes a
-            system call to the OS, saying "Hey OS, please display this text at these coordinates!" The OS then performs
-            the actual low-level assembly (or C/C++ code that compiles to assembly) to interact with the display
-            hardware.
-          </li>
-          <li>
-            <strong>Libraries and APIs:</strong> Applications often use libraries and Application Programming Interfaces
-            (APIs) provided by the OS or other frameworks. These APIs further abstract away the complexity. For
-            instance, a <code>print()</code> function in Python eventually calls into a C library function, which in
-            turn makes a system call to the OS, which then uses assembly to write to the console.
-          </li>
-        </ul>
-      </li>
-    </ul>
+      <ul>
+        <li>
+          <strong>Role:</strong> Your applications (web browsers, games, word processors, custom code) are designed to
+          perform specific tasks for the user.
+        </li>
+        <li>
+          <strong>Assembly Communication:</strong> When you write code in a high-level language (Python, Java, C++,
+          etc.), it's compiled or interpreted down to machine code (assembly instructions) that your CPU understands.
+        </li>
+        <li>
+          <strong>How they "stack":</strong>
+          <ul>
+            <li>
+              <strong>User Mode Execution:</strong> Programs typically run in "user mode," which has limited access to
+              hardware. They cannot directly execute assembly instructions that would manipulate hardware registers or
+              critical system settings. This is a security and stability measure: if a buggy program could directly
+              access hardware, it could crash the entire system.
+            </li>
+            <li>
+              <strong>Relying on OS Services:</strong> Instead of direct hardware access, applications interact with the
+              OS through <strong>system calls</strong>. For example, when your program needs to display text on the
+              screen, it doesn't write assembly instructions to control the graphics card directly. Instead, it makes a
+              system call to the OS, saying "Hey OS, please display this text at these coordinates!" The OS then
+              performs the actual low-level assembly (or C/C++ code that compiles to assembly) to interact with the
+              display hardware.
+            </li>
+            <li>
+              <strong>Libraries and APIs:</strong> Applications often use libraries and Application Programming
+              Interfaces (APIs) provided by the OS or other frameworks. These APIs further abstract away the complexity.
+              For instance, a <code>print()</code> function in Python eventually calls into a C library function, which
+              in turn makes a system call to the OS, which then uses assembly to write to the console.
+            </li>
+          </ul>
+        </li>
+      </ul>
 
-    <p>
-      <strong
-        >Applications operate on a higher level of abstraction, relying on the OS to handle the messy, privileged,
-        low-level assembly interactions with the hardware.</strong
-      >
-    </p>
+      <p>
+        <strong
+          >Applications operate on a higher level of abstraction, relying on the OS to handle the messy, privileged,
+          low-level assembly interactions with the hardware.</strong
+        >
+      </p>
 
-    <h2>The "Stack" is About Control and Privilege</h2>
+      <h2>The "Stack" is About Control and Privilege</h2>
 
-    <p>
-      The stack isn't about <em>avoiding</em> assembly altogether, but rather about
-      <strong>who is allowed to execute which assembly instructions and when</strong>.
-    </p>
+      <p>
+        The stack isn't about <em>avoiding</em> assembly altogether, but rather about
+        <strong>who is allowed to execute which assembly instructions and when</strong>.
+      </p>
 
-    <ul>
-      <li><strong>BIOS:</strong> Has full control at boot-up, setting up the bare minimum.</li>
-      <li>
-        <strong>Operating System (Kernel Mode):</strong> Takes over with elevated privileges, setting up a more
-        sophisticated environment, managing resources, and acting as the gatekeeper for hardware access. It's the only
-        entity (besides the BIOS) that can execute privileged assembly instructions.
-      </li>
-      <li>
-        <strong>Programs (User Mode):</strong> Run with limited privileges, requesting services from the OS via system
-        calls, which are the controlled "doorways" to the kernel's privileged assembly instructions.
-      </li>
-    </ul>
+      <ul>
+        <li><strong>BIOS:</strong> Has full control at boot-up, setting up the bare minimum.</li>
+        <li>
+          <strong>Operating System (Kernel Mode):</strong> Takes over with elevated privileges, setting up a more
+          sophisticated environment, managing resources, and acting as the gatekeeper for hardware access. It's the only
+          entity (besides the BIOS) that can execute privileged assembly instructions.
+        </li>
+        <li>
+          <strong>Programs (User Mode):</strong> Run with limited privileges, requesting services from the OS via system
+          calls, which are the controlled "doorways" to the kernel's privileged assembly instructions.
+        </li>
+      </ul>
 
-    <p>
-      Your custom code is indeed compiled into assembly, but its execution is orchestrated and constrained by the
-      operating system, which itself was set up by the BIOS. This layered approach allows for stability, security, and
-      the ability to run multiple complex applications simultaneously without them interfering with each other or
-      crashing the entire system.
-    </p>
+      <p>
+        Your custom code is indeed compiled into assembly, but its execution is orchestrated and constrained by the
+        operating system, which itself was set up by the BIOS. This layered approach allows for stability, security, and
+        the ability to run multiple complex applications simultaneously without them interfering with each other or
+        crashing the entire system.
+      </p>
+    </details>
   </body>
 </html>
