@@ -56,3 +56,8 @@ details > summary {
 img {
   max-width: 100%;
 }
+
+ul {
+  padding-inline: 3ch;
+  list-style-type: square;
+}
