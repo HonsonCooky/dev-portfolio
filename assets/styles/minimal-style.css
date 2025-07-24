@@ -15,14 +15,11 @@
 }
 
 body {
-  margin: 2em auto;
-  margin-bottom: 20vh;
   background-color: var(--base);
-  padding: 0 18px;
-  max-width: 120ch;
+  padding: 4rem 18px;
   color: var(--text);
   font-size: 18px;
-  line-height: 1.4;
+  line-height: 1.6em;
   font-family: 'JetBrains Mono', monospace;
 }
 
@@ -41,11 +38,15 @@ p {
 
 a {
   color: var(--blue);
-  font-family: 'JetBrains Mono', monospace;
 
+  font-family: 'JetBrains Mono', monospace;
   &:visited {
     color: var(--purple);
   }
+}
+
+button {
+  font-family: 'JetBrains Mono', monospace;
 }
 
 details > summary {
