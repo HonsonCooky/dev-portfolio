@@ -1,52 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+* {
+  scroll-margin-top: 1em;
+  font-family: monospace;
+}
 
-:root {
-  --blue: #4271ae;
-  --purple: #8959a8;
-  --text: #4d4d4c;
-  --base: #ffffff;
-
-  @media (prefers-color-scheme: dark) {
-    --blue: #81a2be;
-    --purple: #b294bb;
-    --text: #c5c8c6;
-    --base: #1d1f21;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--base);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5em;
   padding: 4rem 18px;
-  color: var(--text);
-  font-size: 18px;
-  line-height: 1.6em;
-  font-family: 'JetBrains Mono', monospace;
-}
+  max-width: 1440px;
+  line-height: 1.4em;
 
-section {
-  scroll-margin-top: 1em;
-}
-
-h3,
-h4,
-h5,
-h6,
-li,
-p {
-  font-family: sans-serif;
-}
-
-a {
-  color: var(--blue);
-
-  font-family: 'JetBrains Mono', monospace;
-  &:visited {
-    color: var(--purple);
+  @media (min-width: 780px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 3em;
   }
 }
 
-button {
-  font-family: 'JetBrains Mono', monospace;
+nav {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1em;
+
+  > * {
+    flex: 1 0 260px;
+  }
 }
 
 details > summary {
@@ -54,11 +36,27 @@ details > summary {
 }
 
 img {
+  margin: 1em 1em 1em 0;
+  border: 2px solid darkgray;
   max-width: 100%;
-  max-height: 240px;
+  max-height: 144px;
 }
 
 ul {
-  padding-inline: 3ch;
-  list-style-type: square;
+  margin-block: 0;
+}
+
+code {
+  border-radius: 3px;
+  background-color: lightgrey; /* light gray default */
+  padding: 2px 4px;
+}
+
+code.block {
+  display: block;
+  margin: 1.4em 0;
+  border-left: 4px solid darkgray;
+  background-color: lightgrey; /* slightly darker gray */
+  padding: 2ch;
+  white-space: pre-wrap;
 }
