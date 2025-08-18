@@ -1,27 +1,24 @@
 {
   "name": "dev-portfolio",
-  "version": "1.0.0",
-  "description": "",
-  "main": "minimal.js",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "format": "prettier --write src/"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/HonsonCooky/dev-portfolio.git"
+  "dependencies": {
+    "vue": "^3.5.18"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/HonsonCooky/dev-portfolio/issues"
-  },
-  "homepage": "https://github.com/HonsonCooky/dev-portfolio#readme",
   "devDependencies": {
-    "prettier": "^3.5.3",
-    "prettier-plugin-css-order": "^2.1.2",
-    "prettier-plugin-organize-attributes": "^1.0.0",
-    "prettier-plugin-organize-imports": "^4.1.0"
+    "@vitejs/plugin-vue": "^6.0.1",
+    "prettier": "3.6.2",
+    "vite": "^7.0.6",
+    "vite-plugin-vue-devtools": "^8.0.0"
   }
 }
