@@ -1,9 +1,18 @@
-<script setup></script>
+<script setup>
+import VHeader from './components/VHeader.vue'
+</script>
 
 <template>
-  <main>
-    <RouterView />
-  </main>
+  <div id="app">
+    <VHeader />
+    <main>
+      <RouterView />
+    </main>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+#app {
+  padding: 0 18px;
+}
+</style>
