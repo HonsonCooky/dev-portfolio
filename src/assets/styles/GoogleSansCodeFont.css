@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'Google Sans Code';
+  src: url('@/assets/fonts/GoogleSansCode-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Google Sans Code';
+  src: url('@/assets/fonts/GoogleSansCode-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+}
+
+* {
+  font-family: 'Google Sans Code', monospace;
+}

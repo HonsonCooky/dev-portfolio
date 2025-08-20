@@ -1,14 +1,14 @@
-import { createApp } from "vue";
-import "./assets/styles/html5-reset.css";
-import "./assets/styles/googlesanscode.css";
-import App from "./App.vue";
-import { createMemoryHistory, createRouter } from "vue-router";
-import HomeView from "./views/Home.vue";
+import { createApp } from 'vue'
+import { createMemoryHistory, createRouter } from 'vue-router'
+import App from './App.vue'
+import './assets/styles/GoogleSansCodeFont.css'
+import './assets/styles/HtmlReset.css'
+import HomeView from './views/HomeView.vue'
 
-const routes = [{ path: "/", component: HomeView }];
+const routes = [{ path: '/', component: HomeView }]
 const router = createRouter({
   history: createMemoryHistory(),
   routes,
-});
+})
 
-createApp(App).use(router).mount("#app");
+createApp(App).use(router).mount('#app')
