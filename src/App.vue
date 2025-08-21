@@ -1,18 +1,27 @@
-<script setup>
-import VHeader from './components/VHeader.vue'
-</script>
-
 <template>
-  <div id="app">
-    <VHeader />
-    <main>
-      <RouterView />
-    </main>
-  </div>
+  <DesktopHeader v-if="isWide" />
+  <main>
+    <RouterView />
+  </main>
 </template>
 
-<style scoped>
-#app {
-  padding: 0 18px;
+<script setup>
+import DesktopHeader from './components/DesktopHeader.vue'
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
+
+const width = ref(window.innerWidth)
+
+const isWide = computed(() => width.value > 786)
+
+function handleResize() {
+  width.value = window.innerWidth
 }
-</style>
+
+onMounted(() => {
+  window.addEventListener('resize', handleResize)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', handleResize)
+})
+</script>

@@ -1,0 +1,39 @@
+:root {
+  /* Base UI */
+  --bg: #1e1e1e;
+  --fg: #d4d4d4;
+  --selection-bg: #264f78;
+  --line-highlight-bg: #2a2d2e;
+  --cursor: #aeafad;
+  --border: #3c3c3c;
+  --window: #181818;
+
+  /* Syntax highlighting */
+  --keyword: #569cd6;
+  --operator: #d4d4d4;
+  --variable: #9cdcfe;
+  --variable-readonly: #4fc1ff;
+  --function: #dcdcaa;
+  --string: #ce9178;
+  --number: #b5cea8;
+  --comment: #6a9955;
+  --type: #4ec9b0;
+  --constant: #569cd6;
+
+  /* UI accents */
+  --activitybar-bg: #333333;
+  --statusbar-bg: #007acc;
+  --statusbar-fg: #ffffff;
+  --tab-active-bg: #1e1e1e;
+  --tab-inactive-bg: #2d2d2d;
+  --tab-border: #252526;
+
+  /* Utility */
+  --shadow: rgba(0, 0, 0, 0.36);
+}
+
+html,
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+}
