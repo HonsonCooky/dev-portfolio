@@ -5,5 +5,5 @@ export default {
   tabWidth: 2,
   printWidth: 120,
 
-  plugins: ['prettier-plugin-organize-imports'],
+  plugins: ['prettier-plugin-organize-imports', 'prettier-plugin-css-order'],
 }

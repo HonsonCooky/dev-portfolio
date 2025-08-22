@@ -1,15 +1,15 @@
 @font-face {
-  font-family: 'Google Sans Code';
-  src: url('../fonts/GoogleSansCode.ttf') format('truetype');
-  font-weight: 100 900;
   font-style: normal;
+  font-weight: 100 900;
+  src: url('../fonts/GoogleSansCode.ttf') format('truetype');
+  font-family: 'Google Sans Code';
 }
 
 @font-face {
-  font-family: 'Google Sans Code';
-  src: url('../fonts/GoogleSansCodeItalic.ttf') format('truetype');
-  font-weight: 100 900;
   font-style: italic;
+  font-weight: 100 900;
+  src: url('../fonts/GoogleSansCodeItalic.ttf') format('truetype');
+  font-family: 'Google Sans Code';
 }
 
 * {

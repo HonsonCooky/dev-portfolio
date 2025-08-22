@@ -63,24 +63,24 @@ const experiences = [
 }
 
 .role {
-  font-size: 1.25rem;
   font-weight: 600;
+  font-size: 1.25rem;
 }
 
 .company {
-  font-weight: 400;
   color: var(--text-secondary, #555);
+  font-weight: 400;
 }
 
 .meta {
-  font-size: 0.95rem;
   margin: 0.25rem 0 0.75rem;
   color: var(--text-muted, #666);
+  font-size: 0.95rem;
 }
 
 .achievements {
-  list-style: disc;
   padding-left: 1.25rem;
+  list-style: disc;
 }
 
 .achievements li {

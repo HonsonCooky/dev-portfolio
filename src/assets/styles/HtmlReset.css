@@ -67,17 +67,17 @@ time,
 mark,
 audio,
 video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
   vertical-align: baseline;
+  margin: 0;
+  outline: 0;
+  border: 0;
   background: transparent;
+  padding: 0;
+  font-size: 100%;
 }
 
 body {
-  line-height: 1;
+  line-height: 1.6;
 }
 
 article,
@@ -112,11 +112,11 @@ q:after {
 }
 
 a {
+  vertical-align: baseline;
   margin: 0;
+  background: transparent;
   padding: 0;
   font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
 }
 
 /* change colours to suit your needs */
@@ -136,8 +136,8 @@ del {
 
 abbr[title],
 dfn[title] {
-  border-bottom: 1px dotted;
   cursor: help;
+  border-bottom: 1px dotted;
 }
 
 table {
@@ -148,13 +148,17 @@ table {
 /* change border colour to suit your needs */
 hr {
   display: block;
-  height: 1px;
-  border: 0;
   margin: 1em 0;
+  border: 0;
   padding: 0;
+  height: 1px;
 }
 
 input,
 select {
   vertical-align: middle;
+}
+
+details {
+  cursor: pointer;
 }

@@ -1,17 +1,9 @@
 <template>
   <section class="projects">
     <h2>Projects</h2>
-    <div
-      v-for="(group, idx) in projects"
-      :key="idx"
-      class="project-group"
-    >
+    <div v-for="(group, idx) in projects" :key="idx" class="project-group">
       <h3>{{ group.group }}</h3>
-      <div
-        v-for="(proj, pIdx) in group.items"
-        :key="pIdx"
-        class="project-item"
-      >
+      <div v-for="(proj, pIdx) in group.items" :key="pIdx" class="project-item">
         <h4>{{ proj.name }}</h4>
         <p class="description">{{ proj.description }}</p>
         <p v-if="proj.technologies?.length" class="tech">
@@ -36,7 +28,8 @@ const projects = [
     items: [
       {
         name: 'Bus-Sharp',
-        description: "A web and mobile solution tackling Wellington's public transport issues, developed as a university team project.",
+        description:
+          "A web and mobile solution tackling Wellington's public transport issues, developed as a university team project.",
         technologies: ['React', 'React Native', 'TypeScript'],
         links: [
           { label: 'Bus-Sharp-Ionic', url: '#' },
@@ -51,7 +44,8 @@ const projects = [
       },
       {
         name: 'M5-Stack BLE Network',
-        description: "A solo project building a network of Arduino M5Stack ESP32 devices for weather data transmission via Bluetooth Low Energy.",
+        description:
+          'A solo project building a network of Arduino M5Stack ESP32 devices for weather data transmission via Bluetooth Low Energy.',
         technologies: ['Arduino', 'C++'],
       },
     ],
@@ -115,5 +109,3 @@ const projects = [
   },
 ]
 </script>
-
-<style

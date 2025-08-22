@@ -55,19 +55,19 @@ const education = [
 }
 
 .degree {
-  font-size: 1.25rem;
   font-weight: 600;
+  font-size: 1.25rem;
 }
 
 .meta {
-  font-size: 0.95rem;
   margin: 0.25rem 0 0.75rem;
   color: var(--text-muted, #666);
+  font-size: 0.95rem;
 }
 
 .achievements {
-  list-style: disc;
   padding-left: 1.25rem;
+  list-style: disc;
 }
 
 .achievements li {
