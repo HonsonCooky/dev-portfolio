@@ -22,8 +22,8 @@
       <h3>Engineering Excellence - Now Taking Center Stage.</h3>
 
       <div class="button-group">
-        <button @click="goTo('/resume')">Resume</button>
-        <button @click="goTo('/projects')">Projects</button>
+        <button @click="openResume">Resume</button>
+        <button @click="() => router.push('/projects')">Projects</button>
       </div>
 
       <p>
@@ -42,16 +42,14 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
-function goTo(path) {
-  router.push(path)
+function openResume() {
+  window.open('/docs/HarrisonCookCV(current).pdf', '_blank')
 }
 </script>
 
 <style lang="css" scoped>
 .page {
-  display: flex;
-  row-gap: 3em;
-  flex-flow: row wrap;
+  gap: 3em 4ch;
 }
 
 .profile-card {
@@ -59,10 +57,13 @@ function goTo(path) {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: 2ch;
   box-shadow: -1ch 1ch 5px var(--shadow);
 
   .profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 4ch;
 
     hgroup {
@@ -100,7 +101,7 @@ function goTo(path) {
     color: var(--bg);
     font-size: 2em;
 
-    > * {
+    a {
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -108,14 +109,16 @@ function goTo(path) {
       padding: 1ch;
       color: inherit;
     }
+
+    a:hover {
+      color: var(--fg);
+    }
   }
 }
 
 .intro-card {
   display: flex;
   flex-direction: column;
-  margin-bottom: 2em;
-  margin-left: 1em;
   max-width: 500px;
 
   h1 {
@@ -136,8 +139,10 @@ function goTo(path) {
     gap: 2ch;
     margin: 2em 0;
 
-    button {
+    > button {
       border: 1px solid var(--border);
+      padding: 0.2em 2ch;
+      font-size: 1.2em;
     }
   }
 }

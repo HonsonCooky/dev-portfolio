@@ -159,7 +159,7 @@ select {
   vertical-align: middle;
 }
 
-details {
+summary {
   cursor: pointer;
 }
 
@@ -168,5 +168,5 @@ img {
   width: auto;
   max-width: 70vw;
   height: auto;
-  max-height: 40vh;
+  max-height: 35vh;
 }

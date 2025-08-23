@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import { createMemoryHistory, createRouter } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
 import './assets/styles/FlexDefaults.css'
 import './assets/styles/GoogleSansCodeFont.css'
@@ -19,7 +19,7 @@ const routes = [
   { path: '/contact', component: ContactView },
 ]
 const router = createRouter({
-  history: createMemoryHistory(),
+  history: createWebHistory(),
   routes,
 })
 

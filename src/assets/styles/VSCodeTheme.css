@@ -1,8 +1,8 @@
 :root {
   --bg: #1e1e1e;
   --fg: #d4d4d4;
-  --selection-bg: #264f78;
-  --line-highlight: #2a2d2e;
+  --selection: #264f78;
+  --highlight: #2a2d2e;
   --cursor: #aeafad;
   --border: #3c3c3c;
 
@@ -64,7 +64,7 @@ button {
   align-items: center;
   border: none;
   background-color: transparent;
-  padding: 1ch;
+  padding: 0.3em;
   color: var(--text);
 }
 
@@ -74,4 +74,25 @@ button:hover {
 
 button:active {
   background-color: var(--selection);
+}
+
+summary {
+  padding: 0.3em;
+}
+
+summary:hover {
+  background-color: var(--highlight);
+}
+
+summary:active {
+  background-color: var(--selection);
+}
+
+.page {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 1em 2ch;
+  width: 100%;
+  max-width: 1440px;
 }
