@@ -76,18 +76,6 @@ button:active {
   background-color: var(--selection);
 }
 
-summary {
-  padding: 0.3em;
-}
-
-summary:hover {
-  background-color: var(--highlight);
-}
-
-summary:active {
-  background-color: var(--selection);
-}
-
 code {
   border: 2px solid var(--border);
   background-color: var(--highlight);

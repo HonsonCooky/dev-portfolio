@@ -1,6 +1,6 @@
 <template>
   <header>
-    <button @click="navigateTo('/')" class="icon">
+    <button @click="goto('/')" class="icon">
       <h1>Harrison Cook</h1>
     </button>
 
@@ -9,9 +9,9 @@
     </button>
 
     <nav :class="{ open: isNavOpen }">
-      <button @click="navigateTo('/about')">About</button>
-      <button @click="navigateTo('/projects')">Projects</button>
-      <button @click="navigateTo('/contact')">Contact</button>
+      <button @click="goto('/about')">About</button>
+      <button @click="goto('/projects')">Projects</button>
+      <button @click="goto('/contact')">Contact</button>
     </nav>
   </header>
 </template>
@@ -24,7 +24,7 @@ import { useRouter } from 'vue-router'
 const isNavOpen = ref(false)
 const router = useRouter()
 
-function navigateTo(path) {
+function goto(path) {
   isNavOpen.value = false
   router.push(path)
 }
@@ -33,7 +33,8 @@ function navigateTo(path) {
 <style scoped>
 header {
   display: flex;
-  position: relative;
+  position: sticky;
+  top: 0;
   justify-content: space-between;
   z-index: 1000;
   box-shadow: 0 1ch 5px var(--shadow);
@@ -43,7 +44,7 @@ header {
 
 button {
   z-index: 2000;
-  font-size: 1.4em;
+  font-size: 2em;
 }
 
 button.icon {
