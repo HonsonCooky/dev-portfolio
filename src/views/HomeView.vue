@@ -118,10 +118,8 @@ function openResume() {
 
 .intro-card {
   display: flex;
-  flex: 1;
+  flex: 1 0 280px;
   flex-direction: column;
-  min-width: min(300px, 100vw);
-  max-width: 600px;
 
   h1 {
     font-weight: bolder;
