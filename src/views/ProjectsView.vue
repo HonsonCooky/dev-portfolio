@@ -3,7 +3,7 @@
     <details v-for="proj in projects">
       <summary>{{ proj.group }}</summary>
       <div class="detail-content">
-        <ul class="projects">
+        <ul class="content-list">
           <li v-for="item in proj.items">
             <h1>{{ item.name }}</h1>
             <p>{{ item.description }}</p>
@@ -25,11 +25,32 @@
     </details>
     <details>
       <summary>Toolbelt</summary>
+      <div class="detail-content">
+        <ul class="content-list">
+          <li v-for="pocket in toolbelt">
+            <h1>{{ pocket.name }}</h1>
+            <p>
+              <span v-for="(item, idx) in pocket.items">
+                <span>{{ item.name }}</span>
+                <span v-if="idx < pocket.items.length - 1"> | </span>
+              </span>
+            </p>
+            <p>
+              <span v-for="(useCase, idx) in new Set(pocket.items.flatMap((item) => item.tags))" class="where">
+                <Icon icon="mdi:tick" />
+                <span>{{ useCase }}</span>
+              </span>
+            </p>
+          </li>
+        </ul>
+      </div>
     </details>
   </div>
 </template>
 
 <script setup>
+import { Icon } from '@iconify/vue'
+
 const projects = [
   {
     group: 'University Projects',
@@ -221,15 +242,22 @@ ul {
   margin-left: 2ch;
 }
 
-.projects > li {
+.content-list > li {
   margin-bottom: 2em;
 }
 
-.projects > li > p {
+.content-list > li > p {
   margin: 0.5em 0;
 }
 
 a {
   color: var(--fg);
+}
+
+.where {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1ch;
 }
 </style>
