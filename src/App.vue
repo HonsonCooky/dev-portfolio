@@ -1,15 +1,20 @@
-<script setup lang="ts"></script>
-
 <template>
+  <Header />
   <main>
     <RouterView />
   </main>
 </template>
 
-<style>
+<script setup>
+import Header from './components/Header.vue'
+</script>
+
+<style scoped>
 main {
   display: flex;
-  flex-direction: column;
   flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 </style>

@@ -21,8 +21,8 @@
 :root[data-theme='light'] {
   --bg: #ffffff;
   --fg: #333333;
-  --selection-bg: #add6ff;
-  --line-highlight: #f3f3f3;
+  --selection: #add6ff;
+  --highlight: #f3f3f3;
   --cursor: #000000;
   --border: #e5e5e5;
 
@@ -38,8 +38,22 @@
   --shadow: rgba(0, 0, 0, 0.18);
 }
 
+:root {
+  --pw: 18px;
+}
+
 html,
 body {
   background-color: var(--bg);
   color: var(--fg);
+}
+
+::selection {
+  background-color: var(--selection);
+  color: var(--text);
+}
+
+::-moz-selection {
+  background-color: var(--selection);
+  color: var(--text);
 }
