@@ -9,12 +9,10 @@ import AboutView from './views/AboutView.vue'
 import ContactView from './views/ContactView.vue'
 import HomeView from './views/HomeView.vue'
 import ProjectsView from './views/ProjectsView.vue'
-import WorkHistoryView from './views/WorkHistoryView.vue'
 
 const routes = [
   { path: '/', component: HomeView },
   { path: '/about', component: AboutView },
-  { path: '/resume', component: WorkHistoryView },
   { path: '/projects', component: ProjectsView },
   { path: '/contact', component: ContactView },
 ]

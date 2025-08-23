@@ -19,7 +19,7 @@
 
     <div class="intro-card">
       <h1>Hey!</h1>
-      <h3>Engineering Excellence - Now Taking Center Stage.</h3>
+      <h3>Engineering Excellence,<br />Now Taking Center Stage.</h3>
 
       <div class="button-group">
         <button @click="openResume">Resume</button>
@@ -118,8 +118,10 @@ function openResume() {
 
 .intro-card {
   display: flex;
+  flex: 1;
   flex-direction: column;
-  max-width: 500px;
+  min-width: min(300px, 100vw);
+  max-width: 600px;
 
   h1 {
     font-weight: bolder;

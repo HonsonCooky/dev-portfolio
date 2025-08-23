@@ -88,6 +88,14 @@ summary:active {
   background-color: var(--selection);
 }
 
+code {
+  border: 2px solid var(--border);
+  background-color: var(--highlight);
+  padding: calc(0.3em - 2px) 1ch;
+  color: var(--string);
+  font-size: 1em;
+}
+
 .page {
   display: flex;
   flex-flow: row wrap;

@@ -10,7 +10,6 @@
 
     <nav :class="{ open: isNavOpen }">
       <button @click="navigateTo('/about')">About</button>
-      <button @click="navigateTo('/resume')">Resume</button>
       <button @click="navigateTo('/projects')">Projects</button>
       <button @click="navigateTo('/contact')">Contact</button>
     </nav>
@@ -62,7 +61,7 @@ nav {
   gap: 0.3em;
   z-index: 1000;
   background-color: var(--bg);
-  padding: calc((100vw - 1080px) / 2);
+  padding: calc((100vw - 1440px) / 2);
   width: 100vw;
   height: 100vh;
 
