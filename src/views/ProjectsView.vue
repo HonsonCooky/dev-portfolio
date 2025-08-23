@@ -45,7 +45,7 @@
 
 <script setup>
 import { Icon } from '@iconify/vue'
-import Details from '../components/Details.vue'
+import Details from '../components/Detail.vue'
 import { projects } from '../assets/scripts/projects'
 import { toolbelt } from '../assets/scripts/toolbelt'
 </script>
