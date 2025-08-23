@@ -1,0 +1,106 @@
+:root {
+  --bg: #1e1e1e;
+  --fg: #d4d4d4;
+  --selection: #264f78;
+  --highlight: #2a2d2e;
+  --cursor: #aeafad;
+  --border: #3c3c3c;
+
+  --keyword: #569cd6;
+  --variable: #9cdcfe;
+  --variable-const: #4fc1ff;
+  --function: #dcdcaa;
+  --string: #ce9178;
+  --number: #b5cea8;
+  --comment: #6a9955;
+  --type: #4ec9b0;
+
+  --shadow: rgba(0, 0, 0, 0.36);
+}
+
+:root[data-theme='light'] {
+  --bg: #ffffff;
+  --fg: #333333;
+  --selection: #add6ff;
+  --highlight: #f3f3f3;
+  --cursor: #000000;
+  --border: #e5e5e5;
+
+  --keyword: #0000ff;
+  --variable: #001080;
+  --variable-const: #007acc;
+  --function: #795e26;
+  --string: #a31515;
+  --number: #098658;
+  --comment: #008000;
+  --type: #267f99;
+
+  --shadow: rgba(0, 0, 0, 0.18);
+}
+
+:root {
+  --pw: 18px;
+}
+
+html,
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+::selection {
+  background-color: var(--selection);
+  color: var(--text);
+}
+
+::-moz-selection {
+  background-color: var(--selection);
+  color: var(--text);
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  padding: 0.3em;
+  color: var(--text);
+}
+
+button:hover {
+  background-color: var(--highlight);
+}
+
+button:active {
+  background-color: var(--selection);
+}
+
+summary {
+  padding: 0.3em;
+}
+
+summary:hover {
+  background-color: var(--highlight);
+}
+
+summary:active {
+  background-color: var(--selection);
+}
+
+code {
+  border: 2px solid var(--border);
+  background-color: var(--highlight);
+  padding: calc(0.3em - 2px) 1ch;
+  color: var(--string);
+  font-size: 1em;
+}
+
+.page {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 1em 2ch;
+  width: 100%;
+  max-width: 1440px;
+}
