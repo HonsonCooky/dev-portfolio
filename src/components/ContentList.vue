@@ -1,16 +1,16 @@
 <template>
-  <slot />
+  <div class="content-item">
+    <slot />
+  </div>
 </template>
 
 <style>
-ul {
-  margin-left: 2ch;
-}
-
 .content-item {
+  margin: 1.2em 0;
+
   > h2 {
-    margin: 1em 0;
-    font-size: 1.4em;
+    margin: 0 0 0.6em 0;
+    font-size: 1.2em;
   }
 
   h2 > small {
@@ -28,6 +28,10 @@ ul {
     flex-direction: row;
     align-items: center;
     gap: 1ch;
+  }
+
+  ul {
+    margin-left: 2ch;
   }
 }
 </style>

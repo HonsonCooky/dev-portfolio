@@ -1,26 +1,24 @@
 <template>
   <Details title="Education">
-    <ContentList>
-      <div v-for="edu in education" class="content-item">
-        <h2>{{ edu.degree }}</h2>
-        <p>
-          <span>
-            <Icon icon="mdi:calendar" />
-            {{ edu.dates }}
-          </span>
-          <span>
-            <Icon icon="mdi:location" />
-            {{ edu.location }}
-          </span>
-        </p>
-        <ul>
-          <li v-for="point in edu.achievements">
-            {{ point }}
-          </li>
-        </ul>
-        <div v-if="edu.transcript">
-          <button @click="() => openRecord(edu.transcript)">View Transcript (PDF)</button>
-        </div>
+    <ContentList v-for="edu in education">
+      <h2>{{ edu.degree }}</h2>
+      <p>
+        <span>
+          <Icon icon="mdi:calendar" />
+          {{ edu.dates }}
+        </span>
+        <span>
+          <Icon icon="mdi:location" />
+          {{ edu.location }}
+        </span>
+      </p>
+      <ul>
+        <li v-for="point in edu.achievements">
+          {{ point }}
+        </li>
+      </ul>
+      <div v-if="edu.transcript">
+        <button @click="() => openRecord(edu.transcript)">View Transcript (PDF)</button>
       </div>
     </ContentList>
   </Details>
