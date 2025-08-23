@@ -162,3 +162,11 @@ select {
 details {
   cursor: pointer;
 }
+
+img {
+  display: block;
+  width: auto;
+  max-width: 70vw;
+  height: auto;
+  max-height: 40vh;
+}

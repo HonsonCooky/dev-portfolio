@@ -1,7 +1,6 @@
 <template>
   <header>
     <button @click="navigateTo('/')" class="icon">
-      <img src="../assets/imgs/favicon.svg" />
       <h1>Harrison Cook</h1>
     </button>
 
@@ -11,12 +10,9 @@
 
     <nav :class="{ open: isNavOpen }">
       <button @click="navigateTo('/about')">About</button>
-      <hr />
-      <button @click="navigateTo('/about')">Resume</button>
-      <hr />
-      <button @click="navigateTo('/about')">Projects</button>
-      <hr />
-      <button @click="navigateTo('/about')">Contact</button>
+      <button @click="navigateTo('/resume')">Resume</button>
+      <button @click="navigateTo('/projects')">Projects</button>
+      <button @click="navigateTo('/contact')">Contact</button>
     </nav>
   </header>
 </template>
@@ -40,28 +36,16 @@ header {
   display: flex;
   position: relative;
   justify-content: space-between;
-  box-shadow: 0 0 10px var(--shadow);
+  z-index: 1000;
+  margin-bottom: 1em;
+  box-shadow: 0 1ch 5px var(--shadow);
+  background-color: var(--bg);
   padding: 0 calc((100vw - 1440px) / 2);
 }
 
 button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   z-index: 2000;
-  border: none;
-  background-color: transparent;
-  padding: 1ch;
-  color: var(--text);
   font-size: 1.4em;
-}
-
-button:hover {
-  background-color: var(--highlight);
-}
-
-button:active {
-  background-color: var(--selection);
 }
 
 button.icon {
@@ -76,6 +60,7 @@ nav {
   left: 0;
   flex-direction: column;
   justify-content: center;
+  gap: 0.3em;
   z-index: 1000;
   background-color: var(--bg);
   padding: calc((100vw - 1080px) / 2);
@@ -85,9 +70,5 @@ nav {
   &.open {
     display: flex;
   }
-}
-
-nav > hr {
-  border: 1px solid var(--border);
 }
 </style>

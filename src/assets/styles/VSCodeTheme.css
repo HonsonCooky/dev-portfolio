@@ -57,3 +57,21 @@ body {
   background-color: var(--selection);
   color: var(--text);
 }
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  padding: 1ch;
+  color: var(--text);
+}
+
+button:hover {
+  background-color: var(--highlight);
+}
+
+button:active {
+  background-color: var(--selection);
+}
