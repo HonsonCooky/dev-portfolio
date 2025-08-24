@@ -1,4 +1,6 @@
 <script setup>
+import { onMounted } from 'vue'
+
 const props = defineProps({
   title: {
     type: String,
@@ -10,13 +12,15 @@ const props = defineProps({
   },
 })
 
-window.addEventListener('load', () => {
+onMounted(() => {
   const header = getComputedStyle(document.querySelector('header'))
   document.documentElement.style.setProperty('--header-height', header.height)
 })
 
-window.addEventListener('load', () => {
+onMounted(() => {
+  console.log('here')
   const pageDetails = document.querySelectorAll('details')
+
   pageDetails.forEach((detail) => {
     detail.addEventListener('click', () => {
       pageDetails.forEach((otherDetail) => {
