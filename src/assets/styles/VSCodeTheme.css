@@ -77,12 +77,10 @@ button:active {
 }
 
 code {
-  border: 2px solid var(--border);
+  border: 1px solid var(--border);
   background-color: var(--highlight);
-  padding: calc(0.3em - 2px) 1ch;
+  padding: 1px 1ch;
   color: var(--string);
-  font-size: 1em;
-  line-height: 1.6em;
 }
 
 .page {
