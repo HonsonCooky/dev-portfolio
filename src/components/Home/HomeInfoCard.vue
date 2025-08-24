@@ -5,19 +5,26 @@
 
     <div class="button-group">
       <button @click="openResume">Resume</button>
-      <button @click="() => router.push('/projects')">Projects</button>
+      <button @click="gotoProjects">Projects</button>
     </div>
 
     <p>
       From stage lights to server logs, I've always thrived where structure meets creativity. Now a Software Engineer
-      specializing in TypeScript and C#, I craft systems that are as elegant under the hood as they are enduring in the
-      field. Every project is a chance to turn complexity into clarity - and deliver work that performs for years to
-      come.
+      specializing in <code>TypeScript</code> and <code>C#</code>, I craft systems that are as elegant under the hood as
+      they are enduring in the field. Every project is a chance to turn complexity into clarity - and deliver work that
+      performs for years to come.
     </p>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+const openResume = () => window.open('/docs/HarrisonCookCV(current).pdf', '_blank')
+const gotoProjects = () => router.push('/projects')
+</script>
 
 <style scoped>
 .intro-card {

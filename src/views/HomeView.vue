@@ -6,16 +6,8 @@
 </template>
 
 <script setup lang="ts">
-import { Icon } from '@iconify/vue'
-import { useRouter } from 'vue-router'
-import HomeProfileCard from '../components/HomeProfileCard.vue'
-import HomeInfoCard from '../components/HomeInfoCard.vue'
-
-const router = useRouter()
-
-function openResume() {
-  window.open('/docs/HarrisonCookCV(current).pdf', '_blank')
-}
+import HomeProfileCard from '../components/Home/HomeProfileCard.vue'
+import HomeInfoCard from '../components/Home/HomeInfoCard.vue'
 </script>
 
 <style lang="css" scoped>

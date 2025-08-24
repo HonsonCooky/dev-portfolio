@@ -1,7 +1,7 @@
 <template>
   <div class="profile-card">
     <div class="profile-info">
-      <img src="../assets/imgs/profile.png" alt="profile.png" class="profile-img" />
+      <img src="../../assets/imgs/profile.png" alt="profile.png" />
       <hgroup>
         <h1>Harrison<br />Cook</h1>
         <hr />
@@ -45,7 +45,7 @@ import { Icon } from '@iconify/vue'
   margin: 1em;
 
   h1 {
-    font-size: 2.5em;
+    font-size: 3em;
     line-height: 1;
     text-align: center;
   }

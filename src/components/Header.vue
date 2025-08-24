@@ -62,7 +62,7 @@ nav {
   gap: 0.3em;
   z-index: 1000;
   background-color: var(--bg);
-  padding: calc((100vw - 1440px) / 2);
+  padding: 0 calc((100vw - 1440px) / 2);
   width: 100vw;
   height: 100vh;
 
