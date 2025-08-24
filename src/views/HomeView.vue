@@ -1,17 +1,12 @@
 <script setup lang="ts">
 import HomeInfoCard from '../components/Home/HomeInfoCard.vue'
 import HomeProfileCard from '../components/Home/HomeProfileCard.vue'
+import Page from '../components/Page.vue'
 </script>
 
 <template>
-  <div class="page">
+  <Page :is-column="false">
     <HomeProfileCard />
     <HomeInfoCard />
-  </div>
+  </Page>
 </template>
-
-<style lang="css" scoped>
-.page {
-  gap: 3em 4ch;
-}
-</style>

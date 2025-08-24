@@ -71,6 +71,10 @@ a:hover {
   background-color: var(--highlight);
 }
 
+a:active {
+  background-color: var(--selection);
+}
+
 button {
   display: flex;
   justify-content: center;
@@ -94,13 +98,4 @@ code {
   background-color: var(--highlight);
   padding: 1px 1ch;
   color: var(--string);
-}
-
-.page {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  padding: 1em 2ch;
-  width: 100%;
-  max-width: 1440px;
 }

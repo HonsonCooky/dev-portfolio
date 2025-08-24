@@ -5,11 +5,6 @@ const props = defineProps({
     required: true,
   },
 })
-
-window.addEventListener('load', () => {
-  const allDetails = document.querySelectorAll('details')
-  console.log(allDetails)
-})
 </script>
 
 <template>
