@@ -1,3 +1,7 @@
+<script setup>
+import Details from '../Detail.vue'
+</script>
+
 <template>
   <Details title="About Me">
     <p>
@@ -27,7 +31,3 @@
     </p>
   </Details>
 </template>
-
-<script setup>
-import Details from '../Detail.vue'
-</script>

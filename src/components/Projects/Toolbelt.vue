@@ -1,8 +1,8 @@
 <script setup>
-import Detail from '../Detail.vue'
-import ContentList from '../ContentList.vue'
 import { Icon } from '@iconify/vue'
 import { toolbelt } from '../../assets/scripts/toolbelt.js'
+import ContentList from '../ContentList.vue'
+import Detail from '../Detail.vue'
 </script>
 
 <template>

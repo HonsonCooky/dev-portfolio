@@ -1,3 +1,10 @@
+<script setup>
+import { Icon } from '@iconify/vue'
+import { experiences } from '../../assets/scripts/work.js'
+import ContentList from '../ContentList.vue'
+import Detail from '../Detail.vue'
+</script>
+
 <template>
   <Detail title="Work History">
     <ContentList v-for="role in experiences">
@@ -22,10 +29,3 @@
     </ContentList>
   </Detail>
 </template>
-
-<script setup>
-import ContentList from '../ContentList.vue'
-import Detail from '../Detail.vue'
-import { Icon } from '@iconify/vue'
-import { experiences } from '../../assets/scripts/work.js'
-</script>

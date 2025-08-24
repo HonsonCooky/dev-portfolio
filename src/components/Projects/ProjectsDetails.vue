@@ -1,7 +1,7 @@
 <script setup>
-import ContentList from '../ContentList.vue'
-import Detail from '../../components/Detail.vue'
 import { projects } from '../../assets/scripts/projects'
+import Detail from '../../components/Detail.vue'
+import ContentList from '../ContentList.vue'
 </script>
 
 <template>
@@ -16,11 +16,11 @@ import { projects } from '../../assets/scripts/projects'
           <a v-for="(link, idx) in item.links" :href="link.url">{{ link.label }}</a>
         </span>
       </p>
-      <ul>
-        <li v-for="tech in item.technologies">
-          <code>{{ tech }}</code>
-        </li>
-      </ul>
+      <p>
+        <span>
+          <code v-for="tech in item.technologies">{{ tech }}</code>
+        </span>
+      </p>
     </ContentList>
   </Detail>
 </template>

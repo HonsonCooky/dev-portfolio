@@ -1,3 +1,17 @@
+<script setup>
+import { Icon } from '@iconify/vue'
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+
+const isNavOpen = ref(false)
+const router = useRouter()
+
+function goto(path) {
+  isNavOpen.value = false
+  router.push(path)
+}
+</script>
+
 <template>
   <header>
     <button @click="goto('/')" class="icon">
@@ -15,20 +29,6 @@
     </nav>
   </header>
 </template>
-
-<script setup>
-import { Icon } from '@iconify/vue'
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
-
-const isNavOpen = ref(false)
-const router = useRouter()
-
-function goto(path) {
-  isNavOpen.value = false
-  router.push(path)
-}
-</script>
 
 <style scoped>
 header {

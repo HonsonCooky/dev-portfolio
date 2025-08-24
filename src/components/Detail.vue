@@ -1,3 +1,17 @@
+<script setup>
+const props = defineProps({
+  title: {
+    type: String,
+    required: true,
+  },
+})
+
+window.addEventListener('load', () => {
+  const allDetails = document.querySelectorAll('details')
+  console.log(allDetails)
+})
+</script>
+
 <template>
   <details>
     <summary>{{ title }}</summary>
@@ -7,15 +21,6 @@
   </details>
 </template>
 
-<script setup>
-const props = defineProps({
-  title: {
-    type: String,
-    required: true,
-  },
-})
-</script>
-
 <style scoped>
 details {
   width: 100%;
@@ -23,7 +28,8 @@ details {
 
 summary {
   padding: 0.3em;
-  font-size: 1.6em;
+  font-weight: bold;
+  font-size: 1.4em;
 }
 
 summary:hover {

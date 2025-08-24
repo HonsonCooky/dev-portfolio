@@ -1,3 +1,14 @@
+<script setup>
+import { Icon } from '@iconify/vue'
+import { education } from '../../assets/scripts/education.js'
+import ContentList from '../ContentList.vue'
+import Details from '../Detail.vue'
+
+function openRecord(path) {
+  window.open(path, '_blank')
+}
+</script>
+
 <template>
   <Details title="Education">
     <ContentList v-for="edu in education">
@@ -23,14 +34,3 @@
     </ContentList>
   </Details>
 </template>
-
-<script setup>
-import Details from '../Detail.vue'
-import ContentList from '../ContentList.vue'
-import { Icon } from '@iconify/vue'
-import { education } from '../../assets/scripts/education.js'
-
-function openRecord(path) {
-  window.open(path, '_blank')
-}
-</script>

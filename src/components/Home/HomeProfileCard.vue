@@ -1,3 +1,7 @@
+<script setup>
+import { Icon } from '@iconify/vue'
+</script>
+
 <template>
   <div class="profile-card">
     <div class="profile-info">
@@ -9,17 +13,13 @@
       </hgroup>
     </div>
     <div class="link-icons">
-      <a href="mailto:contact@honsoncooky.dev" target="_blank"><Icon icon="mdi:email" /></a>
+      <a href="mailto:contact@honsoncooky.dev"><Icon icon="mdi:email" /></a>
       <a href="https://github.com/HonsonCooky" target="_blank"><Icon icon="mdi:github" /></a>
       <a href="https://www.linkedin.com/in/HonsonCooky" target="_blank"><Icon icon="mdi:linkedin" /></a>
       <a href="https://www.reddit.com/user/HonsonCooky" target="_blank"><Icon icon="mdi:reddit" /></a>
     </div>
   </div>
 </template>
-
-<script setup>
-import { Icon } from '@iconify/vue'
-</script>
 
 <style scoped>
 .profile-card {
@@ -28,7 +28,6 @@ import { Icon } from '@iconify/vue'
   justify-content: center;
   align-items: center;
   border: 1px solid var(--border);
-  /* box-shadow: -1ch 1ch 5px var(--shadow); */
 }
 
 .profile-info {

@@ -1,3 +1,12 @@
+<script setup>
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+const openResume = () => window.open('/docs/HarrisonCookCV(current).pdf', '_blank')
+const gotoProjects = () => router.push('/projects')
+</script>
+
 <template>
   <div class="intro-card">
     <h1>Kia ora!</h1>
@@ -16,15 +25,6 @@
     </p>
   </div>
 </template>
-
-<script setup>
-import { useRouter } from 'vue-router'
-
-const router = useRouter()
-
-const openResume = () => window.open('/docs/HarrisonCookCV(current).pdf', '_blank')
-const gotoProjects = () => router.push('/projects')
-</script>
 
 <style scoped>
 .intro-card {
