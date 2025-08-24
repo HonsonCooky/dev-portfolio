@@ -37,7 +37,7 @@ header {
   top: 0;
   justify-content: space-between;
   z-index: 1000;
-  box-shadow: 0 1ch 5px var(--shadow);
+  border-bottom: 1px solid var(--border);
   background-color: var(--bg);
   padding: 0 calc((100vw - 1440px) / 2);
 }

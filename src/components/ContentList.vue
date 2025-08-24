@@ -8,16 +8,17 @@
 .content-item {
   margin: 1.2em 0;
 
-  > h2 {
+  h2 {
     margin: 0 0 0.6em 0;
-    font-size: 1.2em;
+    font-weight: normal;
+    font-size: 1.4em;
   }
 
   h2 > small {
     font-size: 0.8em;
   }
 
-  > p {
+  p {
     display: flex;
     flex-direction: column;
     margin: 1em 0;

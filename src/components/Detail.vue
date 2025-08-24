@@ -23,7 +23,7 @@ details {
 
 summary {
   padding: 0.3em;
-  font-size: 1.4em;
+  font-size: 1.6em;
 }
 
 summary:hover {

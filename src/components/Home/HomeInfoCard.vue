@@ -31,6 +31,7 @@ const gotoProjects = () => router.push('/projects')
   display: flex;
   flex: 1 0 280px;
   flex-direction: column;
+  justify-content: center;
 
   h1 {
     font-weight: bolder;

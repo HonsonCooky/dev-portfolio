@@ -19,17 +19,6 @@ import { Icon } from '@iconify/vue'
 }
 
 a {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1ch;
-  padding: 0.3em;
-  color: var(--fg);
-  font-size: 1.4em;
-  text-decoration: none;
-}
-
-a:hover {
-  background-color: var(--highlight);
+  font-size: 1.6em;
 }
 </style>

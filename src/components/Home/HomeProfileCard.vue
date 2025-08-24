@@ -27,7 +27,8 @@ import { Icon } from '@iconify/vue'
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: -1ch 1ch 5px var(--shadow);
+  border: 1px solid var(--border);
+  /* box-shadow: -1ch 1ch 5px var(--shadow); */
 }
 
 .profile-info {
