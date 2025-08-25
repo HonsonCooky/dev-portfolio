@@ -35,7 +35,7 @@ import { Icon } from '@iconify/vue'
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 4ch;
+  padding: min(4ch, 2vw);
 }
 
 .profile-info > hgroup {
@@ -54,6 +54,7 @@ import { Icon } from '@iconify/vue'
     font-weight: lighter;
     font-size: 1.5em;
     line-height: 1.1;
+    text-align: center;
   }
 
   hr {

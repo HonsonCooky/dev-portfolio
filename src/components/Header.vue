@@ -14,15 +14,15 @@ function goto(path) {
 
 <template>
   <header>
-    <button @click="goto('/')" class="icon">
-      <h1>Harrison Cook</h1>
-    </button>
-
     <button @click="isNavOpen = !isNavOpen" class="menu">
       <Icon :icon="isNavOpen ? 'mdi:close' : 'mdi:menu'" />
     </button>
 
-    <nav :class="{ open: isNavOpen }">
+    <button @click="goto('/')" class="icon">
+      <h1>Harrison Cook</h1>
+    </button>
+
+    <nav :class="{ open: isNavOpen }" @click="isNavOpen = false">
       <button @click="goto('/about')">About</button>
       <button @click="goto('/projects')">Projects</button>
       <button @click="goto('/contact')">Contact</button>
@@ -35,7 +35,6 @@ header {
   display: flex;
   position: sticky;
   top: 0;
-  justify-content: space-between;
   z-index: 1000;
   border-bottom: 1px solid var(--border);
   background-color: var(--bg);
@@ -59,6 +58,7 @@ nav {
   left: 0;
   flex-direction: column;
   justify-content: center;
+  align-items: start;
   gap: 0.3em;
   z-index: 1000;
   background-color: var(--bg);
@@ -68,6 +68,12 @@ nav {
 
   &.open {
     display: flex;
+  }
+
+  button {
+    justify-content: start;
+    width: 100%;
+    font-weight: bold;
   }
 }
 </style>
