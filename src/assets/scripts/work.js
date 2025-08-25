@@ -1,30 +1,40 @@
 export const experiences = [
   {
     title: 'Software Engineer',
+    company: 'Splitting Point Studios',
+    dates: 'Sept 2025 - Now',
+    location: 'Remote, NZ',
+    points: [
+      "Engineering the debut of a dream - transforming a spark of imagination into something the world's never laid eyes on.",
+    ],
+  },
+  {
+    title: 'Software Engineer',
     company: 'Xero',
-    dates: 'Aug 2024 - Now',
+    dates: 'Aug 2024 - Sept 2025 (1 year, 1 month)',
     location: 'Wellington, NZ',
     points: [
-      'Proactively identified opportunities for process and code quality improvements, actively participating in discussions to propose solutions.',
-      'Contributed to enhancing the quality and stability of existing legacy systems through targeted bug fixes and code enhancements.',
-      'Assisted in analyzing and resolving issues within legacy applications, gaining familiarity with production challenges.',
+      'Maintained and extended critical legacy IIS applications, reverse-engineering undocumented workflows to deliver new features without disrupting business operations.',
+      'Aided in the design of migration procedures and components for a modern replacement platform, working in parallel with legacy maintenance to streamline eventual cutover.',
+      'Served as on-call engineer for high-impact production incidents across systems outside core squad scope - triaging, resolving, or escalating to restore service.',
+      'Balanced development responsibilities with operational duties in a fast-paced, multi-system environment.',
     ],
   },
   {
     title: 'Software Engineer',
     company: 'Z Energy',
-    dates: 'Nov 2021 - Aug 2024',
+    dates: 'Nov 2021 - Aug 2024 (2 years, 9 months)',
     location: 'Wellington, NZ',
     points: [
-      'Fast-tracked from Graduate to Engineer within 6 months (bypassing Junior status) due to exceptional technical growth and trusted contributions, outpacing my peers.',
-      'Designed, developed, and deployed full-stack, data-centric microservice solutions using TypeScript or C# in Azure.',
-      'Operated within a robust development environment leveraging Infrastructure as Code (IaC) for cloud resources and adhering to rigorous practices for documented, monitored production deployments.',
+      'Maintained and enhanced a distributed microservices ecosystem processing millions of daily requests, ensuring services stayed secure, stable, and up-to-date with the latest libraries.',
+      'Built integrations with multiple third-party vendors and legacy platforms, implementing robust data migration pipelines to standardise and transform incoming datasets.',
+      'Delivered code to production with a focus on reliability, maintainability, and compliance, while executing against existing architecture and design specifications.',
     ],
   },
   {
     title: 'Software Engineer Intern',
     company: 'Raygun',
-    dates: 'Nov 2020 - Feb 2021',
+    dates: 'Nov 2020 - Feb 2021 (3 months)',
     location: 'Wellington, NZ',
     points: [
       "Designed, developed, and published a React Native NPM library, streamlining integration with Raygun's crash reporting and monitoring software.",
