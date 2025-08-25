@@ -18,7 +18,6 @@ onMounted(() => {
 })
 
 onMounted(() => {
-  console.log('here')
   const pageDetails = document.querySelectorAll('details')
 
   pageDetails.forEach((detail) => {
@@ -27,6 +26,11 @@ onMounted(() => {
         if (detail === otherDetail) return
         otherDetail.open = false
       })
+
+      const summary = detail.querySelector('summary')
+      if (summary) {
+        summary.scrollIntoView()
+      }
     })
   })
 })

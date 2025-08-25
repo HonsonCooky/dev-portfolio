@@ -10,7 +10,7 @@ const gotoProjects = () => router.push('/projects')
 <template>
   <div class="intro-card">
     <h1>Kia ora!</h1>
-    <h3>Engineering Excellence - Now Taking Center Stage.</h3>
+    <h3>Engineering Excellence;<br />Now Taking Center Stage.</h3>
 
     <div class="button-group">
       <button @click="openResume">Resume</button>
@@ -18,10 +18,11 @@ const gotoProjects = () => router.push('/projects')
     </div>
 
     <p>
-      From stage lights to server logs, I've always thrived where structure meets creativity. Now a Software Engineer
-      specializing in <code>TypeScript</code> and <code>C#</code>, I craft systems that are as elegant under the hood as
-      they are enduring in the field. Every project is a chance to turn complexity into clarity - and deliver work that
-      performs for years to come.
+      From stage lights to server logs, I've thrived where structure meets creativity. In my professional work, I've
+      delivered maintainable, production-ready systems in <code>TypeScript</code> and <code>C#</code>, often navigating
+      tightly defined specs and complex organizational workflows. Beyond the brief, I sharpen my craft in
+      <code>C</code>, <code>Rust</code>, <code>Zig</code> and <code>Lua</code> - languages that let me explore
+      systems-level thinking and performance-driven design, fuelling where I want to take my engineering next.
     </p>
   </div>
 </template>
