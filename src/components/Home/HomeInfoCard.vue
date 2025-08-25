@@ -59,4 +59,7 @@ const gotoProjects = () => router.push('/projects')
     font-size: 1.2em;
   }
 }
+
+p {
+}
 </style>

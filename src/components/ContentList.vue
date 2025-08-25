@@ -27,8 +27,8 @@
   p > span {
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
-    gap: 1ch;
+    align-items: baseline;
+    gap: 0 1ch;
   }
 
   ul {

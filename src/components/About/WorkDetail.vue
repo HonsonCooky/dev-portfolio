@@ -23,7 +23,9 @@ import Detail from '../Detail.vue'
       </p>
       <ul>
         <li v-for="point in role.points">
-          {{ point }}
+          <p>
+            {{ point }}
+          </p>
         </li>
       </ul>
     </ContentList>

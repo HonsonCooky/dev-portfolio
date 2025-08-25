@@ -20,7 +20,9 @@ function openRecord(path) {
         </span>
         <span>
           <Icon icon="mdi:location" />
-          {{ edu.location }}
+          <span v-for="region in edu.location.split(' ')">
+            {{ region }}
+          </span>
         </span>
       </p>
       <ul>

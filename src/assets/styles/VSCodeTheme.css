@@ -96,11 +96,15 @@ button:active {
 code {
   border: 1px solid var(--border);
   background-color: var(--highlight);
-  padding: 1px 1ch;
+  padding: 0.1em 1ch;
   color: var(--string);
 }
 
 p,
 li {
   max-width: 80ch;
+}
+
+p {
+  text-align: justify;
 }
