@@ -99,3 +99,8 @@ code {
   padding: 1px 1ch;
   color: var(--string);
 }
+
+p,
+li {
+  max-width: 80ch;
+}

@@ -1,33 +1,34 @@
 <script setup>
 import Details from '../Detail.vue'
+
+const start = new Date('2021/08/01') // Account for 3 months at Raygun
+const years = ((new Date() - start) / (1000 * 60 * 60 * 24 * 365)).toFixed(2)
 </script>
 
 <template>
   <Details title="About Me">
     <p>
-      Growing up in a world filled with music and performing, my early years were shaped by rhythm and stage presence.
-      While the arts nurtured my creativity, it was the intricate logic of digital technologies that ultimately captured
-      my curiosity.
+      From stage lights to server logs, my journey began in the world of rhythm, performance, and storytelling. The arts
+      taught me creativity, timing, and presence - skills that now shape how I design and deliver software. When I
+      discovered programming, I saw the same balance of structure and expression I loved in music: disciplined
+      frameworks with infinite room for invention.
     </p>
     <p>
-      With a strong foundation in calculus and a passion for creative expression through photography and theatre, I
-      discovered programming - an elegant fusion of precision and artistry. It's a discipline that, much like music,
-      follows structure yet allows for boundless innovation. Today, I've traded compositions for code, developing
-      solutions that balance efficiency, structure, and long-term viability. Whether refining algorithms for sustained
-      performance or engineering systems built to endure, I thrive on transforming complex theories into practical,
-      resilient applications.
+      In my {{ years }} years as a Software Engineer, I've built maintainable, production-ready systems in
+      <code>TypeScript</code> and <code>C#</code>, often within tightly defined specs and complex organizational
+      workflows. Outside the brief, I hone my craft in <code>C</code>, <code>Rust</code>, <code>Zig</code>, and
+      <code>Lua</code> - exploring systems-level thinking, performance-driven design, and the deep connection between
+      code and hardware.
     </p>
     <p>
-      As a Software Engineer with 4.06 years of industry experience, I currently specialize in TypeScript and C#
-      development, complemented by a broad array of integration technologies. My fascination lies in understanding
-      software at its most fundamental levels, where hardware and code intersect. I am eager to deepen my expertise in
-      engineering highly specialized, efficient solutions that require a comprehensive understanding of the hardware
-      they operate upon.
+      Whether I'm refining algorithms for long-term efficiency or architecting systems built to endure, I approach every
+      project with both engineering rigor and creative precision. My background in musical theatre sharpened my ability
+      to communicate, collaborate, and present, giving me the tools to bridge technical depth with clear, compelling
+      delivery.
     </p>
     <p>
-      Beyond technical expertise, my background in musical theatre has honed my ability to communicate, collaborate, and
-      present effectively. I bring a unique blend of creativity and precision to every project, fostering an environment
-      of technical excellence and innovation. Ready to build something remarkable? Let's orchestrate solutions together.
+      I'm here to build solutions that last - elegant under the hood, resilient in production, and a little artful in
+      their execution.
     </p>
   </Details>
 </template>

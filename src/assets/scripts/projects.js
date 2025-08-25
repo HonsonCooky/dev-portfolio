@@ -1,6 +1,6 @@
 export const projects = [
   {
-    group: 'Software Projects',
+    group: 'Software',
     items: [
       {
         name: 'Developer Portfolio',
@@ -19,7 +19,7 @@ export const projects = [
     ],
   },
   {
-    group: 'Development Environment',
+    group: 'Environment',
     items: [
       {
         name: 'Terminal Text Editing',
@@ -40,7 +40,7 @@ export const projects = [
     ],
   },
   {
-    group: 'University Projects',
+    group: 'University',
     items: [
       {
         name: 'Bus-Sharp',
@@ -68,7 +68,7 @@ export const projects = [
     ],
   },
   {
-    group: 'Hardware Projects',
+    group: 'Hardware',
     items: [
       {
         name: 'Ergonomic Keyboards',
