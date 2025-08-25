@@ -1,6 +1,7 @@
 <script setup>
 import AboutMeDetail from '../components/About/AboutMeDetail.vue'
 import EducationDetail from '../components/About/EducationDetail.vue'
+import Toolbelt from '../components/About/Toolbelt.vue'
 import WorkDetail from '../components/About/WorkDetail.vue'
 import Page from '../components/Page.vue'
 </script>
@@ -8,7 +9,8 @@ import Page from '../components/Page.vue'
 <template>
   <Page title="About">
     <AboutMeDetail />
-    <EducationDetail />
     <WorkDetail />
+    <EducationDetail />
+    <Toolbelt />
   </Page>
 </template>

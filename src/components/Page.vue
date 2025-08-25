@@ -61,6 +61,7 @@ onMounted(() => {
     position: sticky;
     top: var(--header-height);
     margin: 1em 0;
+    border-bottom: 1px solid var(--border);
     background-color: var(--bg);
     width: 100%;
     font-size: 3em;
