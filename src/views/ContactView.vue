@@ -1,6 +1,8 @@
 <script setup>
 import { Icon } from '@iconify/vue'
+import { useRouter } from 'vue-router'
 import Page from '../components/Page.vue'
+const router = useRouter()
 </script>
 
 <template>
@@ -13,7 +15,7 @@ import Page from '../components/Page.vue'
     </a>
     <a href="https://www.reddit.com/user/HonsonCooky" target="_blank"><Icon icon="mdi:reddit" /> Reddit/HonsonCooky</a>
     <br />
-    <a href="/docs/HarrisonCookCV(current).pdf" target="_blank"><Icon icon="mdi:file" /> Resume</a>
+    <button @click="() => router.push('/cv')"><Icon icon="mdi:file" /> Resume</button>
   </Page>
 </template>
 

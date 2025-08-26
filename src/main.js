@@ -7,6 +7,7 @@ import './assets/styles/HtmlReset.css'
 import './assets/styles/VSCodeTheme.css'
 import AboutView from './views/AboutView.vue'
 import ContactView from './views/ContactView.vue'
+import CurriculumVitae from './views/CurriculumVitae.vue'
 import HomeView from './views/HomeView.vue'
 import ProjectsView from './views/ProjectsView.vue'
 
@@ -15,6 +16,7 @@ const routes = [
   { path: '/about', component: AboutView },
   { path: '/projects', component: ProjectsView },
   { path: '/contact', component: ContactView },
+  { path: '/cv', component: CurriculumVitae },
 ]
 const router = createRouter({
   history: createWebHistory(),

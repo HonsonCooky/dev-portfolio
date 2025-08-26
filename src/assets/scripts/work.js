@@ -5,6 +5,7 @@ export const experiences = [
     dates: 'Sept 2025 - Now',
     location: 'Remote, NZ',
     points: [
+      'Ongoing',
       "Engineering the debut of a dream - transforming a spark of imagination into something the world's never laid eyes on.",
     ],
   },

@@ -3,7 +3,7 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
-const openResume = () => window.open('/docs/HarrisonCookCV(current).pdf', '_blank')
+const gotoCv = () => router.push('/cv')
 const gotoProjects = () => router.push('/projects')
 </script>
 
@@ -13,16 +13,15 @@ const gotoProjects = () => router.push('/projects')
     <h3>Engineering Excellence;<br />Now Taking Center Stage.</h3>
 
     <div class="button-group">
-      <button @click="openResume">Resume</button>
+      <button @click="gotoCv">Resume</button>
       <button @click="gotoProjects">Projects</button>
     </div>
 
     <p>
-      From stage lights to server logs, I've thrived where structure meets creativity. In my professional work, I've
-      delivered maintainable, production-ready systems in <code>TypeScript</code> and <code>C#</code>, often navigating
-      tightly defined specs and complex organizational workflows. Beyond the brief, I sharpen my craft in
-      <code>C</code>, <code>Rust</code>, <code>Zig</code> and <code>Lua</code> - languages that let me explore
-      systems-level thinking and performance-driven design, fuelling where I want to take my engineering next.
+      From stage lights to system calls, I thrive where creative performance meets technical precision. Professionally,
+      I deliver maintainable, production-ready systems in <code>TypeScript</code> and <code>C#</code>. Personally, I'm
+      driven to get closer to the hardware, honing my craft in <code>C</code>, <code>Zig</code>, and <code>Lua</code> to
+      explore the systems-level engineering that powers high-performance software.
     </p>
   </div>
 </template>
