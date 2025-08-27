@@ -58,7 +58,7 @@ import { Icon } from '@iconify/vue'
   }
 
   hr {
-    border: 1px solid var(--keyword);
+    border: 1px solid var(--selection);
     width: 50%;
   }
 }
@@ -68,9 +68,8 @@ import { Icon } from '@iconify/vue'
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: var(--keyword);
+  background-color: var(--selection);
   width: 100%;
-  color: var(--bg);
   font-size: 2em;
 }
 

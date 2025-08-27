@@ -47,3 +47,12 @@ export const experiences = [
     ],
   },
 ]
+
+const start = new Date('2021/08/01') // Account for 3 months at Raygun
+const years = ((new Date() - start) / (1000 * 60 * 60 * 24 * 365)).toFixed(2)
+
+export function workYearsRounded() {
+  const roundedYears = Math.round(years * 2) / 2
+  if (roundedYears > years) return `~${roundedYears}`
+  return `${roundedYears}+`
+}

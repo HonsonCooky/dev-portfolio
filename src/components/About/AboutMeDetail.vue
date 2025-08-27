@@ -1,8 +1,6 @@
 <script setup>
+import { workYearsRounded } from '../../assets/scripts/work'
 import Details from '../Detail.vue'
-
-const start = new Date('2021/08/01') // Account for 3 months at Raygun
-const years = ((new Date() - start) / (1000 * 60 * 60 * 24 * 365)).toFixed(2)
 </script>
 
 <template>
@@ -14,7 +12,7 @@ const years = ((new Date() - start) / (1000 * 60 * 60 * 24 * 365)).toFixed(2)
       frameworks with infinite room for invention.
     </p>
     <p>
-      In my {{ years }} years as a professional Software Engineer, I've focused on building maintainable,
+      In my {{ workYearsRounded() }} years as a professional Software Engineer, I've focused on building maintainable,
       production-ready systems in <code>TypeScript</code> and <code>C#</code>, often navigating tightly defined specs
       and complex organizational workflows. Outside of my day-to-day role, my passion lies closer to the hardware. I
       actively hone my craft in <code>C</code>, <code>Zig</code>, and <code>Lua</code>, exploring the systems-level
