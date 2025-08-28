@@ -15,7 +15,7 @@ const router = useRouter()
     </a>
     <a href="https://www.reddit.com/user/HonsonCooky" target="_blank"><Icon icon="mdi:reddit" /> Reddit/HonsonCooky</a>
     <br />
-    <button @click="() => router.push('/cv')"><Icon icon="mdi:file" /> Resume</button>
+    <a @click="() => router.push('/cv')"><Icon icon="mdi:file" /> Resume</a>
   </Page>
 </template>
 
