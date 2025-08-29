@@ -9,8 +9,7 @@
         }
         .letters {
         fill: currentColor;
-        font-family: "Courier New", "Consolas", monospace;
-        font-weight: bold;
+        font-family: monospace;
         font-size: 18px !important;
         }
     </style>

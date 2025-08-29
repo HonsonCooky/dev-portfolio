@@ -183,7 +183,7 @@ function print() {
 }
 
 * {
-  font-family: sans-serif;
+  font-family: 'Roboto';
 }
 
 p,
