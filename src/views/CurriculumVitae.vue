@@ -24,7 +24,7 @@ const globalStyles = `
     }
 
     @page {
-      margin: none;
+      margin: 0;
       size: a4 portrait;
     }
   }
@@ -79,6 +79,7 @@ function print() {
     <hgroup>
       <h1>Harrison Cook</h1>
       <h2>Software Engineer · Full-Stack Development · Cloud Architecture</h2>
+      <a href="https://about.honsoncooky.dev">https://about.honsoncooky.dev</a>
     </hgroup>
 
     <section>
@@ -199,7 +200,9 @@ li {
 }
 
 hgroup {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 hgroup > h1 {
