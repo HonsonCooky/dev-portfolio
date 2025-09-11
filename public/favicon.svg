@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="32" height="32" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <style>
-        .bracket {
-        fill: none;
-        stroke: currentColor;
-        stroke-width: 3;
-        stroke-linecap: round;
-        }
-        .letters {
-        fill: currentColor;
-        font-family: monospace;
-        font-size: 18px !important;
-        }
-    </style>
-    <!-- Left bracket -->
-    <path class="bracket" d="M11,4 L3,4 L3,28 L11,28"/>
-    <!-- Right bracket -->
-    <path class="bracket" d="M21,4 L29,4 L29,28 L21,28"/>
-    <!-- HC text -->
-    <text class="letters" x="16" y="17.5" text-anchor="middle" dominant-baseline="middle" font-size="18">HC</text>
-</svg>
+<svg width="164" height="64" viewBox="0 0 164 64"
+     xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&amp;display=swap');
 
+    .letters {
+      font-family: 'Roboto Mono', monospace;
+      fill: #0000ff;
+      font-size: 48px;
+      font-weight: bolder;
+    }
+  </style>
+
+  <!-- Function-style text -->
+  <text class="letters" x="5" y="48">
+    &lt;HC/&gt;
+  </text>
+</svg>
