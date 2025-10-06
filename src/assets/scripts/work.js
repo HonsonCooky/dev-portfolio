@@ -6,7 +6,8 @@ export const experiences = [
     location: 'Remote, NZ',
     points: [
       'Ongoing',
-      "Engineering the debut of a dream - transforming a spark of imagination into something the world's never laid eyes on.",
+      'Designed and implemented backend foundations to ensure reliability, scalability, and maintainability under extreme load.',
+      'Balanced rapid prototyping with long-term architectural rigor, enabling the project to move from concept to production readiness.',
     ],
   },
   {
