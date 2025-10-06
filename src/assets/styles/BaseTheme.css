@@ -1,21 +1,22 @@
 :root {
-  --bg: #1e1e1e;
-  --fg: #d4d4d4;
-  --selection: #264f78;
-  --highlight: #2a2d2e;
-  --cursor: #aeafad;
-  --border: #3c3c3c;
+  /* Mocha (dark) */
+  --bg: #1e1e2e; /* Base */
+  --fg: #cdd6f4; /* Text */
+  --selection: #585b70; /* Surface1 */
+  --highlight: #313244; /* Surface0 */
+  --cursor: #f5e0dc; /* Rosewater */
+  --border: #45475a; /* Overlay0 */
   --shadow: rgba(0, 0, 0, 0.36);
 }
 
 :root[data-theme='light'] {
-  --bg: #ffffff;
-  --fg: #333333;
-  --selection: #add6ff;
-  --highlight: #f3f3f3;
-  --cursor: #000000;
-  --border: #e5e5e5;
-
+  /* Latte (light) */
+  --bg: #eff1f5; /* Base */
+  --fg: #4c4f69; /* Text */
+  --selection: #ccd0da; /* Surface0 */
+  --highlight: #e6e9ef; /* Mantle */
+  --cursor: #dc8a78; /* Rosewater */
+  --border: #9ca0b0; /* Overlay0 */
   --shadow: rgba(0, 0, 0, 0.18);
 }
 
